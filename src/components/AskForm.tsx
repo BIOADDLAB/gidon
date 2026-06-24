@@ -90,7 +90,7 @@ export default function AskForm() {
             <div className="flex justify-center">
                 <button
                     type="submit"
-                    className="flex justify-center items-center text-center text-[20px] font-bold text-white gap-[10px] bg-green-600 py-[16px] px-[65px] rounded-[33px] hover:bg-green-700 transition-colors"
+                    className="flex justify-center items-center text-center text-[20px] font-bold text-white gap-[10px] bg-green-600 py-[16px] px-[65px] rounded-[33px] hover:bg-[#233b32] transition-colors"
                 >
                     상담 신청하기 <span>&gt;</span>
                 </button>
