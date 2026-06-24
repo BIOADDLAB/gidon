@@ -1,5 +1,6 @@
 import AskSection from '@/components/AskSection';
 import MapSection from '../components/MapStion';
+import CareSection from '../components/CareSection';
 
 export default function Home() {
     return (
@@ -20,6 +21,9 @@ export default function Home() {
 
             {/* 오시는 길 */}
             <MapSection />
+
+            {/* 주의사항 */}
+            <CareSection />
         </>
     );
 }
