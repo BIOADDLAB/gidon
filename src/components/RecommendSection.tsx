@@ -59,7 +59,7 @@ export default function RecommendSection() {
                     {cards.map((card, index) => (
                         <div
                             key={index}
-                            className={`w-full max-w-75 ${card.bgClass} ${card.textColorClass} rounded-[10px] overflow-hidden shadow-[2px_4px_10px_0_rgba(73,73,73,0.25)] flex flex-col transition-transform duration-300 hover:-translate-y-2`}
+                            className={`w-full max-w-75 ${card.bgClass} ${card.textColorClass} rounded-[10px] overflow-hidden shadow-[2px_4px_10px_0_rgba(73,73,73,0.25)] flex flex-col transition-transform duration-300 `}
                         >
                             {/* 상단 영역 */}
                             <div
