@@ -1,6 +1,7 @@
 import AskSection from '@/components/AskSection';
 import MapSection from '../components/MapStion';
 import CareSection from '../components/CareSection';
+import RecommendSection from '../components/RecommendSection';
 
 export default function Home() {
     return (
@@ -24,6 +25,9 @@ export default function Home() {
 
             {/* 주의사항 */}
             <CareSection />
+
+            {/* 추천 영역 */}
+            <RecommendSection />
         </>
     );
 }
