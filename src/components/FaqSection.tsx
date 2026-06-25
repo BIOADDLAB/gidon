@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import SectionHeading from './common/SectionHeading';
+import Image from 'next/image';
 
 interface FaqItem {
     id: number;
@@ -40,10 +41,13 @@ export default function FaqSection() {
 
     return (
         <section className="relative w-full pt-[100px] pb-[130px] overflow-hidden flex flex-col items-center">
-            <picture className="absolute inset-0 w-full h-full -z-10">
-                <source srcSet="images/bg_faq.webp" type="image/webp" />
-                <img src="images/bg_faq.jpg" alt="배경 이미지" className="w-full h-full object-cover object-center" />
-            </picture>
+            <Image
+                src="/images/bg_reco.jpg"
+                alt="배경 이미지"
+                fill
+                sizes="100vw"
+                className="object-cover object-center -z-10"
+            />
 
             <div className="w-full max-w-[930px] px-4">
                 <SectionHeading topTitle="Q & A" centerTitle="자주 묻는 질문" desc="" isDesc={false} />
