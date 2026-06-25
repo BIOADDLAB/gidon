@@ -14,8 +14,8 @@ export default function FaqSection() {
     const faqList: FaqItem[] = [
         {
             id: 1,
-            question: '치아가 하나도 없어도 보험 임플란트가 가능한가요?',
-            answer: '치아가 하나도 없는 무치악 상태는 보험 임플란트 적용 대상이 아닙니다.\n무치악 환자의 경우 보험 틀니 적용 여부를 확인하실 수 있습니다.',
+            question: 'AI 구강스캔을 통해 정밀한 진단 진행',
+            answer: '3D CT 촬영과 구간 검진을 통해 치아와 잇몸 상태를 \n분석하고, 가상 모의 수술로 식립 위치를 계획합니다.',
         },
         {
             id: 2,
