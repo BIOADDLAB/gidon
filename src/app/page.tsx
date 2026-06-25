@@ -4,6 +4,7 @@ import CareSection from '../components/CareSection';
 import RecommendSection from '../components/RecommendSection';
 import FaqSection from '../components/FaqSection';
 import ProcessSection from '../components/ProcessSection';
+import HeroSection from '../components/HeroSection';
 
 interface implantdDtaProps {
     stepNumber: number;
@@ -41,6 +42,12 @@ export default function Home() {
     ];
     return (
         <>
+            <HeroSection
+                mainTitle="GIDEON DENTAL CLINIC"
+                subTitle="서브히어로 테스트"
+                imgSrc="/images/bg_hr_test.jpg"
+            />
+
             {/* 상담 및 문의 영역 */}
             <AskSection />
 

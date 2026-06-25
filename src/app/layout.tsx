@@ -27,7 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <html lang="ko" className={`${dotSans.variable} ${suit.variable} ${tenorSans.variable}`}>
             <body className="flex min-h-screen flex-col">
                 <Header />
-                <main className="flex-1 pt-20">{children}</main>
+                <main className="flex-1">{children}</main>
                 <Footer />
             </body>
         </html>
