@@ -41,7 +41,13 @@ export default function ProcessSection({ topTitle, centerTitle, stepData }: Proc
                             </div>
 
                             <div className="w-[450px] h-[240px] shrink-0 overflow-hidden rounded-[10px] relative">
-                                <Image src={e.imgSrc} alt={e.imgAlt} fill className="object-cover" />
+                                <Image
+                                    src={e.imgSrc}
+                                    alt={e.imgAlt}
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, 450px"
+                                    className="object-cover"
+                                />
                             </div>
                         </div>
                     ))}

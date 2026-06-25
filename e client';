@@ -1,0 +1,87 @@
+[33mcommit 474a44ad25476c11de090da13e76f08f4605e632[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: 유경아 <ukyunga0.1@gmail.com>
+Date:   Fri Jun 26 00:19:34 2026 +0900
+
+    feat: 프로세스 공통 컴포넌트 구현 완료
+
+[33mcommit 7207f5449ecc7e2e702c46599977575af7951cc1[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: 유경아 <ukyunga0.1@gmail.com>
+Date:   Thu Jun 25 18:35:28 2026 +0900
+
+    wip: ProcessSection 공통 컴포넌트 생성 및 마크업 진행중
+
+[33mcommit b0c37ae2610a3755ca8e8539bcd897ee29886d27[m
+Author: 유경아 <ukyunga0.1@gmail.com>
+Date:   Thu Jun 25 11:29:24 2026 +0900
+
+    feat: FaqSection 마크업 및 아코디언 기능 구현
+
+[33mcommit b5639be67bd79b825514e69ad0276a1808cf05a1[m
+Author: 유경아 <ukyunga0.1@gmail.com>
+Date:   Wed Jun 24 17:55:38 2026 +0900
+
+    feat: 공용 FaqSection 컴포넌트 파일 생성 및 기본 틀 작업
+
+[33mcommit 6fc5cfd091b8cf056e09b12ffe858b0d34cabbd4[m
+Author: 유경아 <ukyunga0.1@gmail.com>
+Date:   Wed Jun 24 17:52:12 2026 +0900
+
+    style: hover 애니메이션 제거
+
+[33mcommit 13b27ee247b0c051358ed682eba9fd5ff3c8640f[m
+Author: 유경아 <ukyunga0.1@gmail.com>
+Date:   Wed Jun 24 15:53:15 2026 +0900
+
+    feat: 공용 RecommendSection 마크업 완료 및 데이터 배열 분리
+
+[33mcommit 4a27f7c61bee2d646a311e4efebbff01d38e797d[m
+Author: 유경아 <ukyunga0.1@gmail.com>
+Date:   Wed Jun 24 15:34:59 2026 +0900
+
+    style: 마진 값 변경
+
+[33mcommit 0cdebdbb1adb497653c20f4ac481481a4805cb06[m
+Author: 유경아 <ukyunga0.1@gmail.com>
+Date:   Wed Jun 24 15:30:41 2026 +0900
+
+    feat: 타입추가 및 마진 위치 변경 bottom -> top
+
+[33mcommit 1b946d7928e1bada2e134d49b3660c24f111317f[m
+Author: 유경아 <ukyunga0.1@gmail.com>
+Date:   Wed Jun 24 14:33:46 2026 +0900
+
+    feat: 공용 컴포넌트 작업(주의사항 및 관리방법) 마크업 및 정렬 완료
+
+[33mcommit 66d5731942b2e63a671111fcd2855d7018920e73[m
+Author: 유경아 <ukyunga0.1@gmail.com>
+Date:   Wed Jun 24 12:25:15 2026 +0900
+
+    feat: MapSection 레이아웃 마크업 완료 및 웹 접근성·SEO 우회 적용 완료
+
+[33mcommit 4c65e9ad4b1ecefd2a51922173bec7243ccb7c33[m
+Author: 유경아 <ukyunga0.1@gmail.com>
+Date:   Wed Jun 24 11:03:37 2026 +0900
+
+    style: 상담 버튼 호버 색상 변경
+
+[33mcommit 5e9798f763d31b34b510329ca2d6f171ed90d6c6[m
+Author: 유경아 <ukyunga0.1@gmail.com>
+Date:   Wed Jun 24 11:00:14 2026 +0900
+
+    feat: 간단 문의(Ask) 섹션 구현 및 공용 타이틀 컴포넌트 추가
+    
+    - AskSection, AskCard, AskForm 컴포넌트 구조화 및 반응형 마크업\n- 개인정보 동의 체크박스 커스텀 이미지 반영\n- 공용 SectionHeading 컴포넌트 추가
+
+[33mcommit 2b142638657b0565e29ff116e0c5577f7107590a[m
+Author: 유경아 <ukyunga0.1@gmail.com>
+Date:   Wed Jun 24 10:07:12 2026 +0900
+
+    feat: 레이아웃(헤더, 푸터) 반응형 구현 및 GSAP 라이브러리 세팅
+    
+    - Header, Footer 컴포넌트 마크업 및 PC/모바일 반응형 스타일링 완료\n- 애니메이션 효과 구현을 위한 GSAP 의존성 설치 및 기본 환경 설정
+
+[33mcommit 93545ee8cc81a5126aa7caf818ea1d7ec9febbdb[m
+Author: 유경아 <ukyunga0.1@gmail.com>
+Date:   Mon Jun 22 15:25:53 2026 +0900
+
+    chore: 프로젝트 초기 세팅
