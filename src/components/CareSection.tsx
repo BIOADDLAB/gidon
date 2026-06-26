@@ -1,7 +1,6 @@
 'use client';
 
-import React from 'react';
-
+import Image from 'next/image';
 interface CareSectionProps {
     title?: string;
     descriptionList?: string[];
@@ -19,10 +18,13 @@ export default function CareSection({
 }: CareSectionProps) {
     return (
         <section className="relative w-full min-h-150 flex items-center justify-center py-20 px-4 overflow-hidden">
-            <picture className="absolute inset-0 w-full h-full -z-10">
-                <source srcSet="images/bg_care.webp" type="image/webp" />
-                <img src="images/bg_care.jpg" alt="배경 이미지" className="w-full h-full object-cover object-center" />
-            </picture>
+            <Image
+                src="/images/bg_care.jpg"
+                alt="배경 이미지"
+                fill
+                sizes="100vw"
+                className="object-cover object-center -z-10"
+            />
 
             {/* 카드 영역 */}
             <div className="w-full max-w-230.5 bg-[#E2E8E4] rounded-[30px] overflow-hidden shadow-sm">

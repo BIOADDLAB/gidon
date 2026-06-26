@@ -22,6 +22,22 @@ const tenorSans = Tenor_Sans({
     variable: '--font-accent',
 });
 
+const hansuwon = localFont({
+    src: [
+        {
+            path: '../../public/fonts/KHNPHDotfR.otf',
+            weight: '400',
+        },
+        {
+            path: '../../public/fonts/KHNPHDotfB.otf',
+            weight: '700',
+        },
+    ],
+    variable: '--font-hero',
+});
+
+
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="ko" className={`${dotSans.variable} ${suit.variable} ${tenorSans.variable}`}>
