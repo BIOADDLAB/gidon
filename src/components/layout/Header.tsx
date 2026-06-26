@@ -83,7 +83,6 @@ export default function Header() {
 
     return (
         <header ref={navRef} className="group fixed inset-x-0 top-0 z-50 flex flex-col">
-            {/* [1층 레이어] 메인 GNB 감싸는 전체 배경판 */}
             <div
                 className={`relative z-20 w-full transition-colors duration-300
                     bg-transparent
@@ -91,19 +90,17 @@ export default function Header() {
                     group-[.on]:bg-white group-[.on]:shadow-md
                     ${menuOpen ? 'bg-white shadow-md' : ''}`}
             >
-                {/* [경아 님 원본 복구] 중앙 정렬 및 여백을 담당하는 내부 마스터 컨테이너 */}
                 <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
-                    {/* 로고 */}
                     <Link href="/" className="flex items-center">
                         <img
                             src="/images/common/logo_w.svg"
                             alt="기드온치과"
-                            className={`h-8 ${menuOpen ? 'hidden' : 'block group-hover:hidden group-[.on]:hidden'}`}
+                            className={`h-9 ${menuOpen ? 'hidden' : 'block group-hover:hidden group-[.on]:hidden'}`}
                         />
                         <img
                             src="/images/common/logo_g.svg"
                             alt="기드온치과"
-                            className={`h-8 ${menuOpen ? 'block' : 'hidden group-hover:block group-[.on]:block'}`}
+                            className={`h-9 ${menuOpen ? 'block' : 'hidden group-hover:block group-[.on]:block'}`}
                         />
                     </Link>
 
@@ -116,7 +113,7 @@ export default function Header() {
                             >
                                 <Link
                                     href={menu.href}
-                                    className="px-2 py-4 text-[16px] font-semibold text-white transition-colors
+                                    className="px-2 py-4 text-[18px] font-semibold text-white transition-colors
                                         group-hover:text-green-600
                                         group-[.on]:text-green-600
                                         group-hover/menu:text-[#1c2f2a]"
@@ -153,14 +150,14 @@ export default function Header() {
                             <img
                                 src="/images/common/l_lang_w.svg"
                                 alt="언어"
-                                className={`h-4 w-4 ${menuOpen ? 'hidden' : 'block group-hover:hidden group-[.on]:hidden'}`}
+                                className={`h-5 w-5 ${menuOpen ? 'hidden' : 'block group-hover:hidden group-[.on]:hidden'}`}
                             />
                             <img
                                 src="/images/common/l_lang_g.svg"
                                 alt="언어"
                                 className={`h-4 w-4 ${menuOpen ? 'block' : 'hidden group-hover:block group-[.on]:block'}`}
                             />
-                            <span className="font-ui text-xs font-semibold">KO</span>
+                            <span className="font-ui text-[14px] font-semibold">KO</span>
                         </button>
 
                         {/* 햄버거 버튼 분기 처리 */}

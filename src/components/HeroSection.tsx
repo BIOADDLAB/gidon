@@ -73,7 +73,7 @@ export default function HeroSection({
                             <button
                                 type="button"
                                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                                className={`flex items-center justify-between w-[240px] px-5 py-2 rounded-[8px] text-[18px] font-semibold focus:outline-none transition-colors border rounded-2${
+                                className={`flex items-center justify-between w-[240px] px-5 py-2 rounded-[8px] text-[18px] font-semibold focus:outline-none transition-colors border rounded-[8px] ${
                                     isGreen ? 'text-white  border-[#fff] ' : 'border-[#333]'
                                 }`}
                             >

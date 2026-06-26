@@ -1,7 +1,7 @@
 interface SectionHeadingProps {
     topTitle: string;
     centerTitle: string;
-    desc: string;
+    desc?: string;
     isDesc?: boolean;
 }
 
