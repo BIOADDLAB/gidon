@@ -1,12 +1,10 @@
 'use client';
-import RecommendSection from '../components/RecommendSection';
-import FaqSection from '../components/FaqSection';
-import ProcessSection from '../components/ProcessSection';
+
+import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import AskSection from '@/components/AskSection';
 import MapSection from '../components/MapStion';
-import CareSection from '../components/CareSection';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -23,36 +21,97 @@ interface implantdDtaProps {
 }
 
 export default function Home() {
-    const implantData: implantdDtaProps[] = [
-        {
-            stepNumber: 1,
-            title: 'AI 구강스캔을 통해 정밀한 진단 진행',
-            description:
-                '3D CT 촬영과 구강 검진을 통해 치아와 잇몸 상태를 분석하고, 가상 모의 수술로 식립 위치를 계획합니다.',
-            imgSrc: '/images/bg_procecss_test.jpg',
-            imgAlt: 'AI 구강스캔 진단 이미지',
-        },
-        {
-            stepNumber: 2,
-            title: '네비게이션 임플란트 식립',
-            description: '사전에 계획된 치료 위치 가이드를 바탕으로 보다 정교하게 임플란트를 식립합니다.',
-            imgSrc: '/images/bg_procecss_test.jpg',
-            imgAlt: '임플란트 식립 예시 이미지',
-        },
-        {
-            stepNumber: 3,
-            title: '보철 완성 & 사후 관리',
-            description:
-                '임플란트가 잇몸뼈와 안정적으로 결합된 후 맞춤 보철물을 장착하고, 정기 검진을 통해 관리합니다.',
-            imgSrc: '/images/bg_procecss_test.jpg',
-            imgAlt: '사후 관리 진료 이미지',
-        },
+    const [activeSection, setActiveSection] = useState('hero');
+
+    const navItems = [
+        { id: 'philosophy', label: '기드온 철학' },
+        { id: 'signature', label: '진료 과목' },
+        { id: 'location', label: '오시는 길' },
+        { id: 'ask', label: '상담 예약' },
     ];
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+            const philosophyEl = document.getElementById('philosophy');
+            const signatureEl = document.getElementById('signature');
+            const locationEl = document.getElementById('location');
+            const askEl = document.getElementById('ask');
+
+            if (askEl && scrollPosition >= askEl.offsetTop) {
+                setActiveSection('ask');
+            } else if (locationEl && scrollPosition >= locationEl.offsetTop) {
+                setActiveSection('location');
+            } else if (signatureEl && scrollPosition >= signatureEl.offsetTop) {
+                setActiveSection('signature');
+            } else if (philosophyEl && scrollPosition >= philosophyEl.offsetTop) {
+                setActiveSection('philosophy');
+            } else {
+                setActiveSection('hero');
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const handleNavClick = (id: string) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
-        <>
-            {/* 메인 히어로 최상단 */}
-            <div className="relative w-full h-full block">
-                <div className="absolute bottom-12 left-1/2 -translate-1/2 z-3 flex flex-col items-center gap-2">
+        <div className="relative w-full">
+            <div
+                className={`fixed left-12 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col items-center transition-all duration-500 ${
+                    activeSection === 'hero' ? 'opacity-0 pointer-events-none' : 'opacity-100 pointer-events-auto'
+                }`}
+            >
+                <div className="mb-6">
+                    <img src="/images/i_tooth_g.svg" alt="" className="w-6 h-auto block" />
+                </div>
+
+                <div className="relative flex flex-col gap-6 items-start pl-3">
+                    <div className="absolute left-[19.5px] top-2 bottom-2 w-[1px] bg-[#233a31]/20 z-0" />
+
+                    {navItems.map((item) => {
+                        const isCurrent = activeSection === item.id;
+                        return (
+                            <button
+                                key={item.id}
+                                type="button"
+                                onClick={() => handleNavClick(item.id)}
+                                className="flex items-center gap-4 group focus:outline-none z-10"
+                            >
+                                <div
+                                    className={`w-4 h-4 rounded-full border border-[#233a31] transition-all duration-300 flex items-center justify-center bg-white ${
+                                        isCurrent ? '!bg-[#233a31] scale-110' : 'group-hover:border-[#233a31]/80'
+                                    }`}
+                                >
+                                    {isCurrent && <div className="w-1.5 h-1.5 rounded-full bg-white" />}
+                                </div>
+                                <span
+                                    className={`text-[14px] font-medium tracking-tight transition-all duration-300 ${
+                                        isCurrent
+                                            ? 'text-[#233a31] font-bold translate-x-0.5'
+                                            : 'text-[#233a31]/40 group-hover:text-[#233a31]/70'
+                                    }`}
+                                >
+                                    {item.label}
+                                </span>
+                            </button>
+                        );
+                    })}
+                </div>
+            </div>
+
+            <div id="hero" className="relative w-full h-full block">
+                <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-3 flex flex-col items-center gap-2">
                     <p className="text-white text-base">Scroll Down</p>
                     <div className="flex h-10 w-6 items-start justify-center rounded-full border-2 border-white p-1 ">
                         <div className="h-2 w-0.5 rounded-full bg-white animate-wheel" />
@@ -61,7 +120,6 @@ export default function Home() {
                 </div>
                 <Swiper
                     modules={[Navigation, Pagination, Autoplay]}
-                    // navigation
                     pagination={{ type: 'fraction' }}
                     loop
                     autoplay={{ delay: 3000, disableOnInteraction: false }}
@@ -70,7 +128,7 @@ export default function Home() {
                     className="[&_.swiper-pagination]:!left-100 [&_.swiper-pagination]:!bottom-24 [&_.swiper-pagination]:!right-auto [&_.swiper-pagination]:!w-auto [&_.swiper-pagination]:!text-left text-[20px] text-white tracking-[0.2em]"
                 >
                     <SwiperSlide>
-                        <div className="relative">
+                        <div className="relative h-[800px]">
                             <div className="bg-[#575757] absolute w-full h-full top-0 left-0 z-1 opacity-50"></div>
                             <Image
                                 src="/images/bg_main_01_1.jpg"
@@ -79,7 +137,7 @@ export default function Home() {
                                 sizes="100vw"
                                 className="object-cover object-center"
                             />
-                            <div className="flex flex-col justify-center items-center py-64  z-2 relative text-white">
+                            <div className="flex flex-col justify-center items-center py-64 z-2 relative text-white">
                                 <h1 className="text-[40px]">치과를 오래 쓰는 길,</h1>
                                 <h1 className="text-[40px]">기드온이 안내합니다.</h1>
                                 <p className="text-3xl mt-7">흔들리지 않는 판단, 끝까지 지키는 약속.</p>
@@ -87,7 +145,7 @@ export default function Home() {
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className="relative ">
+                        <div className="relative h-[800px]">
                             <div className="bg-[#575757] absolute w-full h-full top-0 left-0 z-1 opacity-50"></div>
                             <Image
                                 src="/images/bg_main_02.jpg"
@@ -96,7 +154,7 @@ export default function Home() {
                                 sizes="100vw"
                                 className="object-cover object-center"
                             />
-                            <div className="flex flex-col justify-center items-center py-64  z-2 relative text-white">
+                            <div className="flex flex-col justify-center items-center py-64 z-2 relative text-white">
                                 <h1 className="text-[40px]">정해진 길로 정확하게 안내하고,</h1>
                                 <h1 className="text-[40px]">치아를 오래 쓰게 하는 안정적인 치과입니다.</h1>
                                 <p className="text-3xl mt-7">흔들리지 않는 판단, 끝까지 지키는 약속.</p>
@@ -106,8 +164,7 @@ export default function Home() {
                 </Swiper>
             </div>
 
-            {/*메인 두번째*/}
-            <div className={'relative py-40'}>
+            <div id="philosophy" className="relative py-40 bg-white">
                 <Image
                     src="/images/bg_main_03.jpg"
                     alt="메인 히어로 배경 이미지3"
@@ -121,140 +178,110 @@ export default function Home() {
                         centerTitle={'기드온치과의 철학'}
                         desc={
                             '기드온치과는 화려한 장비나 최신 기술을 앞세우는 치과가 아닙니다.\n' +
-                            '한결같이 바른 마음과 정직한 손길로, 당신의 평생 구강 건강을 지켜드립니다.'
+                            '한결같이 바른 마음 and 정직한 손길로, 당신의 평생 구강 건강을 지켜드립니다.'
                         }
                         isDesc={true}
                     />
                 </div>
                 <div className="flex justify-center mt-12 mb-20">
-                    <div className="relative rounded-full border border-gray-600 flex items-center justify-center w-64 h-64 -mr-10">
-                        <div className="absolute inset-2 rounded-full opacity-60 bg-[linear-gradient(180deg,rgba(103,120,113,0.58)_0%,rgba(139,152,147,0.33)_53.85%,rgba(251,251,251,0)_100%)]" />
-                        <p className="relative z-10 text-center text-2xl font-semibold">
+                    <div className="relative rounded-full border border-gray-400 flex items-center justify-center w-64 h-64 -mr-10 bg-white/40 backdrop-blur-sm shadow-sm">
+                        <div className="absolute inset-2 rounded-full opacity-40 bg-[linear-gradient(180deg,rgba(103,120,113,0.58)_0%,rgba(139,152,147,0.33)_53.85%,rgba(251,251,251,0)_100%)]" />
+                        <p className="relative z-10 text-center text-2xl font-semibold text-[#233a31]">
                             정직한 <br /> 진료
                         </p>
                     </div>
-
-                    <div className="relative rounded-full border border-gray-600 flex items-center justify-center w-64 h-64 -mr-10">
-                        <div className="absolute inset-2 rounded-full opacity-60 bg-[linear-gradient(180deg,rgba(103,120,113,0.58)_0%,rgba(139,152,147,0.33)_53.85%,rgba(251,251,251,0)_100%)]" />
-                        <p className="relative z-10 text-center text-2xl font-semibold">
+                    <div className="relative rounded-full border border-gray-400 flex items-center justify-center w-64 h-64 -mr-10 bg-white/40 backdrop-blur-sm shadow-sm">
+                        <div className="absolute inset-2 rounded-full opacity-40 bg-[linear-gradient(180deg,rgba(103,120,113,0.58)_0%,rgba(139,152,147,0.33)_53.85%,rgba(251,251,251,0)_100%)]" />
+                        <p className="relative z-10 text-center text-2xl font-semibold text-[#233a31]">
                             투명한 <br /> 안내
                         </p>
                     </div>
-                    <div className="relative rounded-full border border-gray-600 flex items-center justify-center w-64 h-64">
-                        <div className="absolute inset-2 rounded-full opacity-60 bg-[linear-gradient(180deg,rgba(103,120,113,0.58)_0%,rgba(139,152,147,0.33)_53.85%,rgba(251,251,251,0)_100%)]" />
-                        <p className="relative z-10 text-center text-2xl font-semibold">
+                    <div className="relative rounded-full border border-gray-400 flex items-center justify-center w-64 h-64 bg-white/40 backdrop-blur-sm shadow-sm">
+                        <div className="absolute inset-2 rounded-full opacity-40 bg-[linear-gradient(180deg,rgba(103,120,113,0.58)_0%,rgba(139,152,147,0.33)_53.85%,rgba(251,251,251,0)_100%)]" />
+                        <p className="relative z-10 text-center text-2xl font-semibold text-[#233a31]">
                             끝까지 <br /> 책임
                         </p>
                     </div>
                 </div>
                 <div className="flex justify-center items-center">
-                    <div className="flex justify-center items-center p-4 rounded-full border-2 font-bold border-[#2C4A3E] gap-2 bg-white text-[#2C4A3E] text-xl py-4 px-10">
+                    <a
+                        href="/about"
+                        className="flex justify-center items-center p-4 rounded-full border font-bold border-[#233a31] gap-2 bg-white text-[#233a31] text-[15px] py-4 px-10 shadow-sm hover:bg-gray-50 transition-colors"
+                    >
                         <span>병원철학 자세히보기</span>
-                        <span>
-                            <img src="/images/right_arr.svg" alt="" />
-                        </span>
-                    </div>
+                        <img src="/images/right_arr.svg" alt="" className="w-4 h-4" />
+                    </a>
                 </div>
             </div>
 
-            {/*메인 세번째*/}
-            <div className="py-40">
+            <div id="signature" className="py-40 bg-[#FBFBFB]">
                 <SectionHeading
                     topTitle={'GIDEON’S Signature'}
                     centerTitle={'진료 과목'}
-                    desc={'다양한 임상 경험과 전문성을 바탕으로\n' + '정밀한 시술을 약속드립니다.'}
+                    desc={'다양한 임상 경험과 전문성을 바탕으로\n정밀한 시술을 약속드립니다.'}
                     isDesc={true}
                 />
 
-                <div className="flex justify-center items-center gap-5 mt-14">
-                    <div className="group relative overflow-hidden rounded-md">
-                        <img src="/images/main_hover_01.jpg" alt="메인 호버 1" />
+                {/* 경아님이 마크업해 둔 오리지널 이미지 리스트 정렬 구조 복구 */}
+                <div className="flex justify-center items-center gap-5 mt-14 px-4">
+                    {[
+                        {
+                            title1: 'AI 네비게이션',
+                            title2: '임플란트',
+                            desc: '모의 시술로 오차 없이\n안전하고 아픔을 줄인\n디지털 임플란트.',
+                            img: '01',
+                        },
+                        {
+                            title1: '물방울 레이저',
+                            title2: '치주관리',
+                            desc: '드릴 소리 없이\n물방울로 치료하는\n잇몸 케어.',
+                            img: '02',
+                        },
+                        {
+                            title1: '티스캔',
+                            title2: '교합관리',
+                            desc: '씹는 힘의 균형을\n디지털 수치로\n정밀하게 맞추는 진료.',
+                            img: '03',
+                        },
+                        {
+                            title1: '시니어',
+                            title2: '라미네이트',
+                            desc: '중장년층을 위한\n자연스럽고 품격 있는\n미소 성형.',
+                            img: '04',
+                        },
+                    ].map((card, i) => (
+                        <div key={i} className="group relative overflow-hidden rounded-md cursor-pointer shadow-sm">
+                            {/* 🦷 메인 노출 치아 원본 사진 */}
+                            <img src={`/images/main_hover_${card.img}.jpg`} alt="" className="w-full h-auto block" />
 
-                        <div className="absolute inset-0 flex translate-y-full flex-col justify-start bg-[#2d4a3e] p-5 transition-transform duration-300 group-hover:translate-y-0">
-                            <h3 className="text-2xl font-bold text-white">
-                                AI 네비게이션
-                                <br />
-                                임플란트
-                            </h3>
-                            <div className="my-5 h-px w-4 bg-white/50" />
-                            <p className="text-lg text-white/80">
-                                모의 시술로 오차 없이
-                                <br />
-                                안전하고 아픔을 줄인
-                                <br />
-                                디지털 임플란트.
-                            </p>
+                            {/* 마우스 호버 시 위로 스르륵 나타나는 초록 배경 정보창 */}
+                            <div className="absolute inset-0 flex translate-y-full flex-col justify-start bg-[#2d4a3e] p-5 transition-transform duration-300 group-hover:translate-y-0">
+                                <h3 className="text-2xl font-bold text-white leading-snug">
+                                    {card.title1} <br /> {card.title2}
+                                </h3>
+                                <div className="my-5 h-px w-4 bg-white/50" />
+                                <p className="text-lg text-white/80 whitespace-pre-line leading-relaxed">{card.desc}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="group relative overflow-hidden rounded-md">
-                        <img src="/images/main_hover_02.jpg" alt="메인 호버 1" />
-
-                        <div className="absolute inset-0 flex translate-y-full flex-col justify-start bg-[#2d4a3e] p-5 transition-transform duration-300 group-hover:translate-y-0">
-                            <h3 className="text-2xl font-bold text-white">
-                                물방울 레이저 <br />
-                                치주관리
-                            </h3>
-                            <div className="my-5 h-px w-4 bg-white/50" />
-                            <p className="text-lg text-white/80">
-                                드릴 소리 없이
-                                <br />
-                                물방울로 치료하는
-                                <br />
-                                잇몸 케어.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="group relative overflow-hidden rounded-md">
-                        <img src="/images/main_hover_03.jpg" alt="메인 호버 1" />
-
-                        <div className="absolute inset-0 flex translate-y-full flex-col justify-start bg-[#2d4a3e] p-5 transition-transform duration-300 group-hover:translate-y-0">
-                            <h3 className="text-2xl font-bold text-white">
-                                티스캔
-                                <br />
-                                교합관리
-                            </h3>
-                            <div className="my-5 h-px w-4 bg-white/50" />
-                            <p className="text-lg text-white/80">
-                                씹는 힘의 균형을 <br />
-                                디지털 수치로 <br />
-                                정밀하게 맞추는 진료.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="group relative overflow-hidden rounded-md">
-                        <img src="/images/main_hover_04.jpg" alt="메인 호버 1" />
-
-                        <div className="absolute inset-0 flex translate-y-full flex-col justify-start bg-[#2d4a3e] p-5 transition-transform duration-300 group-hover:translate-y-0">
-                            <h3 className="text-2xl font-bold text-white">
-                                시니어
-                                <br />
-                                라미네이트
-                            </h3>
-                            <div className="my-5 h-px w-4 bg-white/50" />
-                            <p className="text-lg text-white/80">
-                                중장년층을 위한 <br />
-                                자연스럽고 품격 있는 <br />
-                                미소 성형.
-                            </p>
-                        </div>
-                    </div>
+                    ))}
                 </div>
+
                 <div className="flex justify-center items-center pt-25">
                     <button
                         type="button"
-                        className="flex items-center justify-center gap-2 p-4 px-8 rounded-full bg-[#2C4A3E] text-white text-xl"
+                        className="flex items-center justify-center gap-2 p-4 px-8 rounded-full bg-[#2C4A3E] text-white text-xl hover:bg-[#192b24] transition-colors shadow-md"
                     >
                         <span>진료과목 자세히보기</span>
-                        <span>
-                            <img src="/images/right_arr_white.svg" alt="" />
-                        </span>
+                        <img src="/images/right_arr_white.svg" alt="" className="w-4 h-4" />
                     </button>
                 </div>
             </div>
 
-            {/* 오시는길 */}
-
-            <section className="w-full py-[120px] flex flex-col items-center bg-gradient-to-b from-[#EBF2EA] to-[#F4F8F3]">
+            {/* 🗺️ 3. 오시는 길 (💡 경아님이 정성 들여 만든 원본 경로/디자인 100% 원상복구) */}
+            <section
+                id="location"
+                className="w-full py-[120px] flex flex-col items-center bg-gradient-to-b from-[#EBF2EA] to-[#F4F8F3]"
+            >
                 <div className="w-full max-w-[1000px] px-4 flex flex-col items-center">
                     <SectionHeading
                         topTitle="GIDEON'S Location"
@@ -263,20 +290,20 @@ export default function Home() {
                         isDesc={true}
                     />
 
+                    {/* 경아님이 뚫어 놓으신 i_loca_01, 02 아이콘 및 22px 텍스트 구조 완전 롤백 */}
                     <div className="mt-[60px] w-full max-w-[640px] flex flex-col gap-[22px]">
                         <div className="w-full bg-white rounded-[10px] p-5 flex items-center gap-5 shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
                             <div className="w-[50px] h-[50px] bg-green-600 rounded-full flex items-center justify-center shrink-0">
-                                <img src="/images/i_loca_02.svg" alt="" className="w-6 h-6 object-contain " />
+                                <img src="/images/i_loca_02.svg" alt="" className="w-6 h-6 object-contain" />
                             </div>
                             <p className="text-[22px] font-semibold text-green-600 tracking-tight">
                                 모란역 4번 출구에서 도보 2분
                             </p>
                         </div>
 
-                        {/* 박스섀도우 넣기 */}
                         <div className="w-full bg-white rounded-[10px] p-5 flex items-center gap-5 shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
                             <div className="w-[50px] h-[50px] bg-green-600 rounded-full flex items-center justify-center shrink-0">
-                                <img src="/images/i_loca_01.svg" alt="" className="w-6 h-6 object-contain " />
+                                <img src="/images/i_loca_01.svg" alt="" className="w-6 h-6 object-contain" />
                             </div>
                             <p className="text-[22px] font-semibold text-[#233a31] tracking-tight">국민은행 건물 3층</p>
                         </div>
@@ -294,10 +321,11 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* 간편상담 폼 */}
-            <AskSection />
+            <div id="ask">
+                <AskSection />
+            </div>
 
             <MapSection />
-        </>
+        </div>
     );
 }
