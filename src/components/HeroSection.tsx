@@ -73,8 +73,8 @@ export default function HeroSection({
                             <button
                                 type="button"
                                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                                className={`flex items-center justify-between w-[240px] px-5 py-2 rounded-[8px] text-[18px] font-semibold focus:outline-none transition-colors border rounded-[8px] ${
-                                    isGreen ? 'text-white  border-[#fff] ' : 'border-[#333]'
+                                className={`flex items-center justify-between w-[240px] px-5 py-2 rounded-[8px] text-[18px] font-semibold focus:outline-none transition-colors border ${
+                                    isGreen ? 'text-white border-[#fff]' : 'text-[#333] border-[#333]'
                                 }`}
                             >
                                 <span>{subNavItem}</span>
@@ -85,18 +85,35 @@ export default function HeroSection({
                                 />
                             </button>
 
-                            {/* 하단 드롭다운 박스: left-0 w-full로 부모 버튼 너비 그대로 상속 */}
+                            {/* 하단 드롭다운 박스: 부모 버튼 너비를 100% 그대로 상속 */}
                             {isMenuOpen && subMenuList.length > 0 && (
                                 <div className="absolute left-0 top-full mt-[8px] w-full bg-white rounded-[12px] shadow-[0_10px_25px_rgba(0,0,0,0.08)] py-3 z-50 border border-gray-100">
                                     <ul className="flex flex-col">
                                         {subMenuList.map((menu, idx) => {
                                             const isSelected = menu === subNavItem;
+
+                                            // 💡 각 서브메뉴 항목에 맞는 라우팅 매칭 규칙 정의
+                                            let targetHref = '/';
+                                            if (menu === '병원철학') targetHref = '/about/philosophy';
+                                            else if (menu === '기드온의 약속') targetHref = '/about/promise';
+                                            else if (menu === '둘러보기') targetHref = '/about/tour';
+                                            else if (menu === '진행과정') targetHref = '/implant/process';
+                                            else if (menu === '보험 임플란트') targetHref = '/implant/insurance';
+                                            else if (menu === '의료진소개') targetHref = '/doctors';
+                                            else if (menu === 'AI 네비게이션 임플란트')
+                                                targetHref = '/guide/ai-navigation';
+                                            else if (menu === '물방울레이저 치주관리') targetHref = '/guide/laser';
+                                            else if (menu === '티스캔 교합관리') targetHref = '/guide/t-scan';
+                                            else if (menu === '시니어 라미네이트') targetHref = '/guide/senior';
+                                            else if (menu === '가격안내') targetHref = '/price';
+                                            else if (menu === '오시는길') targetHref = '/location';
+
                                             return (
                                                 <li key={idx}>
                                                     <Link
-                                                        href="/"
+                                                        href={targetHref}
                                                         onClick={() => setIsMenuOpen(false)}
-                                                        className={`block relative px-5 py-2 text-[15px]  ${
+                                                        className={`block relative px-5 py-2 text-[15px] transition-colors hover:bg-gray-50 ${
                                                             isSelected
                                                                 ? 'text-green-600 bg-yellow/50 font-bold'
                                                                 : 'text-[#555555]'

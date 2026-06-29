@@ -21,7 +21,7 @@ interface MenuItem {
 const menus: MenuItem[] = [
     {
         title: '기드온치과',
-        href: '/about',
+        href: '/about/philosophy', // 첫 번째 서브페이지로 연결
         subs: [
             { name: '병원철학', href: '/about/philosophy' },
             { name: '기드온의 약속', href: '/about/promise' },
@@ -30,7 +30,7 @@ const menus: MenuItem[] = [
     },
     {
         title: '임플란트',
-        href: '/implant',
+        href: '/implant/process', // 첫 번째 서브페이지로 연결
         subs: [
             { name: '진행과정', href: '/implant/process' },
             { name: '보험 임플란트', href: '/implant/insurance' },
@@ -43,7 +43,7 @@ const menus: MenuItem[] = [
     },
     {
         title: '진료안내',
-        href: '/guide',
+        href: '/guide/ai-navigation', // 첫 번째 서브페이지로 연결
         subs: [
             { name: 'AI 네비게이션 임플란트', href: '/guide/ai-navigation' },
             { name: '물방울레이저 치주관리', href: '/guide/laser' },
@@ -201,7 +201,7 @@ export default function Header() {
                 </div>
             </div>
 
-            {/* [2층 레이어] PC 서브 패널 배경판: 메인메뉴 바로 밑에서 열리며 독립 그림자(shadow-md) 생성 */}
+            {/* [2층 레이어] PC 서브 패널 배경판 */}
             <div className="absolute left-0 top-20 z-10 hidden h-[280px] w-full origin-top scale-y-0 border-b border-gray-200 bg-white opacity-0 shadow-md transition-all duration-300 group-hover:scale-y-100 group-hover:opacity-100 lg:block" />
 
             {/* 모바일 2-Pane 서브 메뉴 디자인 */}
