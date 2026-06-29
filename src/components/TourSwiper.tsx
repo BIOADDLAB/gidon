@@ -36,7 +36,7 @@ export default function TourSwiper() {
             >
                 {tourImages.map((src, idx) => (
                     <SwiperSlide key={idx} className="w-full h-full">
-                        <img src={src} alt="기드온치과 인테리어" className="w-full h-full object-cover" />
+                        <img src={src} alt="기드온치과 인테리어" className="w-full h-full object-/20%" />
                     </SwiperSlide>
                 ))}
             </Swiper>

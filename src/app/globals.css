@@ -15,6 +15,22 @@
     --color-yellow: #dab551d9;
 }
 
+@theme {
+    --animate-wheel: wheel 1.5s ease-in-out infinite;
+
+    @keyframes wheel {
+        0%,
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        50% {
+            transform: translateY(6px);
+            opacity: 0.3;
+        }
+    }
+}
+
 body {
     font-family: var(--font-sans);
     color: var(--color-ink-900);
