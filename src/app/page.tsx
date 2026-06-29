@@ -46,6 +46,8 @@ export default function Home() {
                 mainTitle="GIDEON DENTAL CLINIC"
                 subTitle="서브히어로 테스트"
                 imgSrc="/images/bg_hr_test.jpg"
+                subNavItem=""
+                pageName=""
             />
 
             {/* 상담 및 문의 영역 */}
