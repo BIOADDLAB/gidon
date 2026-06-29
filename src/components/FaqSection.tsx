@@ -109,7 +109,7 @@ export default function FaqSection({ isBg = false }: FaqSectionProps) {
 
                                                 <div className="ml-auto shrink-0 pl-4">
                                                     <img
-                                                        src={isOpen ? 'images/arr_up.png' : 'images/arr_down.png'}
+                                                        src={isOpen ? '/images/arr_up.png' : '/images/arr_down.png'}
                                                         alt=""
                                                         className="w-[16px]"
                                                     />

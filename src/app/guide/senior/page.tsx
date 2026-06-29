@@ -1,6 +1,6 @@
+import Image from 'next/image';
 import HeroSection from '@/components/HeroSection';
 import SectionHeading from './../../../components/common/SectionHeading';
-import Image from 'next/image';
 import SpecialSection from './../../../components/SpecialSection';
 import RecommendSection from '../../../components/RecommendSection';
 import ProcessSection from '../../../components/ProcessSection';
