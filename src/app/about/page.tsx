@@ -1,20 +1,211 @@
+'use client';
+
+import { useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
 import HeroSection from './../../components/HeroSection';
+import SectionHeading from '@/components/common/SectionHeading';
+import MapSection from './../../components/MapStion';
+import TourSwiper from '@/components/TourSwiper';
+import FaqSection from '@/components/FaqSection';
+import AskSection from '@/components/AskSection';
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 export default function About() {
     const aboutMenuList = ['임플란트', '진행과정', '보험 임플란트'];
 
+    // 💡 아치 애니메이션 제어용 Ref 세팅
+    const containerRef = useRef<HTMLDivElement>(null);
+    const archRef = useRef<SVGSVGElement>(null);
+
+    // 🎬 스크롤하면 아치가 밑에서부터 부드럽게 슥 차오르는 GSAP 애니메이션 가동
+    useGSAP(
+        () => {
+            gsap.from(archRef.current, {
+                scaleY: 0,
+                opacity: 0,
+                duration: 1.5,
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: 'top 80%',
+                },
+            });
+        },
+        { scope: containerRef },
+    );
+
     return (
-        <>
+        <main className="">
+            {/* 상단 히어로 섹션 */}
             <HeroSection
                 mainTitle="기드온치과"
                 subTitle="About GIDEON"
                 pageName="임플란트"
                 subNavItem="임플란트"
-                imgSrc="/images/bg_hr_about.jpg"
+                imgSrc="/images/bg_interior_3.jpg"
                 isNav={true}
                 isGreen={false}
                 subMenuList={aboutMenuList}
             />
-        </>
+
+            <section className="w-full pt-[100px] pb-[130px] flex flex-col items-center bg-white">
+                <div className="w-full max-w-[1000px] px-4">
+                    <SectionHeading
+                        topTitle="GIDEON'S Story"
+                        centerTitle="기드온치과의 이야기"
+                        desc=""
+                        isDesc={false}
+                    />
+
+                    <div className="mt-[60px] flex flex-col md:flex-row justify-between items-center gap-[50px]">
+                        <div className="w-full md:w-[45%] shrink-0">
+                            <div className="overflow-hidden rounded-[20px] shadow-sm">
+                                <img
+                                    src="/images/story.jpg"
+                                    alt="기드온치과 이야기 이미지"
+                                    className="w-full h-auto object-cover aspect-[4/5]"
+                                />
+                            </div>
+                        </div>
+
+                        {/* 오른쪽 스토리 본문 텍스트 영역 */}
+                        <div className="w-full md:w-[50%] flex flex-col items-start text-[#444444] text-[16px] leading-[1.8]  break-keep">
+                            <p className="mb-[16px] text-[20px] font-semibold text-[#414141] leading-[1.65]">
+                                치과에 대한 걱정과 망설임을 잘 알기에,
+                                <br />
+                                기드온은 화려한 장비와 기술보다
+                                <br />
+                                따뜻한 마음을 먼저 전합니다.
+                            </p>
+                            <p className="text-[20px] font-normal text-[#414141] leading-[1.65] mb-[45px]">
+                                자연 치아는 가능하면 살리고,
+                                <br />
+                                꼭 필요할 때만 치료하며,
+                                <br />
+                                무엇을 해야 하는지 알아듣기 쉽게
+                                <br />
+                                차근차근 안내하겠습니다.
+                            </p>
+
+                            <div className="w-full h-[1px] bg-gray-200 my-2" />
+
+                            {/* 하단 인용구 디테일 */}
+                            <div className="mt-[50px] font-hero">
+                                <p className="text-[17px]  text-[#515151] mb-2">
+                                    &quot; 상심한 자들을 고치시며
+                                    <br /> 그들의 상처를 싸매시는도다 &quot;
+                                </p>
+                                <span className="text-[14px] text-[#414141]">- 시편 147편 3절 -</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div
+                ref={containerRef}
+                className="relative w-full h-[140px] flex justify-center items-end bg-white overflow-hidden"
+            >
+                <div className="absolute bottom-0 left-0 w-full h-[140px] overflow-hidden pointer-events-none z-0">
+                    <svg
+                        ref={archRef}
+                        className="w-full h-[140px] origin-bottom"
+                        viewBox="0 0 1359 230"
+                        preserveAspectRatio="none"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M1358.9 195.588C1358.9 303.608 1095.11 244.465 719.863 244.465C344.612 244.465 0 303.608 0 195.588C0 87.5676 304.201 0 679.452 0C1054.7 0 1358.9 87.5676 1358.9 195.588Z"
+                            fill="url(#paint0_linear_about_arch_perfect)"
+                        />
+                        <defs>
+                            <linearGradient
+                                id="paint0_linear_about_arch_perfect"
+                                x1="679.45"
+                                y1="0"
+                                x2="679.45"
+                                y2="230"
+                                gradientUnits="userSpaceOnUse"
+                            >
+                                <stop offset="0%" stopColor="#2C4A3E" stopOpacity="0.12" />
+                                <stop offset="18%" stopColor="#2C4A3E" stopOpacity="0.04" />
+                                <stop offset="45%" stopColor="#2C4A3E" stopOpacity="0" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <section className="w-full pb-[120px] flex flex-col items-center bg-white relative -mt-6">
+                <div className="w-full max-w-[1000px] px-4">
+                    <SectionHeading
+                        topTitle="GIDEON'S Promise"
+                        centerTitle="기드온치과의 약속"
+                        desc={`흔들리지 않는 판단, 끝까지 지키는 약속으로 \n처음의 신뢰를 끝까지 지켜갑니다.`}
+                        isDesc={true}
+                    />
+
+                    {/* 약속 리스트 가로형 레이아웃 래퍼 */}
+                    <div className="mt-[60px] flex flex-col gap-5 max-w-[760px] mx-auto">
+                        {/* 카드 1 */}
+                        <div className="flex items-center px-[62px] gap-8 py-10 border-b border-green-600">
+                            <div className="w-[145px] h-[145px] shrink-0 bg-green-600 rounded-[22px] flex items-center justify-center shadow-md ">
+                                <img src="/images/i_gidon_01.svg" alt="" className="w-[95px]  block" />
+                            </div>
+                            <div className="flex flex-col">
+                                <h4 className="text-[25px] font-semibold text-[#233a31] mb-4">정직한 진료</h4>
+                                <p className="text-[18px] font-medium text-[#666] leading-relaxed break-keep leading-[1.75]">
+                                    과잉 진료 없이 꼭 필요한 치료만 정직하게 권합니다. <br />
+                                    덜하지도 더하지도 않게, 환자의 치아 건강을 <br />
+                                    최우선으로 생각합니다.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* 카드 2 */}
+                        <div className="flex items-center px-[62px] gap-8 py-10 border-b border-green-600">
+                            <div className="w-[145px] h-[145px] shrink-0 bg-green-600 rounded-[22px] flex items-center justify-center shadow-md">
+                                <img src="/images/i_gidon_02.svg" alt="" className="w-[95px] block" />
+                            </div>
+                            <div className="flex flex-col">
+                                <h4 className="text-[25px] font-semibold text-[#233a31] mb-2">투명한 안내</h4>
+                                <p className="text-[18px] font-medium text-[#666] leading-relaxed break-keep leading-[1.75]">
+                                    예상치 못한 비용으로 부담을 느끼지 않도록 <br />
+                                    먼저 안내합니다. 모든 치료 계획과 비용을 <br />
+                                    정직하고 정확하게 말씀드립니다.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* 카드 3 */}
+                        <div className="flex items-center px-[62px] gap-8 py-10 border-b border-green-600">
+                            <div className="w-[145px] h-[145px] shrink-0 bg-green-600 rounded-[22px] flex items-center justify-center shadow-md">
+                                <img src="/images/i_gidon_03.svg" alt="" className="w-[95px] block" />
+                            </div>
+                            <div className="flex flex-col">
+                                <h4 className="text-[25px] font-semibold text-[#233a31] mb-[14px] ">끝까지 책임</h4>
+                                <p className="text-[18px] font-medium text-[#666] leading-relaxed break-keep leading-[1.75]">
+                                    치료를 끝내는 것보다, 그 결과를 오래 유지하는 것이 <br />
+                                    더 중요하다고 생각합니다. 오랫동안 튼튼하게 쓰는 결과를 <br />
+                                    위해 평생의 주치의로 함께 관리합니다.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* 자주 묻는 질문 */}
+            <FaqSection isBg={false} />
+
+            <TourSwiper />
+
+            {/* 간편상담 폼 */}
+            <AskSection />
+            <MapSection />
+        </main>
     );
 }

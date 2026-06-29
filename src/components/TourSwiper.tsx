@@ -44,12 +44,12 @@ export default function TourSwiper() {
             <div className="absolute inset-x-0 bottom-[80px] z-10 w-full border-y border-white/40  h-[90px] flex items-center">
                 <div className="w-full max-w-[1400px] mx-auto px-4 flex items-center justify-between text-white">
                     {/* 왼쪽: 타이틀 텍스트 */}
-                    <h3 className="text-[24px] font-bold tracking-wide select-none">기드온치과 둘러보기</h3>
+                    <h3 className="text-[30px] font-bold select-none">기드온치과 둘러보기</h3>
 
                     {/* 오른쪽: 조작 영역 (화살표 & 페이지 번호 일렬 정렬) */}
                     <div className="flex items-center gap-[40px]">
                         {/* 화살표 내비게이션 쌍 */}
-                        <div className="flex items-center gap-5">
+                        <div className="flex items-center">
                             {/* 이전 버튼 (←) */}
                             <button
                                 type="button"
