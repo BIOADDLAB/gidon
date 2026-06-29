@@ -43,14 +43,10 @@ export default function TourSwiper() {
 
             <div className="absolute inset-x-0 bottom-[80px] z-10 w-full border-y border-white/40  h-[90px] flex items-center">
                 <div className="w-full max-w-[1400px] mx-auto px-4 flex items-center justify-between text-white">
-                    {/* 왼쪽: 타이틀 텍스트 */}
                     <h3 className="text-[30px] font-bold select-none">기드온치과 둘러보기</h3>
 
-                    {/* 오른쪽: 조작 영역 (화살표 & 페이지 번호 일렬 정렬) */}
                     <div className="flex items-center gap-[40px]">
-                        {/* 화살표 내비게이션 쌍 */}
                         <div className="flex items-center">
-                            {/* 이전 버튼 (←) */}
                             <button
                                 type="button"
                                 className="swiper-button-prev-custom flex items-center justify-center text-[22px] font-light opacity-80 hover:opacity-100 transition-opacity focus:outline-none w-8 h-8"
@@ -58,7 +54,6 @@ export default function TourSwiper() {
                                 <span>←</span>
                             </button>
 
-                            {/* 다음 버튼 (→) */}
                             <button
                                 type="button"
                                 className="swiper-button-next-custom flex items-center justify-center text-[22px] font-light opacity-80 hover:opacity-100 transition-opacity focus:outline-none w-8 h-8"
@@ -67,7 +62,6 @@ export default function TourSwiper() {
                             </button>
                         </div>
 
-                        {/* 1/15 페이지네이션 넘버 */}
                         <div className="text-[18px] font-light tracking-wider min-w-[50px] text-right opacity-90 select-none">
                             <span>{currentIndex}</span>
                             <span className="mx-1 text-[15px] opacity-60">/</span>
