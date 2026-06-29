@@ -1,8 +1,7 @@
 import localFont from 'next/font/local';
 import { Tenor_Sans } from 'next/font/google';
 import './globals.css';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
+import SiteChrome from '@/components/layout/SiteChrome';
 
 const dotSans = localFont({
     src: '../../public/fonts/AstaSans[wght].ttf',
@@ -42,9 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="ko" className={`${dotSans.variable} ${suit.variable} ${tenorSans.variable}`}>
             <body className="flex min-h-screen flex-col">
-                <Header />
-                <main className="flex-1">{children}</main>
-                <Footer />
+                <SiteChrome>{children}</SiteChrome>
             </body>
         </html>
     );
