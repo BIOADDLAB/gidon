@@ -13,7 +13,7 @@ export default function KakaoMap() {
                     className="flex items-center justify-center    p-2 border border-black rounded-[7px] bg-white"
                 >
                     <img
-                        src="images/common/i_map_naver.png"
+                        src="/images/common/i_map_naver.svg"
                         alt="네이버지도 아이콘"
                         className="bolck w-[30px] h-auto"
                     />
@@ -24,9 +24,9 @@ export default function KakaoMap() {
                     className="flex items-center justify-center    p-2 border border-black rounded-[7px] bg-white"
                 >
                     <img
-                        src="images/common/i_map_google.png"
+                        src="/images/common/i_map_google.svg"
                         alt="네이버지도 아이콘"
-                        className="bolck w-[30px] h-auto"
+                        className="bolck w-[30px] h-[30px]"
                     />
                     <span className="fext-[13px] font-semibold">구글지도로 보기</span>
                 </a>

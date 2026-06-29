@@ -10,13 +10,17 @@ interface FaqItem {
     answer: string;
 }
 
-export default function FaqSection() {
+interface FaqSectionProps {
+    isBg?: boolean;
+}
+
+export default function FaqSection({ isBg = false }: FaqSectionProps) {
     const [openId, setOpenId] = useState<number | null>(null);
     const faqList: FaqItem[] = [
         {
             id: 1,
-            question: 'AI 구강스캔을 통해 정밀한 진단 진행',
-            answer: '3D CT 촬영과 구간 검진을 통해 치아와 잇몸 상태를 \n분석하고, 가상 모의 수술로 식립 위치를 계획합니다.',
+            question: '치아가 하나도 없어도 보험 임플란트가 가능한가요?',
+            answer: '치아가 하나도 없는 무치악 상태는 보험 임플란트 적용 대상이 아닙니다. \n무치악 환자의 경우 보험 틀니 적용 여부를 확인하실 수 있습니다.',
         },
         {
             id: 2,
@@ -31,7 +35,7 @@ export default function FaqSection() {
         {
             id: 4,
             question: '만 65세 이상이면 누구나 보험 적용이 가능한가요?',
-            answer: '만 65세 이상 건강보험 가입자 중 치아가 1개 이상 남아 있는 경우\n보험 적용이 가능합니다.',
+            answer: '만 65세 이상 건강보험 가입자 중 치아가 1개 이상 남아 있는 경우 \n보험 적용이 가능합니다.',
         },
     ];
 
@@ -41,13 +45,17 @@ export default function FaqSection() {
 
     return (
         <section className="relative w-full pt-[100px] pb-[130px] overflow-hidden flex flex-col items-center">
-            <Image
-                src="/images/bg_reco.jpg"
-                alt="배경 이미지"
-                fill
-                sizes="100vw"
-                className="object-cover object-center -z-10"
-            />
+            {isBg ? (
+                <Image
+                    src="/images/bg_reco.jpg"
+                    alt="배경 이미지"
+                    fill
+                    sizes="100vw"
+                    className="object-cover object-center -z-10"
+                />
+            ) : (
+                ''
+            )}
 
             <div className="w-full max-w-[930px] px-4">
                 <SectionHeading topTitle="Q & A" centerTitle="자주 묻는 질문" desc="" isDesc={false} />

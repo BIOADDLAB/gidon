@@ -27,21 +27,21 @@ export default function CareSection({
             />
 
             {/* 카드 영역 */}
-            <div className="w-full max-w-230.5 bg-[#E2E8E4] rounded-[30px] overflow-hidden shadow-sm">
+            <div className="w-full max-w-[923px] bg-[#E2E8E4] rounded-[30px] overflow-hidden shadow-sm">
                 {/* 제목 영역 */}
                 <div className="bg-[#2B483C] py-5 px-6 flex justify-center items-center gap-6.25">
-                    <img src="images/common/i_tooth.png" className="block w-11.25" alt="주의사항 치아모양 아이콘" />
+                    <img src="/images/common/i_tooth_w.svg" className="block w-11.25" alt="주의사항 치아모양 아이콘" />
                     <h2 className="text-white text-[40px] font-bold ">{title}</h2>
                 </div>
 
                 {/*  리스트 영역 */}
-                <div className="bg-white py-[50px] px-6 md:px-[60px] flex justify-center">
+                <div className="bg-[#f9faf9]/75 py-[50px] px-6 md:px-[60px] flex justify-center">
                     <ul className="flex flex-col items-start max-w-[580px] w-full">
                         {descriptionList.map((text, index) => (
-                            <li key={index} className="flex items-start gap-[20px] mb-6 last:mb-0">
+                            <li key={index} className="flex items-start gap-[20px] mb-[23px] last:mb-0">
                                 <div className="shrink-0 mt-1">
                                     <img
-                                        src="images/common/i_care_check.png"
+                                        src="/images/common/i_care_check.png"
                                         alt="체크"
                                         className="w-[25px] h-auto block"
                                     />

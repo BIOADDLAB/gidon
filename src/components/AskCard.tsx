@@ -15,7 +15,7 @@ export default function AskCard() {
                         href="tel:0000-0000"
                         className="flex px-6 py-3 gap-2 justify-center items-center bg-paper text-[20px] font-bold text-green-600 rounded-full border border-green-600 w-fit mx-auto"
                     >
-                        <img src="images/common/l_ask_phone.png" className="w-[27px] block" alt="전화기 아이콘" />
+                        <img src="/images/common/l_ask_phone.png" className="w-[27px] block" alt="전화기 아이콘" />
                         전화걸기
                     </a>
                 </div>
@@ -37,7 +37,7 @@ export default function AskCard() {
                         rel="noopener noreferrer"
                         className="flex px-6 py-3 gap-2.5 justify-center items-center bg-paper text-[20px] font-bold text-green-600 rounded-full border border-green-600 w-fit mx-auto"
                     >
-                        <img src="images/common/l_ask_kakao.png" className="w-[31px] block" alt="카카오톡 아이콘" />
+                        <img src="/images/common/l_ask_kakao.png" className="w-[31px] block" alt="카카오톡 아이콘" />
                         채팅하기
                     </a>
                 </div>
