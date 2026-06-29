@@ -140,26 +140,6 @@ export default function Header() {
 
                     {/* 우측 유틸리티 */}
                     <div className="flex items-center gap-3">
-                        <button
-                            className={`flex items-center gap-2 rounded-full border px-3 py-2 transition-colors ${
-                                menuOpen
-                                    ? 'border-gray-300 text-green-600'
-                                    : 'border-white/60 text-white group-hover:border-gray-300 group-hover:text-green-600 group-[.on]:border-gray-300 group-[.on]:text-green-600'
-                            }`}
-                        >
-                            <img
-                                src="/images/common/l_lang_w.svg"
-                                alt="언어"
-                                className={`h-5 w-5 ${menuOpen ? 'hidden' : 'block group-hover:hidden group-[.on]:hidden'}`}
-                            />
-                            <img
-                                src="/images/common/l_lang_g.svg"
-                                alt="언어"
-                                className={`h-4 w-4 ${menuOpen ? 'block' : 'hidden group-hover:block group-[.on]:block'}`}
-                            />
-                            <span className="font-ui text-[14px] font-semibold">KO</span>
-                        </button>
-
                         {/* 햄버거 버튼 분기 처리 */}
                         <button
                             className="lg:hidden flex items-center justify-center w-8 h-8 focus:outline-none"
