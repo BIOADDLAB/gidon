@@ -252,23 +252,52 @@ export default function Home() {
                 </div>
             </div>
 
-            {/* 상담 및 문의 영역 */}
+            {/* 오시는길 */}
+
+            <section className="w-full py-[120px] flex flex-col items-center bg-gradient-to-b from-[#EBF2EA] to-[#F4F8F3]">
+                <div className="w-full max-w-[1000px] px-4 flex flex-col items-center">
+                    <SectionHeading
+                        topTitle="GIDEON'S Location"
+                        centerTitle="오시는 길"
+                        desc="처음 방문하시는 분도 쉽게 찾으실 수 있습니다."
+                        isDesc={true}
+                    />
+
+                    <div className="mt-[60px] w-full max-w-[640px] flex flex-col gap-[22px]">
+                        <div className="w-full bg-white rounded-[10px] p-5 flex items-center gap-5 shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
+                            <div className="w-[50px] h-[50px] bg-green-600 rounded-full flex items-center justify-center shrink-0">
+                                <img src="/images/i_loca_02.svg" alt="" className="w-6 h-6 object-contain " />
+                            </div>
+                            <p className="text-[22px] font-semibold text-green-600 tracking-tight">
+                                모란역 4번 출구에서 도보 2분
+                            </p>
+                        </div>
+
+                        {/* 박스섀도우 넣기 */}
+                        <div className="w-full bg-white rounded-[10px] p-5 flex items-center gap-5 shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
+                            <div className="w-[50px] h-[50px] bg-green-600 rounded-full flex items-center justify-center shrink-0">
+                                <img src="/images/i_loca_01.svg" alt="" className="w-6 h-6 object-contain " />
+                            </div>
+                            <p className="text-[22px] font-semibold text-[#233a31] tracking-tight">국민은행 건물 3층</p>
+                        </div>
+                    </div>
+
+                    <a
+                        href="/location"
+                        className="mt-[70px] flex items-center justify-center bg-green-600 text-white text-[20px] font-bold px-8 h-[55px] rounded-full shadow-md transition-all gap-2 group"
+                    >
+                        <span>오시는길 자세히보기</span>
+                        <span className="text-[13px] opacity-80 group-hover:translate-x-1 transition-transform">
+                            ＞
+                        </span>
+                    </a>
+                </div>
+            </section>
+
+            {/* 간편상담 폼 */}
             <AskSection />
 
-            {/* 오시는 길 */}
             <MapSection />
-
-            {/* 주의사항 */}
-            <CareSection />
-
-            {/* 추천 영역 */}
-            <RecommendSection />
-
-            {/* 자주묻는질문 */}
-            <FaqSection />
-
-            {/* 진행과정 */}
-            <ProcessSection topTitle="PROCESS" centerTitle="임플란트 진행과정" stepData={implantData} />
         </>
     );
 }
