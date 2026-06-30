@@ -22,7 +22,7 @@ export default function AboutLayout({ activeSection }: AboutLayoutProps) {
     const containerRef = useRef<HTMLDivElement>(null);
     const archRef = useRef<SVGSVGElement>(null);
 
-    // 💡 URL 주소가 바뀔 때 해당 섹션으로 부드럽게 스크롤 이동
+    // URL 주소가 바뀔 때 해당 섹션으로 부드럽게 스크롤 이동
     useEffect(() => {
         const targetElement = document.getElementById(activeSection);
         if (targetElement) {
@@ -32,6 +32,7 @@ export default function AboutLayout({ activeSection }: AboutLayoutProps) {
         }
     }, [activeSection]);
 
+    // GSAP 로직 — 절대 수정 금지
     useGSAP(
         () => {
             gsap.from(archRef.current, {
@@ -48,7 +49,6 @@ export default function AboutLayout({ activeSection }: AboutLayoutProps) {
         { scope: containerRef },
     );
 
-    // subNavItem 텍스트 매칭
     const subNavMap = {
         philosophy: '병원철학',
         promise: '기드온의 약속',
@@ -57,7 +57,6 @@ export default function AboutLayout({ activeSection }: AboutLayoutProps) {
 
     return (
         <main className="scroll-smooth">
-            {/* 상단 히어로 섹션 */}
             <HeroSection
                 mainTitle="기드온치과"
                 subTitle="About GIDEON"
@@ -70,11 +69,12 @@ export default function AboutLayout({ activeSection }: AboutLayoutProps) {
             />
 
             {/* 1. 병원철학 섹션 */}
+            {/* #STYLE: py 대화면 확장 */}
             <section
                 id="philosophy"
-                className="w-full pt-[100px] pb-[130px] flex flex-col items-center bg-white scroll-mt-20"
+                className="w-full pt-[70px] md:pt-[100px] 2xl:pt-[130px] pb-[90px] md:pb-[130px] 2xl:pb-[160px] flex flex-col items-center bg-white scroll-mt-20"
             >
-                <div className="w-full max-w-[1000px] px-4">
+                <div className="w-full max-w-[1000px] 2xl:max-w-[1180px] px-4">
                     <SectionHeading
                         topTitle="GIDEON'S Story"
                         centerTitle="기드온치과의 이야기"
@@ -82,27 +82,27 @@ export default function AboutLayout({ activeSection }: AboutLayoutProps) {
                         isDesc={false}
                     />
 
-                    <div className="mt-[60px] flex flex-col md:flex-row justify-between items-center gap-[50px]">
+                    <div className="mt-[40px] md:mt-[60px] flex flex-col md:flex-row justify-between items-center gap-[30px] md:gap-[50px]">
                         <div className="w-full md:w-[45%] shrink-0">
                             <div className="overflow-hidden rounded-[20px] shadow-sm">
                                 <img
                                     src="/images/story.jpg"
-                                    alt="기드온치과 이야기 이미지"
+                                    alt="기드온치과 진료 철학을 보여주는 손 맞잡은 이미지"
                                     className="w-full h-auto object-cover aspect-[4/5]"
                                 />
                             </div>
                         </div>
 
-                        {/* 오른쪽 스토리 본문 텍스트 영역 (스타일 복구) */}
-                        <div className="w-full md:w-[50%] flex flex-col items-start text-[#444444] text-[16px] leading-[1.8] break-keep">
-                            <p className="mb-[16px] text-[20px] font-semibold text-[#414141] leading-[1.65]">
+                        {/* #STYLE: 모바일 폰트 축소, break-keep 추가 */}
+                        <div className="w-full md:w-[50%] flex flex-col items-start text-[#444444] text-[14px] md:text-[16px] leading-[1.8] break-keep">
+                            <p className="mb-[14px] md:mb-[16px] text-[17px] md:text-[20px] font-semibold text-[#414141] leading-[1.65]">
                                 치과에 대한 걱정과 망설임을 잘 알기에,
                                 <br />
                                 기드온은 화려한 장비와 기술보다
                                 <br />
                                 따뜻한 마음을 먼저 전합니다.
                             </p>
-                            <p className="text-[20px] font-normal text-[#414141] leading-[1.65] mb-[45px]">
+                            <p className="text-[17px] md:text-[20px] font-normal text-[#414141] leading-[1.65] mb-[32px] md:mb-[45px]">
                                 자연 치아는 가능하면 살리고,
                                 <br />
                                 꼭 필요할 때만 치료하며,
@@ -114,13 +114,12 @@ export default function AboutLayout({ activeSection }: AboutLayoutProps) {
 
                             <div className="w-full h-[1px] bg-gray-200 my-2" />
 
-                            {/* 하단 인용구 디테일 */}
-                            <div className="mt-[50px] font-hero">
-                                <p className="text-[17px] text-[#515151] mb-2">
+                            <div className="mt-[36px] md:mt-[50px] font-hero">
+                                <p className="text-[15px] md:text-[17px] text-[#515151] mb-2">
                                     &quot; 상심한 자들을 고치시며
                                     <br /> 그들의 상처를 싸매시는도다 &quot;
                                 </p>
-                                <span className="text-[14px] text-[#414141]">- 시편 147편 3절 -</span>
+                                <span className="text-[13px] md:text-[14px] text-[#414141]">- 시편 147편 3절 -</span>
                             </div>
                         </div>
                     </div>
@@ -130,12 +129,12 @@ export default function AboutLayout({ activeSection }: AboutLayoutProps) {
             {/* 아치 애니메이션 영역 */}
             <div
                 ref={containerRef}
-                className="relative w-full h-[140px] flex justify-center items-end bg-white overflow-hidden"
+                className="relative w-full h-[100px] md:h-[140px] flex justify-center items-end bg-white overflow-hidden"
             >
-                <div className="absolute bottom-0 left-0 w-full h-[140px] overflow-hidden pointer-events-none z-0">
+                <div className="absolute bottom-0 left-0 w-full h-[100px] md:h-[140px] overflow-hidden pointer-events-none z-0">
                     <svg
                         ref={archRef}
-                        className="w-full h-[140px] origin-bottom"
+                        className="w-full h-[100px] md:h-[140px] origin-bottom"
                         viewBox="0 0 1359 230"
                         preserveAspectRatio="none"
                         fill="none"
@@ -166,9 +165,9 @@ export default function AboutLayout({ activeSection }: AboutLayoutProps) {
             {/* 2. 기드온의 약속 섹션 */}
             <section
                 id="promise"
-                className="w-full pb-[120px] flex flex-col items-center bg-white relative -mt-6 scroll-mt-20"
+                className="w-full pb-[80px] md:pb-[120px] flex flex-col items-center bg-white relative -mt-6 scroll-mt-20"
             >
-                <div className="w-full max-w-[1000px] px-4">
+                <div className="w-full max-w-[1000px] 2xl:max-w-[1180px] px-4">
                     <SectionHeading
                         topTitle="GIDEON'S Promise"
                         centerTitle="기드온치과의 약속"
@@ -176,49 +175,52 @@ export default function AboutLayout({ activeSection }: AboutLayoutProps) {
                         isDesc={true}
                     />
 
-                    {/* 약속 리스트 가로형 레이아웃 래퍼 */}
-                    <div className="mt-[60px] flex flex-col gap-5 max-w-[760px] mx-auto">
+                    {/* #STYLE: 약속 카드 — 모바일 flex-col(아이콘 위/텍스트 아래), md 이상 flex-row 유지 */}
+                    <div className="mt-[40px] md:mt-[60px] flex flex-col gap-5 max-w-[760px] mx-auto">
                         {/* 카드 1 */}
-                        <div className="flex items-center px-[62px] gap-8 py-10 border-b border-green-600">
-                            <div className="w-[145px] h-[145px] shrink-0 bg-green-600 rounded-[22px] flex items-center justify-center shadow-md ">
-                                <img src="/images/i_gidon_01.svg" alt="" className="w-[95px] block" />
+                        <div className="flex flex-col md:flex-row items-center md:items-center px-6 md:px-[62px] gap-4 md:gap-8 py-7 md:py-10 border-b border-green-600 text-center md:text-left">
+                            <div className="w-[100px] h-[100px] md:w-[145px] md:h-[145px] shrink-0 bg-green-600 rounded-[18px] md:rounded-[22px] flex items-center justify-center shadow-md">
+                                <img src="/images/i_gidon_01.svg" alt="" className="w-[65px] md:w-[95px] block" />
                             </div>
-                            <div className="flex flex-col">
-                                <h4 className="text-[25px] font-semibold text-[#233a31] mb-4">정직한 진료</h4>
-                                <p className="text-[18px] font-medium text-[#666] break-keep leading-[1.75]">
-                                    과잉 진료 없이 꼭 필요한 치료만 정직하게 권합니다. <br />
-                                    덜하지도 더하지도 않게, 환자의 치아 건강을 <br />
-                                    최우선으로 생각합니다.
+                            <div className="flex flex-col items-center md:items-start">
+                                <h4 className="text-[20px] md:text-[25px] font-semibold text-[#233a31] mb-2 md:mb-4">
+                                    정직한 진료
+                                </h4>
+                                <p className="text-[14px] md:text-[18px] font-medium text-[#666] break-keep leading-[1.7] md:leading-[1.75]">
+                                    과잉 진료 없이 꼭 필요한 치료만 정직하게 권합니다. 덜하지도 더하지도 않게, 환자의
+                                    치아 건강을 최우선으로 생각합니다.
                                 </p>
                             </div>
                         </div>
 
                         {/* 카드 2 */}
-                        <div className="flex items-center px-[62px] gap-8 py-10 border-b border-green-600">
-                            <div className="w-[145px] h-[145px] shrink-0 bg-green-600 rounded-[22px] flex items-center justify-center shadow-md">
-                                <img src="/images/i_gidon_02.svg" alt="" className="w-[95px] block" />
+                        <div className="flex flex-col md:flex-row items-center px-6 md:px-[62px] gap-4 md:gap-8 py-7 md:py-10 border-b border-green-600 text-center md:text-left">
+                            <div className="w-[100px] h-[100px] md:w-[145px] md:h-[145px] shrink-0 bg-green-600 rounded-[18px] md:rounded-[22px] flex items-center justify-center shadow-md">
+                                <img src="/images/i_gidon_02.svg" alt="" className="w-[65px] md:w-[95px] block" />
                             </div>
-                            <div className="flex flex-col">
-                                <h4 className="text-[25px] font-semibold text-[#233a31] mb-2">투명한 안내</h4>
-                                <p className="text-[18px] font-medium text-[#666] break-keep leading-[1.75]">
-                                    예상치 못한 비용으로 부담을 느끼지 않도록 <br />
-                                    먼저 안내합니다. 모든 치료 계획과 비용을 <br />
+                            <div className="flex flex-col items-center md:items-start">
+                                <h4 className="text-[20px] md:text-[25px] font-semibold text-[#233a31] mb-2">
+                                    투명한 안내
+                                </h4>
+                                <p className="text-[14px] md:text-[18px] font-medium text-[#666] break-keep leading-[1.7] md:leading-[1.75]">
+                                    예상치 못한 비용으로 부담을 느끼지 않도록 먼저 안내합니다. 모든 치료 계획과 비용을
                                     정직하고 정확하게 말씀드립니다.
                                 </p>
                             </div>
                         </div>
 
                         {/* 카드 3 */}
-                        <div className="flex items-center px-[62px] gap-8 py-10 border-b border-green-600">
-                            <div className="w-[145px] h-[145px] shrink-0 bg-green-600 rounded-[22px] flex items-center justify-center shadow-md">
-                                <img src="/images/i_gidon_03.svg" alt="" className="w-[95px] block" />
+                        <div className="flex flex-col md:flex-row items-center px-6 md:px-[62px] gap-4 md:gap-8 py-7 md:py-10 border-b border-green-600 text-center md:text-left">
+                            <div className="w-[100px] h-[100px] md:w-[145px] md:h-[145px] shrink-0 bg-green-600 rounded-[18px] md:rounded-[22px] flex items-center justify-center shadow-md">
+                                <img src="/images/i_gidon_03.svg" alt="" className="w-[65px] md:w-[95px] block" />
                             </div>
-                            <div className="flex flex-col">
-                                <h4 className="text-[25px] font-semibold text-[#233a31] mb-[14px]">끝까지 책임</h4>
-                                <p className="text-[18px] font-medium text-[#666] break-keep leading-[1.75]">
-                                    치료를 끝내는 것보다, 그 결과를 오래 유지하는 것이 <br />
-                                    더 중요하다고 생각합니다. 오랫동안 튼튼하게 쓰는 결과를 <br />
-                                    위해 평생의 주치의로 함께 관리합니다.
+                            <div className="flex flex-col items-center md:items-start">
+                                <h4 className="text-[20px] md:text-[25px] font-semibold text-[#233a31] mb-2 md:mb-[14px]">
+                                    끝까지 책임
+                                </h4>
+                                <p className="text-[14px] md:text-[18px] font-medium text-[#666] break-keep leading-[1.7] md:leading-[1.75]">
+                                    치료를 끝내는 것보다, 그 결과를 오래 유지하는 것이 더 중요하다고 생각합니다.
+                                    오랫동안 튼튼하게 쓰는 결과를 위해 평생의 주치의로 함께 관리합니다.
                                 </p>
                             </div>
                         </div>

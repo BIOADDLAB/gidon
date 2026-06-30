@@ -78,7 +78,7 @@ export default function LaserPage() {
             description:
                 '디지털 장비와 구강 검진을 통해 치아와 잇몸 뼈 상태를 \n철저히 분석하고, 안전한 치료 계획을 세웁니다.',
             imgSrc: '/images/pro_item_8.jpg',
-            imgAlt: '정밀 진단 과정',
+            imgAlt: '기드온치과 물방울레이저 치주관리 정밀 진단 과정',
         },
         {
             stepNumber: 2,
@@ -86,7 +86,7 @@ export default function LaserPage() {
             description:
                 '부드러운 물방울과 레이저 빛을 사용하여 통증 없이 \n잇몸 속 나쁜 세균과 염증만을 깨끗하게 치료합니다.',
             imgSrc: '/images/pro_item_2.jpg',
-            imgAlt: '치아 정돈 과정',
+            imgAlt: '기드온치과 물방울레이저 치료 과정',
         },
         {
             stepNumber: 3,
@@ -94,7 +94,7 @@ export default function LaserPage() {
             description:
                 '치료 후 잇몸이 건강하게 잘 아물었는지 확인하고, \n정기 검진을 통해 잇몸을 오래 쓰도록 관리합니다.',
             imgSrc: '/images/pro_item_6.jpg',
-            imgAlt: '최종 부착 과정',
+            imgAlt: '기드온치과 물방울레이저 치주관리 사후 관리 과정',
         },
     ];
 
@@ -114,12 +114,20 @@ export default function LaserPage() {
             <TechSection
                 topTitle="WaterLase Periodontal Care"
                 centerTitle="물방울레이저 치주관리"
-                desc={`물방울레이저 치주관리는 레이저를 이용해 잇몸을 건강하게 관리하는 치료입니다.
-잇몸 염증과 불편함을 줄이고, 건강한 치아를 오래 유지할 수 있도록 돕습니다.`}
+                // #STYLE반응형줄바꿈: br에 반응형 클래스로 사이즈별 줄바꿈 위치 제어
+                desc={
+                    <>
+                        물방울레이저 치주관리는 레이저를 이용해 <br />
+                        잇몸을 건강하게 관리하는 치료입니다. <br />
+                        <br className="hidden md:block" />
+                        잇몸 염증과 불편함을 줄이고, 건강한 치아를 오래 유지할 수 있도록 돕습니다.
+                    </>
+                }
                 imageSrc="/images/tech_img_3.png"
-                imageAlt="장비 이미지"
-                imgClass="w-[440px] aspect-[180/91]"
-                isMargin="mt-[60px] mb-[50px]"
+                imageAlt="기드온치과 물방울레이저 장비 이미지"
+                // #STYLE: 픽셀 고정값(w-[440px]) → 반응형 단계별 너비로 변경
+                imgClass="w-[230px] sm:w-[300px] md:w-[380px] lg:w-[440px] aspect-[180/91]"
+                isMargin="mt-[40px] md:mt-[60px] mb-[30px] md:mb-[50px]"
             />
 
             <SpecialSection
@@ -132,21 +140,14 @@ export default function LaserPage() {
                 centerTitle="기드온 물방울레이저 치주관리만의 특별함"
                 cardList={laserRecommendList}
             />
-            {/* 치료과정 */}
             <ProcessSection
                 topTitle="WHO IS IT FOR"
                 centerTitle="이런 분들에게 추천합니다"
                 stepData={laserProcessSteps}
             />
-            {/* 주의사항 */}
             <CareSection />
-
-            {/* 자주 묻는 질문 */}
             <FaqSection isBg={false} />
-
-            {/* 간편상담 폼 */}
             <AskSection />
-
             <MapSection />
         </main>
     );

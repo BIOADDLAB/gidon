@@ -1,6 +1,7 @@
+// components/HeroSection.tsx
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -30,7 +31,12 @@ export default function HeroSection({
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    // isGreen 여부와 열림/닫힘 상태에 따른 화살표 아이콘 로직
+    useEffect(() => {
+        const handleHeaderMenuOpen = () => setIsMenuOpen(false);
+        window.addEventListener('header-mobile-menu-open', handleHeaderMenuOpen);
+        return () => window.removeEventListener('header-mobile-menu-open', handleHeaderMenuOpen);
+    }, []);
+
     const getArrowIcon = () => {
         if (isGreen) {
             return isMenuOpen ? '/images/i_up_arr_w.svg' : '/images/i_down_arr_w.svg';
@@ -40,59 +46,66 @@ export default function HeroSection({
     };
 
     return (
-        <section className="flex flex-col justify-center items-center relative h-[440px]">
+        <section className="flex flex-col justify-center items-center relative h-[380px] sm:h-[420px] md:h-[460px] lg:h-[440px] 2xl:h-[520px]">
+            {/* #STYLE: 인테리어 사진 노출 극대화를 위해 모바일 높이를 h-[260px]에서 h-[380px]로 과감히 확장, 태블릿 구간(sm:, md:) 높이도 비례하여 상향 스케일링 */}
             <Image
                 src={imgSrc}
-                alt="배경 이미지"
+                alt={`기드온치과 ${pageName || '진료실'} 인테리어`}
                 fill
                 priority
                 sizes="100vw"
-                className="object-cover object-center -z-10"
+                /* #STYLE: 세로형 모바일 디바이스에서 인테리어 구도가 끊기거나 천장만 과하게 잘리지 않도록 황금 비율 보정(center_35%) */
+                className="object-cover object-[center_35%] md:object-[center_25%] lg:object-center -z-10"
             />
-            <h2 className="font-accent text-[20px] mb-1.25 text-white">{subTitle}</h2>
-            <h1 className="text-[40px] text-white font-hero">{mainTitle}</h1>
+            <div className="absolute inset-0 -z-10" style={{ backgroundColor: 'rgba(87, 87, 87, 0.40)' }} />
+
+            {/* #STYLE: 가독성 보장을 위한 폰트 스펙 유지하되 레이아웃 확장으로 상하 마진 여유 확보 */}
+            <h2 className="font-accent text-[14px] md:text-[17px] lg:text-[20px] mb-1.25 text-white">{subTitle}</h2>
+            <h1 className="text-[26px] md:text-[33px] lg:text-[40px] 2xl:text-[46px] text-white font-hero text-center px-4 break-keep pb-10 sm:pb-12 md:pb-0">
+                {mainTitle}
+            </h1>
 
             {isNav ? (
                 <div
-                    className={`absolute bottom-0 w-[1000px] mx-auto px-[30px] py-[20px] ${
+                    className={`absolute bottom-0 w-full max-w-[1000px] px-4 md:px-[30px] 2xl:max-w-[1200px] py-[14px] md:py-[20px] ${
                         isGreen ? 'bg-green-600 text-white' : 'bg-white/20 text-black'
                     } rounded-t-[20px]`}
                 >
                     <div className="flex items-center justify-between">
-                        {/* 왼쪽 영역: 홈 아이콘 및 히스토리 경로 */}
-                        <div className="flex items-center gap-1">
-                            <Link className="block p-1" href="/">
-                                <img src={homeIconSrc} alt="홈 바로가기 버튼" className="w-[24px] h-[24px] block" />
+                        <div className="flex items-center gap-1 min-w-0">
+                            <Link className="block p-1 shrink-0" href="/">
+                                <img
+                                    src={homeIconSrc}
+                                    alt="홈 바로가기"
+                                    className="w-[20px] md:w-[24px] h-[20px] md:h-[24px] block"
+                                />
                             </Link>
-                            <img src={arrowIconSrc} alt="" />
-                            <h3 className="font-ui p-1 text-[18px]">{pageName}</h3>
+                            <img src={arrowIconSrc} alt="" className="shrink-0" />
+                            <h3 className="font-ui p-1 text-[14px] md:text-[18px] truncate">{pageName}</h3>
                         </div>
 
-                        {/* 오른쪽 영역: 너비 맞춤 드롭다운 */}
-                        <div className="relative">
+                        <div className="relative shrink-0">
                             <button
                                 type="button"
                                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                                className={`flex items-center justify-between w-[240px] px-5 py-2 rounded-[8px] text-[18px] font-semibold focus:outline-none transition-colors border ${
+                                className={`flex items-center justify-between w-[160px] md:w-[240px] px-4 md:px-5 py-2 rounded-[8px] text-[14px] md:text-[18px] font-semibold focus:outline-none transition-colors border ${
                                     isGreen ? 'text-white border-[#fff]' : 'text-[#333] border-[#333]'
                                 }`}
                             >
-                                <span>{subNavItem}</span>
+                                <span className="truncate">{subNavItem}</span>
                                 <img
                                     src={getArrowIcon()}
                                     alt=""
-                                    className="w-[24px] h-auto transition-transform duration-200"
+                                    className="w-[20px] md:w-[24px] h-auto transition-transform duration-200 shrink-0 ml-1"
                                 />
                             </button>
 
-                            {/* 하단 드롭다운 박스: 부모 버튼 너비를 100% 그대로 상속 */}
                             {isMenuOpen && subMenuList.length > 0 && (
-                                <div className="absolute left-0 top-full mt-[8px] w-full bg-white rounded-[12px] shadow-[0_10px_25px_rgba(0,0,0,0.08)] py-3 z-50 border border-gray-100">
+                                <div className="absolute left-0 top-full mt-[8px] w-full bg-white rounded-[12px] shadow-[0_10px_25px_rgba(0,0,0,0.08)] py-3 z-40 border border-gray-100">
                                     <ul className="flex flex-col">
                                         {subMenuList.map((menu, idx) => {
                                             const isSelected = menu === subNavItem;
 
-                                            // 💡 각 서브메뉴 항목에 맞는 라우팅 매칭 규칙 정의
                                             let targetHref = '/';
                                             if (menu === '병원철학') targetHref = '/about/philosophy';
                                             else if (menu === '기드온의 약속') targetHref = '/about/promise';
@@ -113,7 +126,7 @@ export default function HeroSection({
                                                     <Link
                                                         href={targetHref}
                                                         onClick={() => setIsMenuOpen(false)}
-                                                        className={`block relative px-5 py-2 text-[15px] transition-colors hover:bg-gray-50 ${
+                                                        className={`block relative px-5 py-2 text-[13px] md:text-[15px] transition-colors hover:bg-gray-50 ${
                                                             isSelected
                                                                 ? 'text-green-600 bg-yellow/50 font-bold'
                                                                 : 'text-[#555555]'

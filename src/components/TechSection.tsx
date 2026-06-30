@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, ReactNode } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 interface TechSectionProps {
     topTitle: string;
     centerTitle: string;
-    desc: string;
+    desc: ReactNode;
     imageSrc: string;
     imageAlt: string;
     imgClass?: string;
@@ -47,16 +47,22 @@ export default function TechSection({
     );
 
     return (
-        <section className="relative flex w-full flex-col items-center overflow-hidden bg-[#F9F9F9] pt-[100px]">
+        // #STYLE: 모바일 상단 패딩 축소(pt-14), 데스크톱(md:pt-[100px]) 원본 규격 보존
+        <section className="relative flex w-full flex-col items-center overflow-hidden bg-[#F9F9F9] pt-14 md:pt-[100px]">
             <div className="px-4 text-center z-10 relative">
                 <SectionHeading topTitle={topTitle} centerTitle={centerTitle} desc={desc} isDesc={true} />
             </div>
 
-            <div ref={containerRef} className="relative mt-[55px] flex w-full justify-center min-h-[320px]">
-                <div className="absolute bottom-0 left-0 w-full h-[230px] bg-[#D9D9D9]/5 overflow-hidden pointer-events-none z-0">
+            {/* #STYLE: 마진 및 최소 높이 반응형 대응 */}
+            <div
+                ref={containerRef}
+                className="relative mt-8 md:mt-[55px] flex w-full justify-center min-h-[200px] md:min-h-[320px]"
+            >
+                {/* #STYLE: 아치 배경판의 세로 높이 가변 분기 및 preserveAspectRatio 가로 와이드 핏 방어 */}
+                <div className="absolute bottom-0 left-0 w-full h-[140px] md:h-[230px] bg-[#D9D9D9]/5 overflow-hidden pointer-events-none z-0">
                     <svg
                         ref={archRef}
-                        className="w-full h-[230px] origin-bottom"
+                        className="w-full h-full origin-bottom"
                         viewBox="0 0 1359 230"
                         preserveAspectRatio="none"
                         fill="none"
@@ -83,10 +89,11 @@ export default function TechSection({
                     </svg>
                 </div>
 
+                {/* #STYLE: 1번 원본 사진의 완벽한 구도 유지를 위해 relative z-10 원래 위치값으로 복원 완료 */}
                 <img
                     src={imageSrc}
                     alt={imageAlt}
-                    className={`relative z-10  object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.05)] ${imgClass}`}
+                    className={`relative z-10 object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.05)] ${imgClass}`}
                 />
             </div>
         </section>

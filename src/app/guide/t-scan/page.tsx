@@ -80,7 +80,7 @@ export default function TScanPage() {
             description:
                 '컴퓨터 분석 시스템을 통해 눈에 보이지 않는 치아의 \n맞물림 압력과 불균형한 위치를 정확하게 찾아냅니다.',
             imgSrc: '/images/pro_item_10.jpg',
-            imgAlt: '정밀 진단 과정',
+            imgAlt: '기드온치과 티스캔 교합관리 정밀 진단 과정',
         },
         {
             stepNumber: 2,
@@ -88,14 +88,14 @@ export default function TScanPage() {
             description:
                 '검사 결과를 바탕으로 과도하게 힘을 받는 치아 표면을 \n다듬어, 전체적인 씹는 힘을 고르게 분산시킵니다.',
             imgSrc: '/images/pro_item_4.jpg',
-            imgAlt: '치아 정돈 과정',
+            imgAlt: '기드온치과 티스캔 교합관리 미세 조절 과정',
         },
         {
             stepNumber: 3,
             title: '정기적인 사후 관리로 튼튼하게 유지',
             description: '정기적인 검진을 통해 균형 잡힌 \n치아 건강을 오래 쓰도록 관리합니다.',
             imgSrc: '/images/pro_item_12.jpg',
-            imgAlt: '최종 부착 과정',
+            imgAlt: '기드온치과 티스캔 교합관리 사후 관리 과정',
         },
     ];
 
@@ -115,13 +115,20 @@ export default function TScanPage() {
             <TechSection
                 topTitle="T-Scan Occlusal Analysis"
                 centerTitle="티스캔 교합관리"
-                desc={`티스캔 교합관리는 컴퓨터 장비로 치아가 씹는 힘과
-맞물림을 바르게 맞춰주는 치료입니다. 특정 치아에만 힘이 쏠리지 않게 도와주어,
-내 치아와 임플란트를 부러짐 없이 오래 쓰도록 지켜줍니다.`}
+                // #STYLE반응형줄바꿈: br에 반응형 클래스로 사이즈별 줄바꿈 위치 제어
+                desc={
+                    <>
+                        티스캔 교합관리는 컴퓨터 장비로 치아가 씹는 힘과 맞물림을 바르게 맞춰주는 치료입니다.
+                        <br className="hidden md:block" />
+                        특정 치아에만 힘이 쏠리지 않게 도와주어,
+                        <br className="hidden md:block" />내 치아와 임플란트를 부러짐 없이 오래 쓰도록 지켜줍니다.
+                    </>
+                }
                 imageSrc="/images/tech_img_4.png"
-                imageAlt="장비 이미지"
-                imgClass="w-[440px] aspect-[180/91]"
-                isMargin="mt-[60px] mb-[50px]"
+                imageAlt="기드온치과 티스캔 장비 이미지"
+                // #STYLE: 픽셀 고정값(w-[440px]) → 반응형 단계별 너비로 변경
+                imgClass="w-[230px] sm:w-[300px] md:w-[380px] lg:w-[440px] aspect-[180/91]"
+                isMargin="mt-[40px] md:mt-[60px] mb-[30px] md:mb-[50px]"
             />
 
             <SpecialSection topTitle="PROCESS" centerTitle="티스캔 교합관리 진행과정" cardList={tScanCards} />
@@ -131,17 +138,10 @@ export default function TScanPage() {
                 centerTitle="이런 시니어 분들에게 추천합니다"
                 cardList={tScanRecommendList}
             />
-            {/* 치료과정 */}
             <ProcessSection topTitle="PROCESS" centerTitle="시니어 라미네이트 진행과정" stepData={tScanProcessSteps} />
-            {/* 주의사항 */}
             <CareSection />
-
-            {/* 자주 묻는 질문 */}
             <FaqSection isBg={false} />
-
-            {/* 간편상담 폼 */}
             <AskSection />
-
             <MapSection />
         </main>
     );

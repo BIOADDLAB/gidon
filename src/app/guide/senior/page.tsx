@@ -1,3 +1,6 @@
+// app/guide/senior/page.tsx
+'use client';
+
 import Image from 'next/image';
 import HeroSection from '@/components/HeroSection';
 import SectionHeading from './../../../components/common/SectionHeading';
@@ -73,7 +76,6 @@ export default function SeniorPage() {
         },
     ];
 
-    // #ISSUE: 추후 이미지 경로변경
     const seniorProcessSteps = [
         {
             stepNumber: 1,
@@ -81,7 +83,7 @@ export default function SeniorPage() {
             description:
                 '디지털 장비와 구강 검진을 통해 치아 마모도와 \n잇몸 상태를 분석하고, 안전한 맞춤 치료 계획을 세웁니다.',
             imgSrc: '/images/pro_item_9.jpg',
-            imgAlt: '정밀 진단 과정',
+            imgAlt: '기드온치과 시니어 라미네이트 정밀 진단 과정',
         },
         {
             stepNumber: 2,
@@ -89,7 +91,7 @@ export default function SeniorPage() {
             description:
                 '치아를 마구 깎아내지 않고 표면만 미세하게 정리한 뒤, \n친환경 재료를 정교하게 붙여 바르고 튼튼하게 만듭니다.',
             imgSrc: '/images/pro_item_3.jpg',
-            imgAlt: '치아 정돈 과정',
+            imgAlt: '기드온치과 시니어 라미네이트 치아 보강 과정',
         },
         {
             stepNumber: 3,
@@ -97,7 +99,7 @@ export default function SeniorPage() {
             description:
                 '치료 후 잇몸이 건강하게 잘 아물었는지 확인하고, \n정기 검진을 통해 잇몸을 오래 쓰도록 관리합니다.',
             imgSrc: '/images/pro_item_6.jpg',
-            imgAlt: '최종 부착 과정',
+            imgAlt: '기드온치과 시니어 라미네이트 사후 관리 과정',
         },
     ];
 
@@ -113,21 +115,26 @@ export default function SeniorPage() {
                 isGreen={false}
                 subMenuList={guideMenuList}
             />
-            <section className="relative pt-[126px] pb-[435px]">
+
+            <section className="relative pt-[60px] pb-[200px] md:pt-[90px] md:pb-[320px] lg:pt-[126px] lg:pb-[435px]">
                 <Image
                     src="/images/bg_senior.jpg"
-                    alt="배경 이미지"
+                    alt="기드온치과 시니어 라미네이트 배경"
                     fill
                     sizes="100vw"
-                    className="object-cover object-center -z-10"
+                    className="object-cover object-center -z-20"
+                />
+
+                {/* #STYLE: 시안의 그라디언트를 유지하면서 뒤의 할머니 할아버지 배경이 투과되도록 opacity-70 속성 추가 장착 */}
+                <div
+                    className="absolute inset-0 -z-10 opacity-40"
+                    style={{ backgroundImage: 'linear-gradient(180deg, #F9F9F9 0%, #8F8F8F 100%)' }}
                 />
 
                 <SectionHeading
                     topTitle="Senior Porcelain Veneers"
                     centerTitle="시니어 라미네이트"
-                    desc={`치아 표면을 미세하게 정리하고 친환경 재료를 붙여 \n
-치아를 바르고 튼튼하게 만드는 치료입니다. \n
-노화로 인해 깨지거나 벌어진 치아 모양을 바로잡아 건강하고 환한 미소를 되찾아 드립니다.`}
+                    desc={`치아 표면을 미세하게 정리하고\n친환경 재료를 붙여 치아를 바르고 튼튼하게 만드는 치료입니다.\n노화로 인해 깨지거나 벌어진 치아 모양을 바로잡아\n건강하고 환한 미소를 되찾아 드립니다.`}
                     isDesc={true}
                     isLh={true}
                 />
@@ -142,17 +149,10 @@ export default function SeniorPage() {
                 centerTitle="이런 시니어 분들에게 추천합니다"
                 cardList={seniorRecommendList}
             />
-            {/* 치료과정 */}
             <ProcessSection topTitle="PROCESS" centerTitle="시니어 라미네이트 진행과정" stepData={seniorProcessSteps} />
-            {/* 주의사항 */}
             <CareSection />
-
-            {/* 자주 묻는 질문 */}
             <FaqSection isBg={false} />
-
-            {/* 간편상담 폼 */}
             <AskSection />
-
             <MapSection />
         </main>
     );
