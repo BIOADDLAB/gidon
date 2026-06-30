@@ -1,8 +1,32 @@
+// app/layout.tsx
+import type { Metadata } from 'next'; // 💡 Next.js 전용 메타데이터 타입 추가
 import localFont from 'next/font/local';
 import { Tenor_Sans } from 'next/font/google';
 import './globals.css';
 import SiteChrome from '@/components/layout/SiteChrome';
-import FloatingBanner from '@/components/common/FloatingBanner'; // 💡 플로팅 배너 임포트!
+import FloatingBanner from '@/components/common/FloatingBanner';
+
+// 💡 [공식 안내 표지판 등록] 카카오톡, 구글, 네이버에 사이트를 증명할 메타데이터 정의
+export const metadata: Metadata = {
+    title: '기드온치과 | 바른 마음과 정직한 진료',
+    description: '흔들리지 않는 판단, 끝까지 지키는 약속. 모란역 4번 출구 도보 1분 기드온치과입니다.',
+    openGraph: {
+        title: '기드온치과',
+        description: '흔들리지 않는 판단, 끝까지 지키는 약속. 정직하고 투명하게 진료합니다.',
+        url: 'https://gideon-dental.com',
+        siteName: '기드온치과',
+        images: [
+            {
+                url: '/images/og-image.png',
+                width: 1200,
+                height: 630,
+                alt: '기드온치과 대표 이미지',
+            },
+        ],
+        locale: 'ko_KR',
+        type: 'website',
+    },
+};
 
 const dotSans = localFont({
     src: '../../public/fonts/AstaSans[wght].ttf',
@@ -38,12 +62,11 @@ const hansuwon = localFont({
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        /* 💡 기존에 누락되었던 ${hansuwon.variable} 클래스까지 완벽하게 추가해서 폰트가 정상 적용되게 했습니다! */
         <html lang="ko" className={`${dotSans.variable} ${suit.variable} ${tenorSans.variable} ${hansuwon.variable}`}>
             <body className="flex min-h-screen flex-col">
                 <SiteChrome>{children}</SiteChrome>
 
-                {/* 💡 화면 우측 하단에 상시 따라다니는 플로팅 배너 장착 완료! */}
+                {/* 화면 우측 하단에 상시 따라다니는 플로팅 배너 */}
                 <FloatingBanner />
             </body>
         </html>

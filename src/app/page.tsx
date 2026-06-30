@@ -63,8 +63,9 @@ export default function Home() {
 
     return (
         <div className="relative w-full">
+            {/* #STYLE: 맥북(1440px) 환경에서 본문과 겹쳐 답답했던 현상을 해결하기 위해, 1600px 미만 전 구간에서 네비바를 완전히 숨김(hidden) 제어 */}
             <div
-                className={`fixed left-12 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col items-baseline transition-all duration-500 ${
+                className={`fixed left-12 top-1/2 -translate-y-1/2 z-40 hidden min-[1600px]:flex flex-col items-baseline transition-all duration-500 ${
                     activeSection === 'hero' || activeSection === 'map'
                         ? 'opacity-0 pointer-events-none'
                         : 'opacity-100 pointer-events-auto'
@@ -200,7 +201,6 @@ export default function Home() {
                     />
                 </div>
 
-                {/* #STYLE: bg-white/40 및 backdrop-blur-sm 속성을 제거하여 교차 보더 라인이 투명하게 겹쳐 보이도록 교정 */}
                 <div className="flex flex-col md:flex-row items-center justify-center gap-0 mt-10 md:mt-12 mb-14 md:mb-20 px-4">
                     <div className="relative z-10 rounded-full border border-gray-400 flex items-center justify-center w-48 h-48 md:w-64 md:h-64 -mb-6 md:mb-0 md:-mr-10 bg-transparent shrink-0">
                         <div
@@ -263,6 +263,7 @@ export default function Home() {
                     />
                 </div>
 
+                {/* #STYLE: 2열 그리드 실험실을 폭파하고, 원래 의도하셨던 시원한 데스크톱 4열 구조(xl:grid-cols-4 max-w-7xl)로 완벽 롤백 */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 mt-10 md:mt-14 px-4 max-w-7xl mx-auto w-full">
                     {[
                         {
