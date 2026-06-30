@@ -10,15 +10,16 @@ import MapSection from './../../components/MapStion';
 import TourSwiper from '@/components/TourSwiper';
 import FaqSection from '@/components/FaqSection';
 import AskSection from '@/components/AskSection';
+import LocationSections from '@/components/LocationSections';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 interface AboutLayoutProps {
-    activeSection: 'philosophy' | 'promise' | 'tour';
+    activeSection: 'philosophy' | 'promise' | 'location' | 'tour';
 }
 
 export default function AboutLayout({ activeSection }: AboutLayoutProps) {
-    const aboutMenuList = ['병원철학', '기드온의 약속', '둘러보기'];
+    const aboutMenuList = ['병원철학', '기드온의 약속', '오시는길', '둘러보기'];
     const containerRef = useRef<HTMLDivElement>(null);
     const archRef = useRef<SVGSVGElement>(null);
 
@@ -52,6 +53,7 @@ export default function AboutLayout({ activeSection }: AboutLayoutProps) {
     const subNavMap = {
         philosophy: '병원철학',
         promise: '기드온의 약속',
+        location: '오시는길',
         tour: '둘러보기',
     };
 
@@ -228,10 +230,13 @@ export default function AboutLayout({ activeSection }: AboutLayoutProps) {
                 </div>
             </section>
 
+            {/* 3. 오시는길 섹션 */}
+            <LocationSections />
+
             {/* 자주 묻는 질문 */}
             <FaqSection isBg={false} />
 
-            {/* 3. 둘러보기 섹션 */}
+            {/* 4. 둘러보기 섹션 */}
             <div id="tour" className="scroll-mt-20">
                 <TourSwiper />
             </div>

@@ -119,7 +119,8 @@ export default function HeroSection({
                                             else if (menu === '티스캔 교합관리') targetHref = '/guide/t-scan';
                                             else if (menu === '시니어 라미네이트') targetHref = '/guide/senior';
                                             else if (menu === '가격안내') targetHref = '/price';
-                                            else if (menu === '오시는길') targetHref = '/location';
+                                            else if (menu === '기드온칼럼') targetHref = '/column';
+                                            else if (menu === '오시는길') targetHref = '/about/location';
 
                                             return (
                                                 <li key={idx}>

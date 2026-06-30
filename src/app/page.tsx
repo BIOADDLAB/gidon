@@ -12,6 +12,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import Image from 'next/image';
 import SectionHeading from '@/components/common/SectionHeading';
+import PhilosophyStats from '@/components/common/PhilosophyStats';
 
 export default function Home() {
     const [activeSection, setActiveSection] = useState('hero');
@@ -193,12 +194,18 @@ export default function Home() {
                     <SectionHeading
                         topTitle={'GIDEON’S Philosophy'}
                         centerTitle={'기드온치과의 철학'}
-                        desc={
+                        desc=""
+                        isDesc={false}
+                    />
+
+                    <PhilosophyStats />
+
+                    <p className="mx-auto mt-10 max-w-[720px] whitespace-pre-line break-keep text-center text-[16px] font-medium leading-[1.75] text-[#444] md:text-[20px]">
+                        {
                             '기드온치과는 화려한 장비나 최신 기술을 앞세우는 치과가 아닙니다.\n' +
                             '한결같이 바른 마음과 정직한 손길로, 당신의 평생 구강 건강을 지켜드립니다.'
                         }
-                        isDesc={true}
-                    />
+                    </p>
                 </div>
 
                 <div className="flex flex-col md:flex-row items-center justify-center gap-0 mt-10 md:mt-12 mb-14 md:mb-20 px-4">

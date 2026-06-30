@@ -4,7 +4,6 @@ import localFont from 'next/font/local';
 import { Tenor_Sans } from 'next/font/google';
 import './globals.css';
 import SiteChrome from '@/components/layout/SiteChrome';
-import FloatingBanner from '@/components/common/FloatingBanner';
 
 export const metadata: Metadata = {
     title: '기드온치과 | 바른 마음과 정직한 진료',
@@ -64,9 +63,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <html lang="ko" className={`${dotSans.variable} ${suit.variable} ${tenorSans.variable} ${hansuwon.variable}`}>
             <body className="flex min-h-screen flex-col">
                 <SiteChrome>{children}</SiteChrome>
-
-                {/* 화면 우측 하단에 상시 따라다니는 플로팅 배너 */}
-                <FloatingBanner />
             </body>
         </html>
     );

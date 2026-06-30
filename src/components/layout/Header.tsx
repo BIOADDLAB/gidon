@@ -26,8 +26,14 @@ const menus: MenuItem[] = [
         subs: [
             { name: '병원철학', href: '/about/philosophy' },
             { name: '기드온의 약속', href: '/about/promise' },
+            { name: '오시는길', href: '/about/location' },
             { name: '둘러보기', href: '/about/tour' },
         ],
+    },
+    {
+        title: '의료진소개',
+        href: '/doctors',
+        subs: [{ name: '의료진소개', href: '/doctors' }],
     },
     {
         title: '임플란트',
@@ -36,11 +42,6 @@ const menus: MenuItem[] = [
             { name: '진행과정', href: '/implant/process' },
             { name: '보험 임플란트', href: '/implant/insurance' },
         ],
-    },
-    {
-        title: '의료진소개',
-        href: '/doctors',
-        subs: [{ name: '의료진소개', href: '/doctors' }],
     },
     {
         title: '진료안내',
@@ -58,9 +59,9 @@ const menus: MenuItem[] = [
         subs: [{ name: '가격안내', href: '/price' }],
     },
     {
-        title: '오시는길',
-        href: '/location',
-        subs: [{ name: '오시는길', href: '/location' }],
+        title: '기드온칼럼',
+        href: '/column',
+        subs: [{ name: '기드온칼럼', href: '/column' }],
     },
 ];
 
