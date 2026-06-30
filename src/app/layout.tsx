@@ -1,19 +1,18 @@
 // app/layout.tsx
-import type { Metadata } from 'next'; // 💡 Next.js 전용 메타데이터 타입 추가
+import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import { Tenor_Sans } from 'next/font/google';
 import './globals.css';
 import SiteChrome from '@/components/layout/SiteChrome';
 import FloatingBanner from '@/components/common/FloatingBanner';
 
-// 💡 [공식 안내 표지판 등록] 카카오톡, 구글, 네이버에 사이트를 증명할 메타데이터 정의
 export const metadata: Metadata = {
     title: '기드온치과 | 바른 마음과 정직한 진료',
     description: '흔들리지 않는 판단, 끝까지 지키는 약속. 모란역 4번 출구 도보 1분 기드온치과입니다.',
     openGraph: {
         title: '기드온치과',
         description: '흔들리지 않는 판단, 끝까지 지키는 약속. 정직하고 투명하게 진료합니다.',
-        url: 'https://gideon-dental.com',
+        url: 'gidon-two.vercel.app',
         siteName: '기드온치과',
         images: [
             {
