@@ -1,17 +1,11 @@
-import HeroSection from '@/components/HeroSection';
+import AboutLayout from '../AboutLayout';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: '둘러보기 | 기드온치과',
+    description: '기드온치과의 쾌적하고 편안한 원내 시설 및 진료 환경을 확인해보세요.',
+};
 
 export default function TourPage() {
-    const aboutMenuList = ['병원철학', '기드온의 약속', '둘러보기'];
-    return (
-        <HeroSection
-            mainTitle="기드온치과"
-            subTitle="About GIDEON"
-            pageName="기드온치과"
-            subNavItem="둘러보기"
-            imgSrc="/images/bg_hr_about.jpg"
-            isNav={true}
-            isGreen={true}
-            subMenuList={aboutMenuList}
-        />
-    );
+    return <AboutLayout activeSection="tour" />;
 }

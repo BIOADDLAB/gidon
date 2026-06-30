@@ -12,14 +12,6 @@ import 'swiper/css/pagination';
 import Image from 'next/image';
 import SectionHeading from '@/components/common/SectionHeading';
 
-interface implantdDtaProps {
-    stepNumber: number;
-    title: string;
-    description: string;
-    imgSrc: string;
-    imgAlt: string;
-}
-
 export default function Home() {
     const [activeSection, setActiveSection] = useState('hero');
 
@@ -68,11 +60,11 @@ export default function Home() {
     return (
         <div className="relative w-full">
             <div
-                className={`fixed left-12 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col items-center transition-all duration-500 ${
+                className={`fixed left-12 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col items-baseline transition-all duration-500 ${
                     activeSection === 'hero' ? 'opacity-0 pointer-events-none' : 'opacity-100 pointer-events-auto'
                 }`}
             >
-                <div className="mb-6">
+                <div className="mb-6 pl-3">
                     <img src="/images/i_tooth_g.svg" alt="" className="w-6 h-auto block" />
                 </div>
 
@@ -92,9 +84,7 @@ export default function Home() {
                                     className={`w-4 h-4 rounded-full border border-[#233a31] transition-all duration-300 flex items-center justify-center bg-white ${
                                         isCurrent ? '!bg-[#233a31] scale-110' : 'group-hover:border-[#233a31]/80'
                                     }`}
-                                >
-                                    {isCurrent && <div className="w-1.5 h-1.5 rounded-full bg-white" />}
-                                </div>
+                                ></div>
                                 <span
                                     className={`text-[14px] font-medium tracking-tight transition-all duration-300 ${
                                         isCurrent
@@ -138,9 +128,9 @@ export default function Home() {
                                 className="object-cover object-center"
                             />
                             <div className="flex flex-col justify-center items-center py-64 z-2 relative text-white">
-                                <h1 className="text-[40px]">치과를 오래 쓰는 길,</h1>
-                                <h1 className="text-[40px]">기드온이 안내합니다.</h1>
-                                <p className="text-3xl mt-7">흔들리지 않는 판단, 끝까지 지키는 약속.</p>
+                                <h1 className="text-[40px] font-hero leading-6.1">치과를 오래 쓰는 길,</h1>
+                                <h1 className="text-[40px] font-hero">기드온이 안내합니다.</h1>
+                                <p className="text-3xl mt-7 font-ui">흔들리지 않는 판단, 끝까지 지키는 약속.</p>
                             </div>
                         </div>
                     </SwiperSlide>
@@ -155,9 +145,9 @@ export default function Home() {
                                 className="object-cover object-center"
                             />
                             <div className="flex flex-col justify-center items-center py-64 z-2 relative text-white">
-                                <h1 className="text-[40px]">정해진 길로 정확하게 안내하고,</h1>
-                                <h1 className="text-[40px]">치아를 오래 쓰게 하는 안정적인 치과입니다.</h1>
-                                <p className="text-3xl mt-7">흔들리지 않는 판단, 끝까지 지키는 약속.</p>
+                                <h1 className="text-[40px] font-hero">정해진 길로 정확하게 안내하고,</h1>
+                                <h1 className="text-[40px] font-hero">치아를 오래 쓰게 하는 안정적인 치과입니다.</h1>
+                                <p className="text-3xl mt-7 font-ui">흔들리지 않는 판단, 끝까지 지키는 약속.</p>
                             </div>
                         </div>
                     </SwiperSlide>
@@ -222,7 +212,6 @@ export default function Home() {
                     isDesc={true}
                 />
 
-                {/* 경아님이 마크업해 둔 오리지널 이미지 리스트 정렬 구조 복구 */}
                 <div className="flex justify-center items-center gap-5 mt-14 px-4">
                     {[
                         {
@@ -251,10 +240,8 @@ export default function Home() {
                         },
                     ].map((card, i) => (
                         <div key={i} className="group relative overflow-hidden rounded-md cursor-pointer shadow-sm">
-                            {/* 🦷 메인 노출 치아 원본 사진 */}
                             <img src={`/images/main_hover_${card.img}.jpg`} alt="" className="w-full h-auto block" />
 
-                            {/* 마우스 호버 시 위로 스르륵 나타나는 초록 배경 정보창 */}
                             <div className="absolute inset-0 flex translate-y-full flex-col justify-start bg-[#2d4a3e] p-5 transition-transform duration-300 group-hover:translate-y-0">
                                 <h3 className="text-2xl font-bold text-white leading-snug">
                                     {card.title1} <br /> {card.title2}
@@ -277,7 +264,6 @@ export default function Home() {
                 </div>
             </div>
 
-            {/* 🗺️ 3. 오시는 길 (💡 경아님이 정성 들여 만든 원본 경로/디자인 100% 원상복구) */}
             <section
                 id="location"
                 className="w-full py-[120px] flex flex-col items-center bg-gradient-to-b from-[#EBF2EA] to-[#F4F8F3]"
@@ -290,7 +276,6 @@ export default function Home() {
                         isDesc={true}
                     />
 
-                    {/* 경아님이 뚫어 놓으신 i_loca_01, 02 아이콘 및 22px 텍스트 구조 완전 롤백 */}
                     <div className="mt-[60px] w-full max-w-[640px] flex flex-col gap-[22px]">
                         <div className="w-full bg-white rounded-[10px] p-5 flex items-center gap-5 shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
                             <div className="w-[50px] h-[50px] bg-green-600 rounded-full flex items-center justify-center shrink-0">

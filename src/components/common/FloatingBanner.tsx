@@ -21,7 +21,7 @@ export default function FloatingBanner() {
                     <img
                         src="/images/i_flo_01.svg"
                         alt=""
-                        className="w-[30px] h-6 object-contain opacity-95 group-hover:scale-105 transition-transform"
+                        className="w-[30px] object-contain opacity-95 group-hover:scale-105 transition-transform"
                     />
                     <span className="text-[14px] font-bold ">챗봇</span>
                 </a>
@@ -33,7 +33,7 @@ export default function FloatingBanner() {
                     <img
                         src="/images/i_flo_02.svg"
                         alt=""
-                        className="w-[30px] h-6 object-contain opacity-95 group-hover:scale-105 transition-transform"
+                        className="w-[30px] object-contain opacity-95 group-hover:scale-105 transition-transform"
                     />
                     <span className="text-[14px] font-bold ">상담예약</span>
                 </a>
@@ -61,7 +61,7 @@ export default function FloatingBanner() {
                     <img
                         src="/images/i_flo_04.svg"
                         alt=""
-                        className="w-6 h-6 object-contain opacity-95 group-hover:scale-105 transition-transform"
+                        className="w-[30px]  object-contain opacity-95 group-hover:scale-105 transition-transform"
                     />
                     <span className="text-[14px] font-bold">카카오채널</span>
                 </a>

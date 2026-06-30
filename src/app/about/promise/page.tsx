@@ -1,17 +1,11 @@
-import HeroSection from '@/components/HeroSection';
+import AboutLayout from '../AboutLayout';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: '기드온의 약속 | 기드온치과',
+    description: '과잉 진료 없는 정직한 진료, 투명한 안내, 끝까지 책임지는 기드온치과의 약속입니다.',
+};
 
 export default function PromisePage() {
-    const aboutMenuList = ['병원철학', '기드온의 약속', '둘러보기'];
-    return (
-        <HeroSection
-            mainTitle="기드온치과"
-            subTitle="About GIDEON"
-            pageName="기드온치과"
-            subNavItem="기드온의 약속"
-            imgSrc="/images/bg_hr_about.jpg"
-            isNav={true}
-            isGreen={true}
-            subMenuList={aboutMenuList}
-        />
-    );
+    return <AboutLayout activeSection="promise" />;
 }
