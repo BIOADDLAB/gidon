@@ -7,7 +7,7 @@ export default function FloatingBanner() {
 
     return (
         // #STYLE: 모바일 right/bottom 조정 (엄지 손가락 닿기 쉬운 위치)
-        <div className="fixed right-3 md:right-6 bottom-5 md:bottom-10 z-50 flex flex-col items-end select-none">
+        <div className="fixed right-3 md:right-6 bottom-5 md:bottom-10 z-40 flex flex-col items-end select-none">
             <div
                 className={`flex flex-col gap-[6px] md:gap-[10px] items-end w-[140px] md:w-[180px] mb-2.5 md:mb-4 transition-all duration-300 origin-bottom ${
                     isOpen
