@@ -201,15 +201,13 @@ export default function Home() {
                     <PhilosophyStats />
 
                     <p className="mx-auto mt-10 max-w-[720px] whitespace-pre-line break-keep text-center text-[16px] font-medium leading-[1.75] text-[#444] md:text-[20px]">
-                        {
-                            '기드온치과는 화려한 장비나 최신 기술을 앞세우는 치과가 아닙니다.\n' +
-                            '한결같이 바른 마음과 정직한 손길로, 당신의 평생 구강 건강을 지켜드립니다.'
-                        }
+                        {'기드온치과는 화려한 장비나 최신 기술을 앞세우는 치과가 아닙니다.\n' +
+                            '한결같이 바른 마음과 정직한 손길로, 당신의 평생 구강 건강을 지켜드립니다.'}
                     </p>
                 </div>
 
                 <div className="flex flex-col md:flex-row items-center justify-center gap-0 mt-10 md:mt-12 mb-14 md:mb-20 px-4">
-                    <div className="relative z-10 rounded-full border border-gray-400 flex items-center justify-center w-48 h-48 md:w-64 md:h-64 -mb-6 md:mb-0 md:-mr-10 bg-transparent shrink-0">
+                    <div className="relative z-10 rounded-full border border-green-600 flex items-center justify-center w-48 h-48 md:w-64 md:h-64 -mb-6 md:mb-0 md:-mr-10 bg-transparent shrink-0">
                         <div
                             className="absolute inset-2 rounded-full pointer-events-none"
                             style={{
@@ -222,7 +220,7 @@ export default function Home() {
                             정직한 <br /> 진료
                         </p>
                     </div>
-                    <div className="relative z-0 rounded-full border border-gray-400 flex items-center justify-center w-48 h-48 md:w-64 md:h-64 -mb-6 md:mb-0 md:-mr-10 bg-transparent shrink-0">
+                    <div className="relative z-0 rounded-full border border-green-600 flex items-center justify-center w-48 h-48 md:w-64 md:h-64 -mb-6 md:mb-0 md:-mr-10 bg-transparent shrink-0">
                         <div
                             className="absolute inset-2 rounded-full pointer-events-none"
                             style={{
@@ -235,7 +233,7 @@ export default function Home() {
                             투명한 <br /> 안내
                         </p>
                     </div>
-                    <div className="relative z-10 rounded-full border border-gray-400 flex items-center justify-center w-48 h-48 md:w-64 md:h-64 bg-transparent shrink-0">
+                    <div className="relative z-10 rounded-full border border-green-600 flex items-center justify-center w-48 h-48 md:w-64 md:h-64 bg-transparent shrink-0">
                         <div
                             className="absolute inset-2 rounded-full pointer-events-none"
                             style={{

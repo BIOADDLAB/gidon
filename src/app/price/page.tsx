@@ -2,6 +2,8 @@
 
 import HeroSection from '@/components/HeroSection';
 import SectionHeading from './../../components/common/SectionHeading';
+import MapSection from '../../components/MapStion';
+import FaqSection from '@/components/FaqSection';
 
 export default function PricePage() {
     const priceMenuList = ['가격안내'];
@@ -246,6 +248,10 @@ export default function PricePage() {
                     </div>
                 </div>
             </section>
+
+            <FaqSection isBg={true} />
+
+            <MapSection />
         </main>
     );
 }

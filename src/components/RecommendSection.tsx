@@ -91,19 +91,14 @@ export default function RecommendSection({
                                     className="w-[22px] md:w-[25px] block mb-4 md:mb-5"
                                     alt="추천 대상 치아 아이콘"
                                 />
-                                {/* #STYLE: 줄바꿈 어색함 해결 — 데이터(card.title)의 \n은 PC 기준으로 짜여있어
-                                    whitespace-pre-line을 그대로 쓰면 모바일 좁은 화면에 안 맞는 지점에서 끊김.
-                                    830px 미만에서는 whitespace-normal로 강제 줄바꿈 해제하고 break-keep으로만 자연 줄바꿈,
-                                    830px 이상부터 디자인 의도대로 pre-line 적용 */}
-                                <strong className="text-[20px] min-[830px]:text-[23px] lg:text-[25px] 2xl:text-[28px] font-bold leading-snug whitespace-normal min-[830px]:whitespace-pre-line break-keep">
+                                <strong className="text-[20px] min-[830px]:text-[23px] lg:text-[25px] 2xl:text-[28px] font-bold leading-snug whitespace-pre-line break-keep">
                                     {card.title}
                                 </strong>
                             </div>
 
                             {/* 하단 영역 */}
                             <div className="pt-[28px] md:pt-[38px] pb-8 md:pb-10 px-6 text-center flex-grow flex justify-center items-center">
-                                {/* #STYLE: 설명문도 동일하게 830px 미만에서 강제 줄바꿈 해제 */}
-                                <p className="leading-[26px] min-[830px]:leading-[30px] text-[14px] min-[830px]:text-[15px] 2xl:text-[16px] font-medium whitespace-normal min-[830px]:whitespace-pre-line break-keep">
+                                <p className="leading-[26px] min-[830px]:leading-[30px] text-[14px] min-[830px]:text-[15px] 2xl:text-[16px] font-medium whitespace-pre-line break-keep">
                                     {card.description}
                                 </p>
                             </div>

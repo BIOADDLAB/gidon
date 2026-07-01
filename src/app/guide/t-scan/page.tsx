@@ -72,7 +72,6 @@ export default function TScanPage() {
         },
     ];
 
-    // #ISSUE: 추후 이미지 경로변경
     const tScanProcessSteps = [
         {
             stepNumber: 1,
@@ -115,18 +114,23 @@ export default function TScanPage() {
             <TechSection
                 topTitle="T-Scan Occlusal Analysis"
                 centerTitle="티스캔 교합관리"
-                // #STYLE반응형줄바꿈: br에 반응형 클래스로 사이즈별 줄바꿈 위치 제어
                 desc={
                     <>
-                        티스캔 교합관리는 컴퓨터 장비로 치아가 씹는 힘과 맞물림을 바르게 맞춰주는 치료입니다.
+                        티스캔 교합관리는 컴퓨터 장비로 치아가 씹는
+                        <br className="hidden min-[360px]:block md:hidden" /> 힘과
                         <br className="hidden md:block" />
+                        맞물림을 바르게 맞춰주는 치료입니다.
+                        <br className="hidden min-[360px]:block md:hidden" />
+                        <br className="hidden min-[360px]:block md:hidden" />
                         특정 치아에만 힘이 쏠리지 않게 도와주어,
-                        <br className="hidden md:block" />내 치아와 임플란트를 부러짐 없이 오래 쓰도록 지켜줍니다.
+                        <br className="hidden md:block" />
+                        <br className="hidden min-[360px]:block md:hidden" />내 치아와 임플란트를 부러짐 없이
+                        <br className="hidden min-[360px]:block md:hidden" />
+                        오래 쓰도록 지켜줍니다.
                     </>
                 }
                 imageSrc="/images/tech_img_4.png"
                 imageAlt="기드온치과 티스캔 장비 이미지"
-                // #STYLE: 픽셀 고정값(w-[440px]) → 반응형 단계별 너비로 변경
                 imgClass="w-[230px] sm:w-[300px] md:w-[380px] lg:w-[440px] aspect-[180/91]"
                 isMargin="mt-[40px] md:mt-[60px] mb-[30px] md:mb-[50px]"
             />

@@ -1,3 +1,4 @@
+// components/FaqSection.tsx
 'use client';
 
 import { useState } from 'react';
@@ -43,12 +44,14 @@ export default function FaqSection({ isBg = false }: FaqSectionProps) {
         setOpenId(openId === id ? null : id);
     };
 
+    // #STYLE: isBg가 false일 때만 지정하신 연회색 고정 배경색(#F9FAF5)이 작동하도록 조건부 클래스 바인딩
     return (
-        // #STYLE: py 대화면 확장
-        <section className="relative w-full pt-[70px] md:pt-[100px] 2xl:pt-[130px] pb-[90px] md:pb-[130px] 2xl:pb-[160px] overflow-hidden flex flex-col items-center">
+        <section
+            className={`relative w-full pt-[70px] md:pt-[100px] 2xl:pt-[130px] pb-[90px] md:pb-[130px] 2xl:pb-[160px] overflow-hidden flex flex-col items-center ${!isBg ? 'bg-[#F9FAF5]' : ''}`}
+        >
             {isBg ? (
                 <Image
-                    src="/images/bg_reco.jpg"
+                    src="/images/bg_green3.jpg"
                     alt="기드온치과 자주 묻는 질문 배경"
                     fill
                     sizes="100vw"
@@ -56,7 +59,6 @@ export default function FaqSection({ isBg = false }: FaqSectionProps) {
                 />
             ) : null}
 
-            {/* #STYLE: max-w 대화면 확장 */}
             <div className="w-full max-w-[930px] 2xl:max-w-[1100px] px-4">
                 <SectionHeading topTitle="Q & A" centerTitle="자주 묻는 질문" desc="" isDesc={false} />
 
@@ -96,7 +98,6 @@ export default function FaqSection({ isBg = false }: FaqSectionProps) {
                                                 className="w-full flex items-start text-left focus:outline-none pb-[6px] md:pb-[10px] pt-0.5 md:pt-1"
                                                 aria-expanded={isOpen}
                                             >
-                                                {/* #STYLE: 모바일 폰트 추가 축소(14px), leading 더 좁게 조정 — PC 비율 그대로 축소만 한 것보다 압축감 있게 */}
                                                 <h3
                                                     className={`text-[14px] md:text-[21px] lg:text-[25px] 2xl:text-[27px] font-semibold transition-colors break-keep leading-[1.4] md:leading-snug ${isOpen ? 'text-white' : 'text-[#3d3e3c]'}`}
                                                 >
@@ -113,8 +114,6 @@ export default function FaqSection({ isBg = false }: FaqSectionProps) {
                                             </button>
 
                                             {isOpen && (
-                                                // #STYLE: 모바일에서는 줄바꿈 없애기 — 데이터(item.answer)의 \n은 PC 폭 기준이라
-                                                // 모바일 좁은 폭에서 그대로 쓰면 어색하게 끊김. md 미만은 whitespace-normal로 해제
                                                 <div className="animate-fade-in">
                                                     <p className="whitespace-normal md:whitespace-pre-line text-[14px] md:text-[17px] lg:text-[18px] font-medium mt-3 md:mt-4 text-white leading-relaxed pb-3 break-keep">
                                                         {item.answer}

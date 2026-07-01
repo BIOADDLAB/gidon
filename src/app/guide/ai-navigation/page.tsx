@@ -114,8 +114,18 @@ export default function AiNavigationPage() {
             <TechSection
                 topTitle="Navigation Implant"
                 centerTitle="네비게이션 임플란트"
-                desc={`네비게이션 임플란트는 3D CT를 통해 환자 개개인의 구강 상태를 분석하고,
-식립 위치를 정밀하게 계획하여 정밀한 임플란트 치료를 제공합니다.`}
+                desc={
+                    <>
+                        네비게이션 임플란트는 3D CT를 통해
+                        <br className="hidden min-[360px]:block md:hidden" />
+                        환자 개개인의 구강 상태를 분석하고,
+                        <br className="hidden md:block" />
+                        <br className="hidden min-[360px]:block md:hidden" />
+                        식립 위치를 정밀하게 계획하여
+                        <br className="hidden min-[360px]:block md:hidden" />
+                        정밀한 임플란트 치료를 제공합니다.
+                    </>
+                }
                 imageSrc="/images/tech_img_2.png"
                 imageAlt="장비 이미지"
                 imgClass="w-[440px] aspect-[180/91]"

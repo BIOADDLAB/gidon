@@ -20,20 +20,31 @@ export default function InsurancePage() {
                 subMenuList={insuranceMenuList}
             />
 
-            {/* 보험임플란트란 */}
-            {/* #STYLE: py 대화면 확장 */}
             <section className="w-full py-[70px] md:py-[100px] 2xl:py-[130px] flex flex-col items-center bg-white">
                 <div className="w-full max-w-[1000px] 2xl:max-w-[1180px] px-4 flex flex-col items-center">
                     <SectionHeading
                         topTitle="GIDEON DENTAL CLINIC"
                         centerTitle="보험 임플란트"
-                        desc={`보험 임플란트는 만 65세 이상 어르신을 대상으로 \n건강보험 혜택을 받을 수 있는 임플란트 치료입니다. \n치료 비용 부담은 줄이고, 건강한 치아 기능을 회복할 수 있도록 돕습니다.`}
+                        desc={
+                            <>
+                                보험 임플란트는 만 65세 이상 어르신을
+                                <br className="hidden min-[360px]:block md:hidden" /> 대상으로
+                                <br className="hidden md:block" />
+                                건강보험 혜택을 받을 수 있는
+                                <br className="hidden min-[360px]:block md:hidden" />
+                                임플란트 치료입니다.
+                                <br className="hidden md:block" />
+                                <br className="hidden min-[360px]:block md:hidden" />
+                                <br className="hidden min-[360px]:block md:hidden" />
+                                치료 비용 부담은 줄이고, 건강한 치아 기능을
+                                <br className="hidden min-[360px]:block md:hidden" />
+                                회복할 수 있도록 돕습니다.
+                            </>
+                        }
                         isDesc={true}
                     />
 
-                    {/* #STYLE: 모바일 flex-col 유지(기존과 동일하나 border 처리 보강) */}
                     <div className="flex flex-col md:flex-row items-stretch border border-[#b0b0b0] rounded-[15px] w-full max-w-[760px] 2xl:max-w-[880px] mt-[36px] md:mt-[50px] overflow-hidden">
-                        {/* 적용대상 */}
                         <div className="flex-1 flex flex-col items-center text-center px-6 py-[32px] md:py-[45px] border-b md:border-b-0 md:border-r border-[#b0b0b0]">
                             <img
                                 src="/images/i_insu_1.svg"
@@ -48,7 +59,6 @@ export default function InsurancePage() {
                             </p>
                         </div>
 
-                        {/* 지원내용 */}
                         <div className="flex-1 flex flex-col items-center text-center px-6 py-[32px] md:py-[45px] border-b md:border-b-0 md:border-r border-[#b0b0b0]">
                             <img
                                 src="/images/i_insu_2.svg"
@@ -63,7 +73,6 @@ export default function InsurancePage() {
                             </p>
                         </div>
 
-                        {/* 적용개수 */}
                         <div className="flex-1 flex flex-col items-center text-center px-6 py-[32px] md:py-[45px]">
                             <img
                                 src="/images/i_insu_3.svg"
@@ -81,7 +90,7 @@ export default function InsurancePage() {
                 </div>
             </section>
 
-            <FaqSection isBg={false} />
+            <FaqSection isBg={true} />
             <AskSection />
             <MapSection />
         </main>
