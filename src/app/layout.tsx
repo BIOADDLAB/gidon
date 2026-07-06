@@ -47,12 +47,8 @@ const tenorSans = Tenor_Sans({
 const hansuwon = localFont({
     src: [
         {
-            path: '../../public/fonts/KHNPHDotfR.otf',
+            path: '../../public/fonts/KHNPHUotfR.otf',
             weight: '400',
-        },
-        {
-            path: '../../public/fonts/KHNPHDotfB.otf',
-            weight: '700',
         },
     ],
     variable: '--font-hero',
