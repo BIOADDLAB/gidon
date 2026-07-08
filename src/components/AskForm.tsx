@@ -156,5 +156,6 @@ export default function AskForm() {
             </div>
             {isPrivacyOpen && <PrivacyPolicyModal onClose={() => setIsPrivacyOpen(false)} />}
         </form>
+        </>
     );
 }
