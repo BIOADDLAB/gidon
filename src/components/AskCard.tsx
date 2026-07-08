@@ -11,12 +11,11 @@ export default function AskCard() {
                     <p className="text-[20px] md:text-[22px] lg:text-[24px] font-semibold text-green-600">
                         대표 상담번호 <br />
                         <b className="block text-[28px] md:text-[30px] lg:text-[32px] font-extrabold mt-[6px] mb-[10px] md:mb-[16px]">
-                            0000-0000
+                            1522-7528
                         </b>
                     </p>
-                    {/* #LINK: 전화번호 실제 번호로 교체 필요 */}
                     <a
-                        href="tel:0000-0000"
+                        href="tel:1522-7528"
                         className="flex px-5 md:px-6 py-3 gap-2 justify-center items-center bg-paper text-[17px] md:text-[18px] lg:text-[20px] font-bold text-green-600 rounded-full border border-green-600 w-fit mx-auto"
                     >
                         <img
@@ -41,9 +40,8 @@ export default function AskCard() {
                         채팅으로 <br />
                         간편하게 문의하세요.
                     </p>
-                    {/* #LINK: 카카오 채널 실제 URL 교체 필요 */}
                     <a
-                        href="https://pf.kakao.com/"
+                        href="http://pf.kakao.com/_xisgFE"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex px-5 md:px-6 py-3 gap-2.5 justify-center items-center bg-paper text-[17px] md:text-[18px] lg:text-[20px] font-bold text-green-600 rounded-full border border-green-600 w-fit mx-auto"

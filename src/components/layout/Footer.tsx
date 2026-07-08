@@ -1,22 +1,21 @@
-import Link from 'next/link';
-import { Fragment } from 'react';
+'use client';
 
-const policyLinks = [
-    { name: '비급여수가표', href: '/policy/non-benefit' },
-    { name: '개인정보처리방침', href: '/policy/privacy' },
-    { name: '이용약관', href: '/policy/terms' },
-];
+import { Fragment } from 'react';
+import { useState } from 'react';
+import PrivacyPolicyModal from '@/components/common/PrivacyPolicyModal';
 
 //#LINK: 사업자등록증 기준 정보로 업데이트. 전화번호는 사업자등록증에 명시되어 있지 않아 임시값 유지 — 실제 대표번호로 교체 필요
 const info = [
     '기드온치과',
     '대표 : 성요길',
     '경기도 성남시 중원구 성남대로 1126, 303호·304호·305호(메가프라자)',
-    '전화 : 02-000-0000',
+    '전화 : 1522-7528',
     '사업자등록번호 : 898-23-02423',
 ];
 
 export default function Footer() {
+    const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
+
     return (
         // #STYLE: 모바일 좌측 정렬(items-start, text-left), md 이상 가운데 정렬(items-center, text-center)로 반응형 구조 변경
         <footer className="w-full bg-[#2d433b] px-5 md:px-6 pt-12 md:pt-16 2xl:pt-20 pb-10 md:pb-12 text-white/80">
@@ -25,15 +24,13 @@ export default function Footer() {
 
                 {/* #STYLE: 모바일 터치 영역 확보를 위해 텍스트 크기(13px) 및 gap 조정 */}
                 <nav className="mb-6 md:mb-6 flex flex-wrap items-center gap-x-4 md:gap-x-6 gap-y-2">
-                    {policyLinks.map((l) => (
-                        <Link
-                            key={l.href}
-                            href={l.href}
-                            className="text-[13px] md:text-[12px] font-semibold text-white transition-colors hover:text-white/70"
-                        >
-                            {l.name}
-                        </Link>
-                    ))}
+                    <button
+                        type="button"
+                        className="text-[13px] md:text-[12px] font-semibold text-white transition-colors hover:text-white/70"
+                        onClick={() => setIsPrivacyOpen(true)}
+                    >
+                        개인정보 취급방침
+                    </button>
                 </nav>
 
                 {/* #STYLE: 모바일 세로 배치 시 위계 구분을 위해 첫 번째 항목(상호명) 폰트 가중치 추가 */}
@@ -51,6 +48,8 @@ export default function Footer() {
                     COPYRIGHT (C) 2026 GIDEON DENTAL CLINIC ALL RIGHTS RESERVED. MADE BY 바이오애드랩.
                 </p>
             </div>
+
+            {isPrivacyOpen && <PrivacyPolicyModal onClose={() => setIsPrivacyOpen(false)} />}
         </footer>
     );
 }

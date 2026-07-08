@@ -2,15 +2,47 @@
 
 import React, { useState } from 'react';
 import SectionHeading from './common/SectionHeading';
+import PrivacyPolicyModal from './common/PrivacyPolicyModal';
 
 export default function AskForm() {
     const [isChecked, setIsChecked] = useState(false);
+    const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitMessage, setSubmitMessage] = useState('');
+    const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | ''>('');
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!isChecked) {
             alert('개인정보취급방침에 동의해주세요.');
             return;
+        }
+
+        setIsSubmitting(true);
+        setSubmitMessage('');
+        setSubmitStatus('');
+
+        try {
+            const formData = new FormData(e.currentTarget);
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                body: formData,
+            });
+            const result = (await response.json()) as { success: boolean; error?: string };
+
+            if (!response.ok || !result.success) {
+                throw new Error(result.error ?? '상담 신청 전송에 실패했습니다.');
+            }
+
+            e.currentTarget.reset();
+            setIsChecked(false);
+            setSubmitStatus('success');
+            setSubmitMessage('상담 신청이 접수되었습니다. 빠르게 연락드리겠습니다.');
+        } catch (error) {
+            setSubmitStatus('error');
+            setSubmitMessage(error instanceof Error ? error.message : '상담 신청 전송에 실패했습니다.');
+        } finally {
+            setIsSubmitting(false);
         }
     };
 
@@ -34,6 +66,7 @@ export default function AskForm() {
                         </label>
                         <input
                             id="name"
+                            name="name"
                             type="text"
                             required
                             placeholder="성함을 입력해주세요."
@@ -49,6 +82,7 @@ export default function AskForm() {
                         </label>
                         <input
                             id="phone"
+                            name="phone"
                             type="tel"
                             required
                             placeholder="010-0000-0000"
@@ -64,6 +98,7 @@ export default function AskForm() {
                         </label>
                         <input
                             id="message"
+                            name="message"
                             type="text"
                             required
                             placeholder="문의하실 내용을 자유롭게 입력해주세요."
@@ -91,20 +126,35 @@ export default function AskForm() {
                 >
                     개인정보취급방침에 동의
                 </label>
-                {/* #LINK: 개인정보처리방침 페이지 경로 확인 필요 */}
-                <a href="/privacy" className="underline z-10 text-[14px] md:text-base">
+                <button
+                    type="button"
+                    className="underline z-10 text-[14px] md:text-base"
+                    onClick={() => setIsPrivacyOpen(true)}
+                >
                     [자세히 보기]
-                </a>
+                </button>
             </div>
+
+            {submitMessage && (
+                <p
+                    className={`mx-auto mb-5 max-w-[660px] rounded-2xl px-5 py-4 text-center text-sm font-bold ${
+                        submitStatus === 'success' ? 'bg-green-50 text-green-700' : 'bg-red-50 text-red-600'
+                    }`}
+                >
+                    {submitMessage}
+                </p>
+            )}
 
             <div className="flex justify-center">
                 <button
                     type="submit"
+                    disabled={isSubmitting}
                     className="flex justify-center items-center text-center text-[17px] md:text-[18px] lg:text-[20px] font-bold text-white gap-[10px] bg-green-600 py-[14px] md:py-[16px] px-[48px] md:px-[65px] rounded-[33px] hover:bg-[#233b32] transition-colors"
                 >
-                    상담 신청하기 <span>&gt;</span>
+                    {isSubmitting ? '전송 중...' : '상담 신청하기'} <span>&gt;</span>
                 </button>
             </div>
+            {isPrivacyOpen && <PrivacyPolicyModal onClose={() => setIsPrivacyOpen(false)} />}
         </form>
     );
 }

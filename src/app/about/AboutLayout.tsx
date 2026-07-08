@@ -88,8 +88,8 @@ export default function AboutLayout({ activeSection }: AboutLayoutProps) {
                         <div className="w-full md:w-[45%] shrink-0">
                             <div className="overflow-hidden rounded-[20px] shadow-sm">
                                 <img
-                                    src="/images/story.jpg"
-                                    alt="기드온치과 진료 철학을 보여주는 손 맞잡은 이미지"
+                                    src="/images/story.png"
+                                    alt="기드온치과 진료 철학을 보여주는 원장님 이미지"
                                     className="w-full h-auto object-cover aspect-[4/5]"
                                 />
                             </div>

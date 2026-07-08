@@ -63,10 +63,10 @@ export default function LocationSections() {
                                     </h3>
                                 </div>
                                 <p className="text-[19px] md:text-[24px] text-[#3d3e3c] tracking-[-0.03em] font-bold block mb-3 md:mb-[18px]">
-                                    031-XXXX-XXXX
+                                    1522-7528
                                 </p>
                                 <a
-                                    href="tel:031-0000-0000"
+                                    href="tel:1522-7528"
                                     className="inline-block text-[16px] md:text-[20px] font-bold py-2 md:py-[9px] px-5 md:px-[25px] rounded-[33px] mt-2 md:mt-[16px] border border-green-600 bg-[#F4F1EA]"
                                 >
                                     전화 걸기

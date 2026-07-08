@@ -36,6 +36,28 @@ export default function ColumnPage() {
                     <ColumnList />
                 </div>
             </section>
+
+            <a
+                href="https://blog.naver.com/pauls2001n"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="fixed bottom-5 left-3 right-[86px] z-40 flex items-center justify-between gap-3 rounded-full border border-[#DCEFE4] bg-white/95 px-4 py-3 shadow-[0_10px_30px_rgba(0,0,0,0.14)] backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-[#03C75A] md:bottom-10 md:left-6 md:right-auto md:w-[280px] md:rounded-[24px] md:px-5 md:py-5"
+            >
+                <div className="min-w-0">
+                    <span className="inline-flex rounded-full bg-[#03C75A] px-3 py-1 text-[10px] font-extrabold tracking-[0.08em] text-white">
+                        NAVER BLOG
+                    </span>
+                    <strong className="mt-1.5 block truncate text-[15px] font-bold text-green-900 md:mt-3 md:break-keep md:text-[19px]">
+                        네이버 블로그 바로가기
+                    </strong>
+                    <span className="hidden text-sm font-medium leading-[1.6] text-ink-500 md:mt-2 md:block">
+                        더 다양한 치료 정보와 병원 소식을 확인해보세요.
+                    </span>
+                </div>
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-green-600 text-sm font-bold text-white md:h-11 md:w-11">
+                    &gt;
+                </span>
+            </a>
         </main>
     );
 }

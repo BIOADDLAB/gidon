@@ -31,8 +31,7 @@ export default function MapSection() {
                             <h3 className="font-semibold text-green-600 w-16 md:w-20 shrink-0 text-[15px] md:text-base">
                                 문의 전화
                             </h3>
-                            {/* #LINK: 실제 전화번호 교체 필요 */}
-                            <p className="text-ink-900 text-[15px] md:text-[17px] lg:text-[18px]">00-000-0000</p>
+                            <p className="text-ink-900 text-[15px] md:text-[17px] lg:text-[18px]">1522-7528</p>
                         </li>
 
                         <li className="flex gap-6 md:gap-14.25 pb-3 md:pb-3.75 border-b border-[#3C3C3C] mb-3 md:mb-3.75">

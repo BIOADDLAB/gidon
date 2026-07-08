@@ -2,6 +2,11 @@
 
 import { useState } from 'react';
 
+const PHONE_NUMBER = '1522-7528';
+const NAVER_RESERVATION_URL =
+    'https://map.naver.com/p/entry/place/2054269887?c=15.00,0,0,0,dh&placePath=%2Fhome%3Ffrom%3Dmap%26fromPanelNum%3D1%26additionalHeight%3D76%26timestamp%3D202607081735%26locale%3Dko%26svcName%3Dmap_pcv5';
+const KAKAO_CHANNEL_URL = 'http://pf.kakao.com/_xisgFE';
+
 export default function FloatingBanner() {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -15,36 +20,8 @@ export default function FloatingBanner() {
                         : 'opacity-0 transform translate-y-4 pointer-events-none h-0 overflow-hidden'
                 }`}
             >
-                {/* #LINK: 챗봇 URL 연결 필요 */}
-                {/* #STYLE: 모바일 버튼 높이/패딩 축소, 텍스트 줄바꿈 방지 */}
                 <a
-                    href="#"
-                    className="flex items-center w-full h-[42px] md:h-[55px] bg-[#233a31] text-white rounded-full shadow-lg hover:bg-[#192b24] transition-all px-3 md:px-5 gap-2 md:gap-3 group"
-                >
-                    <img
-                        src="/images/i_flo_01.svg"
-                        alt=""
-                        className="w-[20px] md:w-[30px] shrink-0 object-contain opacity-95 group-hover:scale-105 transition-transform"
-                    />
-                    <span className="text-[12px] md:text-[14px] font-bold whitespace-nowrap">챗봇</span>
-                </a>
-
-                {/* #LINK: 실제 전화번호 교체 필요 */}
-                <a
-                    href="tel:032-564-2875"
-                    className="flex items-center w-full h-[42px] md:h-[55px] bg-[#233a31] text-white rounded-full shadow-lg hover:bg-[#192b24] transition-all px-3 md:px-5 gap-2 md:gap-3 group"
-                >
-                    <img
-                        src="/images/i_flo_02.svg"
-                        alt=""
-                        className="w-[20px] md:w-[30px] shrink-0 object-contain opacity-95 group-hover:scale-105 transition-transform"
-                    />
-                    <span className="text-[12px] md:text-[14px] font-bold whitespace-nowrap">상담예약</span>
-                </a>
-
-                {/* #LINK: 네이버 예약 실제 URL 교체 필요 */}
-                <a
-                    href="https://booking.naver.com"
+                    href={NAVER_RESERVATION_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center w-full h-[42px] md:h-[55px] bg-[#233a31] text-white rounded-full shadow-lg hover:bg-[#192b24] transition-all px-3 md:px-5 gap-2 md:gap-3 group"
@@ -57,9 +34,8 @@ export default function FloatingBanner() {
                     <span className="text-[12px] md:text-[14px] font-bold whitespace-nowrap">네이버예약</span>
                 </a>
 
-                {/* #LINK: 카카오 채널 실제 URL 교체 필요 */}
                 <a
-                    href="https://kakao.com"
+                    href={KAKAO_CHANNEL_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center w-full h-[42px] md:h-[55px] bg-[#233a31] text-white rounded-full shadow-lg hover:bg-[#192b24] transition-all px-3 md:px-5 gap-2 md:gap-3 group"
@@ -74,7 +50,7 @@ export default function FloatingBanner() {
             </div>
 
             {/* #STYLE: 메인 버튼 2개(예약/토글) — 모바일은 flex-col(세로), md부터 flex-row(가로)
-                모바일 세로 정렬 시 펼침 메뉴(챗봇~카카오채널)와 동선이 이어지도록 토글 버튼을 위, 예약 버튼을 아래로 배치
+                모바일 세로 정렬 시 펼침 메뉴와 동선이 이어지도록 토글 버튼을 위, 예약 버튼을 아래로 배치
                 md 이상 가로 정렬에서는 기존처럼 예약이 왼쪽(먼저) 오도록 order로 위치만 되돌림 */}
             <div className="flex flex-col md:flex-row items-end md:items-center gap-2.5 md:gap-4">
                 <button
@@ -94,9 +70,8 @@ export default function FloatingBanner() {
                     )}
                 </button>
 
-                {/* #LINK: 실제 전화번호 교체 필요 */}
                 <a
-                    href="tel:032-564-2875"
+                    href={`tel:${PHONE_NUMBER}`}
                     className="order-2 md:order-1 flex flex-col items-center justify-center w-[54px] md:w-[75px] h-[54px] md:h-[75px] bg-[#233a31] text-white rounded-full shadow-xl hover:bg-[#192b24] transition-all active:scale-95"
                 >
                     <img
