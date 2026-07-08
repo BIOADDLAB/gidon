@@ -4,6 +4,7 @@
     --font-sans: var(--font-sans), -apple-system, sans-serif;
     --font-ui: var(--font-ui), sans-serif;
     --font-accent: var(--font-accent), serif;
+    --font-hero: var(--font-hero), serif;
 
     --color-green-900: #19261e;
     --color-green-600: #2c4a3e;

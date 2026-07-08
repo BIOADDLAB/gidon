@@ -234,7 +234,7 @@ export default function AboutLayout({ activeSection }: AboutLayoutProps) {
             <LocationSections />
 
             {/* 자주 묻는 질문 */}
-            <FaqSection isBg={false} />
+            <FaqSection isBg={true} />
 
             {/* 4. 둘러보기 섹션 */}
             <div id="tour" className="scroll-mt-20">

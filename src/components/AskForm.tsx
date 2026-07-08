@@ -47,14 +47,14 @@ export default function AskForm() {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            {/* #STYLE: max-w 대화면 확장, 모바일 패딩 조정 */}
-            <div className="bg-white max-w-[860px] 2xl:max-w-[1020px] mx-auto mb-[30px] md:mb-[40px] pt-[30px] md:pt-[40px] pb-[50px] md:pb-[68px] rounded-[10px]">
-                <SectionHeading
-                    topTitle="Consultation"
-                    centerTitle="간단 문의하기"
-                    desc="궁금한 점을 남겨주시면 정성을 다해 답변해 드리겠습니다."
-                />
+        <>
+            <form onSubmit={handleSubmit}>
+                <div className="bg-white max-w-[860px] 2xl:max-w-[1020px] mx-auto mb-[30px] md:mb-[40px] pt-[30px] md:pt-[40px] pb-[50px] md:pb-[68px] rounded-[10px]">
+                    <SectionHeading
+                        topTitle="Consultation"
+                        centerTitle="간단 문의하기"
+                        desc="궁금한 점을 남겨주시면 정성을 다해 답변해 드리겠습니다."
+                    />
 
                 <div className="max-w-[660px] 2xl:max-w-[780px] mx-auto mt-[50px] md:mt-[70px] px-4 md:px-0">
                     <div className="mb-[30px] md:mb-[40px]">

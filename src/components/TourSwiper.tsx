@@ -40,7 +40,7 @@ export default function TourSwiper() {
                 {tourImages.map((src, idx) => (
                     <SwiperSlide key={idx} className="w-full h-full relative">
                         {/* #STYLE: 이미지 가독성을 높이기 위한 오버레이 레이어 추가 */}
-                        <div className="absolute inset-0 bg-[rgba(87,87,87,0.4)] z-10" />
+                        <div className="absolute inset-0 bg-[rgba(87,87,87,0)] z-10" />
 
                         <img
                             src={src}
@@ -53,28 +53,28 @@ export default function TourSwiper() {
 
             <div className="absolute inset-x-0 bottom-[40px] md:bottom-[60px] lg:bottom-[80px] z-20 w-full border-y border-white/40 h-[70px] md:h-[90px] flex items-center">
                 <div className="w-full max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-4 md:px-6 flex items-center justify-between text-white">
-                    <h3 className="text-[20px] md:text-[26px] lg:text-[30px] 2xl:text-[34px] font-bold select-none">
+                    <h3 className="text-[20px] md:text-[26px] lg:text-[30px] 2xl:text-[34px] font-bold select-none text-shadow-md">
                         기드온치과 둘러보기
                     </h3>
 
-                    <div className="flex items-center gap-[24px] md:gap-[40px]">
+                    <div className="flex items-center gap-[px] md:gap-[40px]">
                         <div className="flex items-center">
                             <button
                                 type="button"
-                                className="swiper-button-prev-custom flex items-center justify-center text-[20px] md:text-[22px] font-light opacity-80 hover:opacity-100 transition-opacity focus:outline-none w-8 h-8"
+                                className="swiper-button-prev-custom flex items-center justify-center text-[20px] md:text-[22px] font-light opacity-80 hover:opacity-100 transition-opacity focus:outline-none w-8 h-8 text-shadow-md"
                             >
                                 <span>←</span>
                             </button>
 
                             <button
                                 type="button"
-                                className="swiper-button-next-custom flex items-center justify-center text-[20px] md:text-[22px] font-light opacity-80 hover:opacity-100 transition-opacity focus:outline-none w-8 h-8"
+                                className="swiper-button-next-custom flex items-center justify-center text-[20px] md:text-[22px] font-light opacity-80 hover:opacity-100 transition-opacity focus:outline-none w-8 h-8 text-shadow-md"
                             >
                                 <span>→</span>
                             </button>
                         </div>
 
-                        <div className="text-[16px] md:text-[18px] font-light tracking-wider min-w-[50px] text-right opacity-90 select-none">
+                        <div className="text-[16px] md:text-[18px] font-light tracking-wider min-w-[50px] text-right opacity-90 select-none text-shadow-md">
                             <span>{currentIndex}</span>
                             <span className="mx-1 text-[13px] md:text-[15px] opacity-60">/</span>
                             <span className="text-[14px] md:text-[16px] opacity-70">{tourImages.length}</span>

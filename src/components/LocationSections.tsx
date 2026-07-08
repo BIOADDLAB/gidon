@@ -27,7 +27,7 @@ export default function LocationSections() {
                             />
                         </div>
 
-                        <div className="w-full lg:flex-1 border border-green-600 rounded-[10px] flex flex-col justify-between bg-white shrink-0">
+                        <div className="w-full lg:flex-1 border border-green-600 rounded-[10px] flex flex-col justify-between bg-[#f9faf5] shrink-0">
                             <div className="p-6 md:p-[45px] flex-1">
                                 <div className="flex items-center gap-2 pb-2 mb-3 md:mb-4">
                                     <span className="w-[28px] h-[28px] md:w-[33px] md:h-[33px] bg-green-600 rounded-full flex items-center justify-center shrink-0">
@@ -77,6 +77,23 @@ export default function LocationSections() {
                 </div>
             </section>
 
+            <section className="relative w-full pt-[60px] pb-[80px] md:pt-[100px] md:pb-[130px]">
+                {/* #STYLE: 고정폭 w-[1140px]를 max-w 제약으로 변경하고 px-4를 주어 가로폭이 터지는 현상 원천 방어 */}
+                <div className="w-full max-w-[1140px] px-4 mx-auto">
+                    <Image
+                        src="/images/bg_location.jpg"
+                        alt="배경 이미지"
+                        fill
+                        sizes="100vw"
+                        className="object-cover object-center -z-10"
+                    />
+                    <SectionHeading topTitle="MAP" centerTitle="지도에서 바로 확인하기" isWhite={true} />
+
+                    {/* 구글지도영역 */}
+                    {/* #STYLE: 모바일 화면에서 지도가 너무 거대해져 발생하는 스크롤 가로막기 현상을 방지하기 위해 높이 및 상단 마진 반응형 조율 */}
+                    <div className="w-full h-[300px] sm:h-[380px] md:h-[456px] bg-[#D9D9D9] rounded-[10px] mt-8 md:mt-[58px]"></div>
+                </div>
+            </section>
             <section className="relative w-full pt-[70px] pb-[90px] md:pt-[90px] md:pb-[110px] lg:pt-[100px] lg:pb-[130px]">
                 <Image
                     src="/images/bg_info.jpg"

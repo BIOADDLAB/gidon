@@ -1,4 +1,3 @@
-// app/guide/senior/page.tsx
 'use client';
 
 import Image from 'next/image';
@@ -125,7 +124,6 @@ export default function SeniorPage() {
                     className="object-cover object-center -z-20"
                 />
 
-                {/* #STYLE: 시안의 그라디언트를 유지하면서 뒤의 할머니 할아버지 배경이 투과되도록 opacity-70 속성 추가 장착 */}
                 <div
                     className="absolute inset-0 -z-10 opacity-40"
                     style={{ backgroundImage: 'linear-gradient(180deg, #F9F9F9 0%, #8F8F8F 100%)' }}
@@ -134,9 +132,21 @@ export default function SeniorPage() {
                 <SectionHeading
                     topTitle="Senior Porcelain Veneers"
                     centerTitle="시니어 라미네이트"
-                    desc={`치아 표면을 미세하게 정리하고\n친환경 재료를 붙여 치아를 바르고 튼튼하게 만드는 치료입니다.\n노화로 인해 깨지거나 벌어진 치아 모양을 바로잡아\n건강하고 환한 미소를 되찾아 드립니다.`}
+                    desc={
+                        <>
+                            치아 표면을 미세하게 정리하고
+                            <br className="hidden min-[360px]:block md:hidden" /> 친환경 재료를 붙여
+                            <br className="hidden md:block" /> 치아를 바르고
+                            <br className="hidden min-[360px]:block md:hidden" /> 튼튼하게 만드는 치료입니다.
+                            <br className="hidden md:block" />
+                            <br className="hidden min-[360px]:block md:hidden" />
+                            <br className="hidden min-[360px]:block md:hidden" />
+                            노화로 인해 깨지거나 벌어진 치아 모양을
+                            <br className="hidden min-[360px]:block md:hidden" /> 바로잡아 건강하고 환한 미소를 되찾아
+                            드립니다.
+                        </>
+                    }
                     isDesc={true}
-                    isLh={true}
                 />
             </section>
             <SpecialSection
