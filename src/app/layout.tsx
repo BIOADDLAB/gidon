@@ -6,12 +6,22 @@ import './globals.css';
 import SiteChrome from '@/components/layout/SiteChrome';
 
 export const metadata: Metadata = {
+    metadataBase: new URL('https://www.gideondental.com'),
     title: '기드온치과 | 바른 마음과 정직한 진료',
     description: '흔들리지 않는 판단, 끝까지 지키는 약속. 모란역 4번 출구 도보 1분 기드온치과입니다.',
+    alternates: {
+        canonical: '/',
+    },
+    verification: {
+        google: 'NaamOcxQHaC-LfwRngAj30AxlaFVUWjQ1LrTq3nXEM0',
+        other: {
+            'naver-site-verification': '89a7f95f37d653673e94cbe126030a93a652458b',
+        },
+    },
     openGraph: {
         title: '기드온치과',
         description: '흔들리지 않는 판단, 끝까지 지키는 약속. 정직하고 투명하게 진료합니다.',
-        url: 'gidon-two.vercel.app',
+        url: '/',
         siteName: '기드온치과',
         images: [
             {
