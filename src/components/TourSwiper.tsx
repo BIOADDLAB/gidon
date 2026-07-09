@@ -19,6 +19,13 @@ export default function TourSwiper() {
         '/images/img_tour_03.jpg',
         '/images/img_tour_04.jpg',
         '/images/img_tour_05.jpg',
+        '/images/img_tour_06.jpg',
+        '/images/img_tour_07.jpg',
+        '/images/img_tour_08.jpg',
+        '/images/img_tour_09.jpg',
+        '/images/img_tour_10.jpg',
+        '/images/img_tour_11.jpg',
+        '/images/img_tour_12.jpg',
     ];
 
     return (
