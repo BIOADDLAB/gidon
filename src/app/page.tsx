@@ -13,6 +13,7 @@ import 'swiper/css/pagination';
 import Image from 'next/image';
 import SectionHeading from '@/components/common/SectionHeading';
 import PhilosophyStats from '@/components/common/PhilosophyStats';
+import Link from 'next/link';
 
 export default function Home() {
     const [activeSection, setActiveSection] = useState('hero');
@@ -329,13 +330,13 @@ export default function Home() {
                 </div>
 
                 <div className="flex justify-center items-center pt-14 md:pt-25 px-4">
-                    <button
-                        type="button"
+                    <Link
+                        href="/guide/ai-navigation"
                         className="flex items-center justify-center gap-2 py-3.5 px-6 md:p-4 md:px-8 rounded-full bg-[#2C4A3E] text-white text-base md:text-xl hover:bg-[#192b24] transition-colors shadow-md"
                     >
                         <span>진료과목 자세히보기</span>
-                        <img src="/images/right_arr_white.svg" alt="" className="w-4 h-4" />
-                    </button>
+                        <img src="/images/right_arr_white.svg" alt="" aria-hidden="true" className="w-4 h-4" />
+                    </Link>
                 </div>
             </div>
 

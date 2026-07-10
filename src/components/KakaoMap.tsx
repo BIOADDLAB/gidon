@@ -21,17 +21,17 @@ export default function KakaoMap() {
                     priority={false}
                 />
                 {/* #STYLE: 모바일 left/bottom 여백 축소, 버튼 텍스트 줄바꿈 방지(whitespace-nowrap) */}
-                <div className="absolute right-[16px] bottom-[16px] flex flex-col items-end justify-center gap-2 md:right-[24px] md:bottom-[24px]">
+                <div className="absolute right-[16px] bottom-[16px] flex flex-col items-end justify-center gap-2 md:right-[24px]  md:bottom-[24px]">
                     <a
                         href={NAVER_MAP_URL}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-1 p-2 border border-black rounded-[7px] bg-white whitespace-nowrap"
+                        className="flex items-center  justify-center gap-1 border border-black w-[126px] h-[38px] rounded-[7px] bg-white whitespace-nowrap"
                     >
                         <img
                             src="/images/common/i_map_naver.svg"
                             alt="네이버지도 아이콘"
-                            className="block w-[24px] md:w-[30px] h-auto"
+                            className="block w-auto  h-[22px]"
                         />
                         <span className="text-[12px] md:text-[13px] font-semibold">네이버지도로 보기</span>
                     </a>
@@ -39,12 +39,12 @@ export default function KakaoMap() {
                         href={GOOGLE_MAP_URL}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-1 p-2 border border-black rounded-[7px] bg-white whitespace-nowrap"
+                        className="flex items-center  border border-black w-[126px] h-[38px] gap-1 justify-center rounded-[7px] bg-white whitespace-nowrap"
                     >
                         <img
                             src="/images/common/i_map_google.svg"
                             alt="구글지도 아이콘"
-                            className="block w-[24px] md:w-[30px] h-[24px] md:h-[30px]"
+                            className="block w-auto  h-[22px]"
                         />
                         <span className="text-[12px] md:text-[13px] font-semibold">구글지도로 보기</span>
                     </a>
