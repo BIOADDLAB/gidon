@@ -58,7 +58,7 @@ export default function RecommendSection({
         <section className="relative w-full pt-[70px] md:pt-[100px] 2xl:pt-[130px] pb-[90px] md:pb-[130px] 2xl:pb-[160px] overflow-hidden flex flex-col items-center">
             <Image
                 src="/images/bg_reco.jpg"
-                alt="기드온치과 임플란트 추천 대상 배경"
+                alt=""
                 fill
                 priority
                 sizes="100vw"
@@ -86,11 +86,7 @@ export default function RecommendSection({
                                     backgroundRepeat: 'repeat-x',
                                 }}
                             >
-                                <img
-                                    src={card.iconSrc}
-                                    className="w-[22px] md:w-[25px] block mb-4 md:mb-5"
-                                    alt="추천 대상 치아 아이콘"
-                                />
+                                <img src={card.iconSrc} className="w-[22px] md:w-[25px] block mb-4 md:mb-5" alt="" />
                                 <strong className="text-[20px] min-[830px]:text-[23px] lg:text-[25px] 2xl:text-[28px] font-bold leading-snug whitespace-pre-line break-keep">
                                     {card.title}
                                 </strong>

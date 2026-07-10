@@ -18,28 +18,28 @@ export default function TScanPage() {
             cardTitle: '컴퓨터 분석으로 \n맞물림을 눈으로 확인',
             cardDesc: '치아 표면만 미세하게 정리하여 \n시린 증상 없이 안전하게 치료합니다.',
             specialSrc: '/images/i_special_8.svg',
-            specialAlt: '치아 아이콘',
+            specialAlt: '',
         },
         {
             id: 2,
             cardTitle: '치아 하나하나 \n씹는 힘을 고르게 조절',
             cardDesc: '특정 치아에만 힘이 쏠리지 않도록 \n전체 치아를 균형 있게 지켜줍니다.',
             specialSrc: '/images/i_special_9.svg',
-            specialAlt: '임플란트 아이콘',
+            specialAlt: '',
         },
         {
             id: 3,
             cardTitle: '자연 치아와 임플란트 \n파손 걱정 없이 오래 사용',
             cardDesc: '맞물림 균형을 맞춰, 치아가 깨지거나 \n임플란트가 망가지는 것을 예방합니다.',
             specialSrc: '/images/i_special_10.svg',
-            specialAlt: '임플란트 아이콘',
+            specialAlt: '',
         },
         {
             id: 4,
             cardTitle: '보철물 수명은 늘리고 \n시림 증상은 줄여줌',
             cardDesc: '보철물의 수명을 늘려주고 \n치아 시림 증상도 개선해줍니다.',
             specialSrc: '/images/i_special_11.svg',
-            specialAlt: '임플란트 아이콘',
+            specialAlt: '',
         },
     ];
 
@@ -79,7 +79,7 @@ export default function TScanPage() {
             description:
                 '컴퓨터 분석 시스템을 통해 눈에 보이지 않는 치아의 \n맞물림 압력과 불균형한 위치를 정확하게 찾아냅니다.',
             imgSrc: '/images/pro_item_10.jpg',
-            imgAlt: '기드온치과 티스캔 교합관리 정밀 진단 과정',
+            imgAlt: '성남임플란트 기드온치과 티스캔 교합관리 정밀 진단 과정',
         },
         {
             stepNumber: 2,
@@ -87,14 +87,14 @@ export default function TScanPage() {
             description:
                 '검사 결과를 바탕으로 과도하게 힘을 받는 치아 표면을 \n다듬어, 전체적인 씹는 힘을 고르게 분산시킵니다.',
             imgSrc: '/images/pro_item_4.jpg',
-            imgAlt: '기드온치과 티스캔 교합관리 미세 조절 과정',
+            imgAlt: '성남임플란트 기드온치과 티스캔 교합관리 미세 조절 과정',
         },
         {
             stepNumber: 3,
             title: '정기적인 사후 관리로 튼튼하게 유지',
             description: '정기적인 검진을 통해 균형 잡힌 \n치아 건강을 오래 쓰도록 관리합니다.',
             imgSrc: '/images/pro_item_12.jpg',
-            imgAlt: '기드온치과 티스캔 교합관리 사후 관리 과정',
+            imgAlt: '성남임플란트 기드온치과 티스캔 교합관리 사후 관리 과정',
         },
     ];
 
@@ -130,7 +130,7 @@ export default function TScanPage() {
                     </>
                 }
                 imageSrc="/images/tech_img_4.png"
-                imageAlt="기드온치과 티스캔 장비 이미지"
+                imageAlt=""
                 imgClass="w-[230px] sm:w-[300px] md:w-[380px] lg:w-[440px] aspect-[180/91]"
                 isMargin="mt-[40px] md:mt-[60px] mb-[30px] md:mb-[50px]"
             />

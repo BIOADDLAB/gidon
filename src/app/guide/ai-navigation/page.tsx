@@ -18,28 +18,28 @@ export default function AiNavigationPage() {
             cardDesc:
                 '3D 정밀 검사를 통해 잇몸뼈와 \n치아 상태를 꼼꼼히 확인하고, \n환자분에게 맞는 치료 계획을 세웁니다.',
             specialSrc: '/images/i_special_1.svg',
-            specialAlt: '치아 아이콘',
+            specialAlt: '',
         },
         {
             id: 2,
             cardTitle: '더욱 정확한 \n임플란트 수술',
             cardDesc: '미리 계획한 위치에 정확하게 \n식립하여 더욱 안정적이고 \n자연스러운 결과를 추구합니다.',
             specialSrc: '/images/i_special_2.svg',
-            specialAlt: '임플란트 아이콘',
+            specialAlt: '',
         },
         {
             id: 3,
             cardTitle: '통증과 부담은 \n줄이고',
             cardDesc: '불필요한 절개를 최소화하여 \n출혈과 붓기, 회복에 \n대한 부담을 줄여드립니다.',
             specialSrc: '/images/i_special_3.svg',
-            specialAlt: '임플란트 아이콘',
+            specialAlt: '',
         },
         {
             id: 4,
             cardTitle: '수술 후 관리까지 \n책임지고',
             cardDesc: '임플란트를 심는 것에서 끝나지 않고, \n오래 사용할 수 있도록 \n꾸준히 관리해드립니다.',
             specialSrc: '/images/i_special_4.svg',
-            specialAlt: '임플란트 아이콘',
+            specialAlt: '',
         },
     ];
 
@@ -78,7 +78,7 @@ export default function AiNavigationPage() {
             description:
                 '디지털 장비와 구강 검진을 통해 치아 마모도와 \n잇몸 상태를 분석하고, 안전한 맞춤 치료 계획을 세웁니다.',
             imgSrc: '/images/pro_item_9.jpg',
-            imgAlt: '정밀 진단 과정',
+            imgAlt: '성남임플란트 기드온치과 정밀 진단 과정',
         },
         {
             stepNumber: 2,
@@ -86,7 +86,7 @@ export default function AiNavigationPage() {
             description:
                 '치아를 마구 깎아내지 않고 표면만 미세하게 정리한 뒤, \n친환경 재료를 정교하게 붙여 바르고 튼튼하게 만듭니다.',
             imgSrc: '/images/pro_item_3.jpg',
-            imgAlt: '치아 정돈 과정',
+            imgAlt: '성남임플란트 기드온치과 치아 정돈 과정',
         },
         {
             stepNumber: 3,
@@ -94,7 +94,7 @@ export default function AiNavigationPage() {
             description:
                 '치료 후 잇몸이 건강하게 잘 아물었는지 확인하고, \n정기 검진을 통해 잇몸을 오래 쓰도록 관리합니다.',
             imgSrc: '/images/pro_item_6.jpg',
-            imgAlt: '최종 부착 과정',
+            imgAlt: '성남임플란트 기드온치과 최종 부착 과정',
         },
     ];
 
@@ -127,7 +127,7 @@ export default function AiNavigationPage() {
                     </>
                 }
                 imageSrc="/images/tech_img_2.png"
-                imageAlt="장비 이미지"
+                imageAlt=""
                 imgClass="w-[440px] aspect-[180/91]"
                 isMargin="mt-[60px] mb-[50px]"
             />

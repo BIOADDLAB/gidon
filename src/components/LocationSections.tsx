@@ -33,7 +33,7 @@ export default function LocationSections() {
                                     <span className="w-[28px] h-[28px] md:w-[33px] md:h-[33px] bg-green-600 rounded-full flex items-center justify-center shrink-0">
                                         <img
                                             src="/images/i_loca_m.svg"
-                                            alt="주소 아이콘"
+                                            alt=""
                                             className="w-4 h-4 md:w-5 md:h-5 object-contain"
                                         />
                                     </span>
@@ -42,7 +42,8 @@ export default function LocationSections() {
                                     </h3>
                                 </div>
                                 <p className="text-[15px] md:text-[18px] text-[#3d3e3c] font-medium leading-relaxed tracking-[-0.03em] break-keep">
-                                    경기도 성남시 중원구 성남대로 1126, 메가프라자 3층
+                                    경기도 성남시 중원구 성남대로 1126, <br className="block md:hidden" />
+                                    메가프라자 3층
                                     <span className="font-normal text-[13px] md:text-[16px] text-gray-500 block mt-1 tracking-[-0.03em]">
                                         모란역 4번출구 방향 도보 2분 국민은행 건물 3층
                                     </span>
@@ -54,7 +55,7 @@ export default function LocationSections() {
                                     <span className="w-[28px] h-[28px] md:w-[33px] md:h-[33px] bg-green-600 rounded-full flex items-center justify-center shrink-0">
                                         <img
                                             src="/images/i_loca_p.svg"
-                                            alt="전화 아이콘"
+                                            alt="전화 연결하기"
                                             className="w-4 h-4 md:w-5 md:h-5 object-contain"
                                         />
                                     </span>
@@ -82,7 +83,7 @@ export default function LocationSections() {
                 <div className="w-full max-w-[1140px] px-4 mx-auto">
                     <Image
                         src="/images/bg_location.jpg"
-                        alt="배경 이미지"
+                        alt=""
                         fill
                         sizes="100vw"
                         className="object-cover object-center -z-10"
@@ -97,7 +98,7 @@ export default function LocationSections() {
             <section className="relative w-full pt-[70px] pb-[90px] md:pt-[90px] md:pb-[110px] lg:pt-[100px] lg:pb-[130px]">
                 <Image
                     src="/images/bg_info.jpg"
-                    alt="기드온치과 방문 안내 배경"
+                    alt=""
                     fill
                     sizes="100vw"
                     className="object-cover object-center -z-10"
@@ -117,7 +118,7 @@ export default function LocationSections() {
                                 <img
                                     src="/images/i_info_1.svg"
                                     className="w-[28px] h-[31px] md:w-[38px] md:h-[42px]"
-                                    alt="지하철 이용 아이콘"
+                                    alt=""
                                 />
                                 <h3 className="font-ui text-[19px] md:text-[26px] font-bold text-white">지하철 이용</h3>
                             </div>
@@ -146,7 +147,7 @@ export default function LocationSections() {
                                 <img
                                     src="/images/i_info_2.svg"
                                     className="w-[28px] h-[31px] md:w-[38px] md:h-[42px]"
-                                    alt="버스 이용 아이콘"
+                                    alt=""
                                 />
                                 <h3 className="font-ui text-[19px] md:text-[26px] font-bold text-white">버스 이용</h3>
                             </div>
@@ -164,7 +165,7 @@ export default function LocationSections() {
                                 <img
                                     src="/images/i_info_3.svg"
                                     className="w-[28px] h-[31px] md:w-[38px] md:h-[42px]"
-                                    alt="진료 시간 안내 아이콘"
+                                    alt=""
                                 />
                                 <h3 className="font-ui text-[19px] md:text-[26px] font-bold text-white">
                                     진료 시간 안내
@@ -205,7 +206,7 @@ export default function LocationSections() {
                                 <img
                                     src="/images/i_info_4.svg"
                                     className="w-[28px] h-[31px] md:w-[38px] md:h-[42px]"
-                                    alt="주차 안내 아이콘"
+                                    alt=""
                                 />
                                 <h3 className="font-ui text-[19px] md:text-[26px] font-bold text-white">주차 안내</h3>
                             </div>

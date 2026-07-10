@@ -51,7 +51,7 @@ export default function TourSwiper() {
 
                         <img
                             src={src}
-                            alt={`기드온치과 인테리어 ${idx + 1}`}
+                            alt={`성남임플란트 기드온치과 내부 전경`}
                             className="w-full h-full object-cover object-center"
                         />
                     </SwiperSlide>

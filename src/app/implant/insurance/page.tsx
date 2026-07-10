@@ -49,7 +49,7 @@ export default function InsurancePage() {
                             <img
                                 src="/images/i_insu_1.svg"
                                 className="w-[58px] md:w-[74px] mb-3 md:mb-4 block"
-                                alt="보험 임플란트 적용대상 아이콘"
+                                alt=""
                             />
                             <h4 className="text-[20px] md:text-[25px] font-bold text-[#233a31] mb-2 md:mb-3">
                                 적용대상
@@ -63,7 +63,7 @@ export default function InsurancePage() {
                             <img
                                 src="/images/i_insu_2.svg"
                                 className="w-[58px] md:w-[74px] mb-3 md:mb-4 block"
-                                alt="보험 임플란트 지원내용 아이콘"
+                                alt=""
                             />
                             <h4 className="text-[20px] md:text-[25px] font-bold text-[#233a31] mb-2 md:mb-3">
                                 지원내용
@@ -77,7 +77,7 @@ export default function InsurancePage() {
                             <img
                                 src="/images/i_insu_3.svg"
                                 className="w-[58px] md:w-[74px] mb-3 md:mb-4 block"
-                                alt="보험 임플란트 적용개수 아이콘"
+                                alt=""
                             />
                             <h4 className="text-[20px] md:text-[25px] font-bold text-[#233a31] mb-2 md:mb-3">
                                 적용개수

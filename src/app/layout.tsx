@@ -7,8 +7,9 @@ import SiteChrome from '@/components/layout/SiteChrome';
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://www.gideondental.com'),
-    title: '기드온치과 | 바른 마음과 정직한 진료',
-    description: '흔들리지 않는 판단, 끝까지 지키는 약속. 모란역 4번 출구 도보 1분 기드온치과입니다.',
+    title: '성남임플란트 기드온치과 | 바른 마음과 정직한 진료',
+    description:
+        '성남임플란트 잘하는 기드온치과입니다. 흔들리지 않는 판단, 끝까지 지키는 약속. 모란역 4번 출구 도보 1분 거리에 위치하고 있으며 정직하고 투명하게 진료합니다.',
     alternates: {
         canonical: '/',
     },
@@ -19,8 +20,9 @@ export const metadata: Metadata = {
         },
     },
     openGraph: {
-        title: '기드온치과',
-        description: '흔들리지 않는 판단, 끝까지 지키는 약속. 정직하고 투명하게 진료합니다.',
+        title: '성남임플란트 기드온치과 | 바른 마음과 정직한 진료',
+        description:
+            '성남임플란트 잘하는 기드온치과입니다. 흔들리지 않는 판단, 끝까지 지키는 약속. 모란역 4번 출구 도보 1분 거리에 위치하고 있으며 정직하고 투명하게 진료합니다.',
         url: '/',
         siteName: '기드온치과',
         images: [

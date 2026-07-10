@@ -17,28 +17,28 @@ export default function LaserPage() {
             cardTitle: '덜 아프고 편안한 \n맞춤형 잇몸 치료',
             cardDesc: '치아 표면만 미세하게 정리하여 \n시린 증상 없이 안전하게 치료합니다.',
             specialSrc: '/images/i_special_1.svg',
-            specialAlt: '치아 아이콘',
+            specialAlt: '',
         },
         {
             id: 2,
             cardTitle: '입속 나쁜 세균만 \n쏙쏙 살균 청소',
             cardDesc: '잇몸 깊은 곳에 숨은 미세 염증과 \n원인균을 뿌리째 강력하게 살균합니다.',
             specialSrc: '/images/i_special_5.svg',
-            specialAlt: '임플란트 아이콘',
+            specialAlt: '',
         },
         {
             id: 3,
             cardTitle: '붓기와 출혈을 줄여 \n빠른 일상 회복',
             cardDesc: '잇몸 세포의 재생을 부드럽게 자극하여 \n치료 후 부기 없이 빠르게 아뭅니다.',
             specialSrc: '/images/i_special_3.svg',
-            specialAlt: '임플란트 아이콘',
+            specialAlt: '',
         },
         {
             id: 4,
             cardTitle: '내 치아와 임플란트를 \n오래오래 튼튼하게',
             cardDesc: '물리적 자극 없이 안전하게 케어하여 \n자연치아와 임플란트 수명을 늘려줍니다.',
             specialSrc: '/images/i_special_7.svg',
-            specialAlt: '임플란트 아이콘',
+            specialAlt: '',
         },
     ];
 
@@ -78,7 +78,7 @@ export default function LaserPage() {
             description:
                 '디지털 장비와 구강 검진을 통해 치아와 잇몸 뼈 상태를 \n철저히 분석하고, 안전한 치료 계획을 세웁니다.',
             imgSrc: '/images/pro_item_8.jpg',
-            imgAlt: '기드온치과 물방울레이저 치주관리 정밀 진단 과정',
+            imgAlt: '성남임플란트 기드온치과 물방울레이저 치주관리 정밀 진단 과정',
         },
         {
             stepNumber: 2,
@@ -86,7 +86,7 @@ export default function LaserPage() {
             description:
                 '부드러운 물방울과 레이저 빛을 사용하여 통증 없이 \n잇몸 속 나쁜 세균과 염증만을 깨끗하게 치료합니다.',
             imgSrc: '/images/pro_item_2.jpg',
-            imgAlt: '기드온치과 물방울레이저 치료 과정',
+            imgAlt: '성남임플란트 기드온치과 물방울레이저 치료 과정',
         },
         {
             stepNumber: 3,
@@ -94,7 +94,7 @@ export default function LaserPage() {
             description:
                 '치료 후 잇몸이 건강하게 잘 아물었는지 확인하고, \n정기 검진을 통해 잇몸을 오래 쓰도록 관리합니다.',
             imgSrc: '/images/pro_item_6.jpg',
-            imgAlt: '기드온치과 물방울레이저 치주관리 사후 관리 과정',
+            imgAlt: '성남임플란트 기드온치과 물방울레이저 치주관리 사후 관리 과정',
         },
     ];
 
@@ -124,7 +124,7 @@ export default function LaserPage() {
                     </>
                 }
                 imageSrc="/images/tech_img_3.png"
-                imageAlt="기드온치과 물방울레이저 장비 이미지"
+                imageAlt=""
                 // #STYLE: 픽셀 고정값(w-[440px]) → 반응형 단계별 너비로 변경
                 imgClass="w-[230px] sm:w-[300px] md:w-[380px] lg:w-[440px] aspect-[180/91]"
                 isMargin="mt-[40px] md:mt-[60px] mb-[30px] md:mb-[50px]"

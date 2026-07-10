@@ -34,7 +34,7 @@ export default function ProcessSection({
                       title: '정밀 진단 및 상담',
                       description: '3D CT 등 디지털 장비를 활용하여\n환자의 상태를 정밀하게 분석합니다.',
                       imgSrc: '/images/common/bg_process_default.jpg',
-                      imgAlt: '기드온치과 3D CT 정밀 진단 과정',
+                      imgAlt: '성남임플란트 기드온치과 3D CT 정밀 진단 과정',
                   },
               ];
 
@@ -46,7 +46,7 @@ export default function ProcessSection({
             {isBg ? (
                 <Image
                     src="/images/bg_info.jpg"
-                    alt="기드온치과 진행과정 배경"
+                    alt=""
                     fill
                     sizes="100vw"
                     className="object-cover object-center -z-10"

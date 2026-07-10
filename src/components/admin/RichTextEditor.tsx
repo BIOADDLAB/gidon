@@ -54,15 +54,13 @@ export default function RichTextEditor({ value, onChange }: RichTextEditorProps)
                 },
             }),
             Placeholder.configure({
-                placeholder:
-                    '본문을 작성하세요. 제목, 문단, 목록, 이미지, 링크를 넣을 수 있습니다.',
+                placeholder: '본문을 작성하세요. 제목, 문단, 목록, 이미지, 링크를 넣을 수 있습니다.',
             }),
         ],
         content: value,
         editorProps: {
             attributes: {
-                class:
-                    'min-h-[560px] bg-white px-12 py-10 text-[17px] leading-9 text-ink-900 outline-none [&_.is-editor-empty:first-child::before]:float-left [&_.is-editor-empty:first-child::before]:h-0 [&_.is-editor-empty:first-child::before]:text-ink-500/45 [&_.is-editor-empty:first-child::before]:content-[attr(data-placeholder)] [&_h1]:my-6 [&_h1]:text-4xl [&_h1]:font-bold [&_h1]:leading-tight [&_h2]:my-5 [&_h2]:text-2xl [&_h2]:font-bold [&_p]:my-4 [&_ul]:my-5 [&_ul]:list-disc [&_ul]:pl-7 [&_ol]:my-5 [&_ol]:list-decimal [&_ol]:pl-7 [&_blockquote]:my-6 [&_blockquote]:border-l-4 [&_blockquote]:border-green-600 [&_blockquote]:bg-paper [&_blockquote]:py-4 [&_blockquote]:pl-5',
+                class: 'min-h-[560px] bg-white px-12 py-10 text-[17px] leading-9 text-ink-900 outline-none [&_.is-editor-empty:first-child::before]:float-left [&_.is-editor-empty:first-child::before]:h-0 [&_.is-editor-empty:first-child::before]:text-ink-500/45 [&_.is-editor-empty:first-child::before]:content-[attr(data-placeholder)] [&_h1]:my-6 [&_h1]:text-4xl [&_h1]:font-bold [&_h1]:leading-tight [&_h2]:my-5 [&_h2]:text-2xl [&_h2]:font-bold [&_p]:my-4 [&_ul]:my-5 [&_ul]:list-disc [&_ul]:pl-7 [&_ol]:my-5 [&_ol]:list-decimal [&_ol]:pl-7 [&_blockquote]:my-6 [&_blockquote]:border-l-4 [&_blockquote]:border-green-600 [&_blockquote]:bg-paper [&_blockquote]:py-4 [&_blockquote]:pl-5',
             },
         },
         onUpdate: ({ editor: nextEditor }) => {

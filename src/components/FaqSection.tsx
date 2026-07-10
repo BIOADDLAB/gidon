@@ -52,7 +52,7 @@ export default function FaqSection({ isBg = false }: FaqSectionProps) {
             {isBg ? (
                 <Image
                     src="/images/bg_green3.jpg"
-                    alt="기드온치과 자주 묻는 질문 배경"
+                    alt=""
                     fill
                     sizes="100vw"
                     className="object-cover object-center -z-10"
@@ -107,7 +107,7 @@ export default function FaqSection({ isBg = false }: FaqSectionProps) {
                                                 <div className="ml-auto shrink-0 pl-2.5 md:pl-4 pt-0.5">
                                                     <img
                                                         src={isOpen ? '/images/arr_up.png' : '/images/arr_down.png'}
-                                                        alt={isOpen ? '닫기' : '열기'}
+                                                        alt=""
                                                         className="w-[12px] md:w-[16px]"
                                                     />
                                                 </div>

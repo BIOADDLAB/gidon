@@ -352,7 +352,9 @@ function PopupManagement() {
                                 <div className="flex min-w-0 items-center gap-5">
                                     <div
                                         className="h-20 w-20 shrink-0 rounded-2xl bg-[#E8E1D3] bg-cover bg-center"
-                                        style={popup.imageUrl ? { backgroundImage: `url(${popup.imageUrl})` } : undefined}
+                                        style={
+                                            popup.imageUrl ? { backgroundImage: `url(${popup.imageUrl})` } : undefined
+                                        }
                                     />
                                     <div className="min-w-0">
                                         <div className="flex items-center gap-2">
@@ -674,9 +676,7 @@ function ColumnManagement() {
                     </div>
                     <p
                         className={`mb-4 rounded-2xl px-5 py-4 text-sm font-bold shadow-sm ${
-                            messageType === 'success'
-                                ? 'bg-green-50 text-green-700'
-                                : 'bg-red-50 text-red-600'
+                            messageType === 'success' ? 'bg-green-50 text-green-700' : 'bg-red-50 text-red-600'
                         }`}
                     >
                         {message}
@@ -701,7 +701,9 @@ function ColumnManagement() {
                                 <div
                                     key={column.id}
                                     className={`rounded-2xl border px-4 py-4 ${
-                                        editingColumn?.id === column.id ? 'border-green-600 bg-paper' : 'border-line bg-white'
+                                        editingColumn?.id === column.id
+                                            ? 'border-green-600 bg-paper'
+                                            : 'border-line bg-white'
                                     }`}
                                 >
                                     <button

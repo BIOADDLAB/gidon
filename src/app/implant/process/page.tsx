@@ -18,21 +18,21 @@ export default function ProcessPage() {
             title: '나에게 맞는 치료를 설계합니다.',
             description: '정밀 진단을 통해 구강 상태를 정확하게 파악하고 \n맞춤 치료 계획을 수립합니다.',
             imgSrc: '/images/pro_item_1.jpg',
-            imgAlt: '기드온치과 임플란트 정밀 진단 과정',
+            imgAlt: '성남임플란트 기드온치과 임플란트 정밀 진단 과정',
         },
         {
             stepNumber: 2,
             title: '안정적인 식립을 진행합니다.',
             description: '임플란트가 잇몸뼈와 단단하게 결합될 수 있도록 \n체계적으로 치료를 진행합니다.',
             imgSrc: '/images/pro_item_5.jpg',
-            imgAlt: '기드온치과 임플란트 식립 과정',
+            imgAlt: '성남임플란트 기드온치과 임플란트 식립 과정',
         },
         {
             stepNumber: 3,
             title: '건강한 미소를 완성합니다.',
             description: '자연치아와 유사한 보철물을 제작하고 \n정기적인 관리로 오래 사용할 수 있도록 돕습니다.',
             imgSrc: '/images/pro_item_6.jpg',
-            imgAlt: '기드온치과 임플란트 보철물 완성 과정',
+            imgAlt: '성남임플란트 기드온치과 임플란트 보철물 완성 과정',
         },
     ];
 
@@ -62,7 +62,7 @@ export default function ProcessPage() {
                     </>
                 }
                 imageSrc="/images/tech_img_1.png"
-                imageAlt="기드온치과 임플란트 장비 이미지"
+                imageAlt=""
                 // #STYLE: 픽셀 고정값(w-[370px]) → 반응형 단계별 너비로 변경, aspect-ratio는 유지
                 imgClass="w-[200px] sm:w-[260px] md:w-[320px] lg:w-[370px] aspect-[180/91]"
                 isMargin="mt-[40px] md:mt-[60px] mb-[30px] md:mb-[50px]"

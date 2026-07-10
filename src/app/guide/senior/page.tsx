@@ -20,28 +20,28 @@ export default function SeniorPage() {
             cardTitle: '치아 삭제를 최소화하여 \n내 치아를 안전하게 보존',
             cardDesc: '치아 표면만 미세하게 정리하여 \n시린 증상 없이 안전하게 치료합니다.',
             specialSrc: '/images/i_special_10.svg',
-            specialAlt: '치아 아이콘',
+            specialAlt: '',
         },
         {
             id: 2,
             cardTitle: '노화로 깨지고 벌어진 \n치아 모양과 배열 개선',
             cardDesc: '마모되고 틈이 벌어진 앞니를 바로잡아 \n젊고 건강한 미소를 되찾아 드립니다.',
             specialSrc: '/images/i_special_9.svg',
-            specialAlt: '임플란트 아이콘',
+            specialAlt: '',
         },
         {
             id: 3,
             cardTitle: '잇몸 라인까지 고려한 \n자연스럽고 편안한 조화',
             cardDesc: '인위적이고 과하게 하얀 치아가 아니라, \n원래 치조골과 잇몸에 맞게 제작합니다.',
             specialSrc: '/images/i_special_12.svg',
-            specialAlt: '임플란트 아이콘',
+            specialAlt: '',
         },
         {
             id: 4,
             cardTitle: '치아 본연의 기능을 살려 \n음식도 편안하게 씹도록',
             cardDesc: '단순한 미용 성형을 넘어 \n약해진 치아를 보강합니다.',
             specialSrc: '/images/i_special_11.svg',
-            specialAlt: '임플란트 아이콘',
+            specialAlt: '',
         },
     ];
 
@@ -82,7 +82,7 @@ export default function SeniorPage() {
             description:
                 '디지털 장비와 구강 검진을 통해 치아 마모도와 \n잇몸 상태를 분석하고, 안전한 맞춤 치료 계획을 세웁니다.',
             imgSrc: '/images/pro_item_9.jpg',
-            imgAlt: '기드온치과 시니어 라미네이트 정밀 진단 과정',
+            imgAlt: '성남임플란트 기드온치과 시니어 라미네이트 정밀 진단 과정',
         },
         {
             stepNumber: 2,
@@ -90,7 +90,7 @@ export default function SeniorPage() {
             description:
                 '치아를 마구 깎아내지 않고 표면만 미세하게 정리한 뒤, \n친환경 재료를 정교하게 붙여 바르고 튼튼하게 만듭니다.',
             imgSrc: '/images/pro_item_3.jpg',
-            imgAlt: '기드온치과 시니어 라미네이트 치아 보강 과정',
+            imgAlt: '성남임플란트 기드온치과 시니어 라미네이트 치아 보강 과정',
         },
         {
             stepNumber: 3,
@@ -98,7 +98,7 @@ export default function SeniorPage() {
             description:
                 '치료 후 잇몸이 건강하게 잘 아물었는지 확인하고, \n정기 검진을 통해 잇몸을 오래 쓰도록 관리합니다.',
             imgSrc: '/images/pro_item_6.jpg',
-            imgAlt: '기드온치과 시니어 라미네이트 사후 관리 과정',
+            imgAlt: '성남임플란트 기드온치과 시니어 라미네이트 사후 관리 과정',
         },
     ];
 
@@ -118,7 +118,7 @@ export default function SeniorPage() {
             <section className="relative pt-[60px] pb-[200px] md:pt-[90px] md:pb-[320px] lg:pt-[126px] lg:pb-[435px]">
                 <Image
                     src="/images/bg_senior.jpg"
-                    alt="기드온치과 시니어 라미네이트 배경"
+                    alt=""
                     fill
                     sizes="100vw"
                     className="object-cover object-center -z-20"

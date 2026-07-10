@@ -21,7 +21,7 @@ export default function AskCard() {
                         <img
                             src="/images/common/l_ask_phone.png"
                             className="w-[24px] md:w-[27px] block"
-                            alt="전화기 아이콘"
+                            alt="성남임플란트 기드온치과 전화연결하기"
                         />
                         전화걸기
                     </a>
@@ -46,11 +46,7 @@ export default function AskCard() {
                         rel="noopener noreferrer"
                         className="flex px-5 md:px-6 py-3 gap-2.5 justify-center items-center bg-paper text-[17px] md:text-[18px] lg:text-[20px] font-bold text-green-600 rounded-full border border-green-600 w-fit mx-auto"
                     >
-                        <img
-                            src="/images/common/l_ask_kakao.png"
-                            className="w-[28px] md:w-[31px] block"
-                            alt="카카오톡 아이콘"
-                        />
+                        <img src="/images/common/l_ask_kakao.png" className="w-[28px] md:w-[31px] block" alt="성남임플란트 기드온치과 채팅으로 문의하기" />
                         채팅하기
                     </a>
                 </div>

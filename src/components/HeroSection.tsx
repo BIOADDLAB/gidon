@@ -50,7 +50,7 @@ export default function HeroSection({
             {/* #STYLE: 인테리어 사진 노출 극대화를 위해 모바일 높이를 h-[260px]에서 h-[380px]로 과감히 확장, 태블릿 구간(sm:, md:) 높이도 비례하여 상향 스케일링 */}
             <Image
                 src={imgSrc}
-                alt={`기드온치과 ${pageName || '진료실'} 인테리어`}
+                alt=""
                 fill
                 priority
                 sizes="100vw"
@@ -76,7 +76,7 @@ export default function HeroSection({
                             <Link className="block p-1 shrink-0" href="/">
                                 <img
                                     src={homeIconSrc}
-                                    alt="홈 바로가기"
+                                    alt=""
                                     className="w-[20px] md:w-[24px] h-[20px] md:h-[24px] block"
                                 />
                             </Link>

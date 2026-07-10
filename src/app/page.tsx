@@ -65,6 +65,7 @@ export default function Home() {
     return (
         <div className="relative w-full">
             {/* #STYLE: 맥북(1440px) 환경에서 본문과 겹쳐 답답했던 현상을 해결하기 위해, 1600px 미만 전 구간에서 네비바를 완전히 숨김(hidden) 제어 */}
+            <h1 className="hidden">성남임플란트 기드온치과</h1>
             <div
                 className={`fixed left-12 top-1/2 -translate-y-1/2 z-40 hidden min-[1600px]:flex flex-col items-baseline transition-all duration-500 ${
                     activeSection === 'hero' || activeSection === 'map'
@@ -131,19 +132,19 @@ export default function Home() {
                             <div className="bg-[#575757] absolute w-full h-full top-0 left-0 z-1 opacity-50"></div>
                             <Image
                                 src="/images/bg_main_01_1.jpg"
-                                alt="메인 히어로 배경 이미지1"
+                                alt="성남임플란트 기드온치과 외관"
                                 fill
                                 sizes="100vw"
                                 priority
                                 className="object-cover object-center"
                             />
                             <div className="flex flex-col justify-center items-center h-full px-4 z-2 relative text-white text-center">
-                                <h1 className="text-2xl sm:text-3xl md:text-[40px] font-hero font-normal  leading-tight md:leading-6.1 break-keep  tracking-normal">
+                                <h2 className="text-2xl sm:text-3xl md:text-[40px] font-hero font-normal  leading-tight md:leading-6.1 break-keep  tracking-normal">
                                     치과를 오래 쓰는 길,
-                                </h1>
-                                <h1 className="text-2xl sm:text-3xl md:text-[40px] font-hero font-normal leading-tight mt-1 tracking-normal">
+                                </h2>
+                                <h2 className="text-2xl sm:text-3xl md:text-[40px] font-hero font-normal leading-tight mt-1 tracking-normal">
                                     기드온이 안내합니다.
-                                </h1>
+                                </h2>
                                 <p className="text-base sm:text-xl md:text-3xl mt-5 md:mt-7 font-ui opacity-90 break-keep tracking-normal">
                                     흔들리지 않는 판단, 끝까지 지키는 약속.
                                 </p>
@@ -155,18 +156,18 @@ export default function Home() {
                             <div className="bg-[#575757] absolute w-full h-full top-0 left-0 z-1 opacity-50"></div>
                             <Image
                                 src="/images/bg_main_02.jpg"
-                                alt="메인 히어로 배경 이미지2"
+                                alt="성남임플란트 기드온치과 내부"
                                 fill
                                 sizes="100vw"
                                 className="object-cover object-center"
                             />
                             <div className="flex flex-col justify-center items-center h-full px-4 z-2 relative text-white text-center tracking-normal">
-                                <h1 className="text-2xl sm:text-3xl md:text-[40px] font-hero leading-tight break-keep  tracking-normal">
+                                <h2 className="text-2xl sm:text-3xl md:text-[40px] font-hero leading-tight break-keep  tracking-normal">
                                     정해진 길로 정확하게 안내하고,
-                                </h1>
-                                <h1 className="text-2xl sm:text-3xl md:text-[40px] font-hero leading-tight mt-1 break-keep tracking-normal">
+                                </h2>
+                                <h2 className="text-2xl sm:text-3xl md:text-[40px] font-hero leading-tight mt-1 break-keep tracking-normal">
                                     치아를 오래 쓰게 하는 안정적인 치과입니다.
-                                </h1>
+                                </h2>
                                 <p className="text-base sm:text-xl md:text-3xl mt-5 md:mt-7 font-ui opacity-90 break-keep tracking-normal">
                                     흔들리지 않는 판단, 끝까지 지키는 약속.
                                 </p>
@@ -185,7 +186,7 @@ export default function Home() {
             <div id="philosophy" className="relative py-20 md:py-40 overflow-hidden">
                 <Image
                     src="/images/bg_main_03.jpg"
-                    alt="메인 히어로 배경 이미지3"
+                    alt=""
                     fill
                     sizes="100vw"
                     className="object-cover object-center -z-10 absolute top-0 left-0"
@@ -253,7 +254,11 @@ export default function Home() {
                         className="flex justify-center items-center rounded-full border font-bold border-[#233a31] gap-2 bg-white text-[#233a31] text-[14px] md:text-[15px] py-3.5 px-8 md:py-4 md:px-10 shadow-sm hover:bg-gray-50 transition-colors"
                     >
                         <span>병원철학 자세히보기</span>
-                        <img src="/images/right_arr.svg" alt="" className="w-4 h-4" />
+                        <img
+                            src="/images/right_arr.svg"
+                            alt="기드온치과소개 병원철학 영역으로 이동"
+                            className="w-4 h-4"
+                        />
                     </a>
                 </div>
             </div>

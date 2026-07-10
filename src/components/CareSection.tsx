@@ -24,7 +24,7 @@ export default function CareSection({
                 src="/images/bg_care.jpg"
                 // #STYLE: 치료 후 관리 배경 — 인테리어 분위기 이미지, 세로 중앙 기준 유지
                 // #ISSUE: 배경 사진 주요 피사체 위치에 따라 object-position 조정 필요
-                alt="기드온치과 치료 후 관리 안내 배경"
+                alt=""
                 fill
                 sizes="100vw"
                 className="object-cover object-center -z-10"
@@ -34,11 +34,7 @@ export default function CareSection({
             <div className="w-full max-w-[480px] sm:max-w-[640px] md:max-w-[923px] 2xl:max-w-[1080px] bg-[#E2E8E4] rounded-[24px] sm:rounded-[30px] overflow-hidden shadow-sm">
                 {/* 제목 영역 */}
                 <div className="bg-[#2B483C] py-3.5 sm:py-4 md:py-5 px-5 sm:px-6 flex justify-center items-center gap-3.5 sm:gap-5 md:gap-6.25">
-                    <img
-                        src="/images/common/i_tooth_w.svg"
-                        className="block w-7 sm:w-9 md:w-11.25"
-                        alt="주의사항 치아 아이콘"
-                    />
+                    <img src="/images/common/i_tooth_w.svg" className="block w-7 sm:w-9 md:w-11.25" alt="" />
                     {/* #STYLE: 타이틀 반응형 — 모바일 26px → sm(태블릿) 30px → md 34px → lg 40px → 2xl 44px, 5단계 모두 확인됨 */}
                     <h2 className="text-white text-[22px] sm:text-[30px] md:text-[34px] lg:text-[40px] 2xl:text-[44px] font-bold break-keep">
                         {title}
@@ -56,7 +52,7 @@ export default function CareSection({
                                 <div className="shrink-0 mt-1">
                                     <img
                                         src="/images/common/i_care_check.png"
-                                        alt="체크"
+                                        alt=""
                                         className="w-[18px] sm:w-[22px] md:w-[25px] h-auto block"
                                     />
                                 </div>

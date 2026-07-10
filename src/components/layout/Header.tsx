@@ -107,12 +107,12 @@ export default function Header() {
                     <Link href="/" className="flex items-center" onClick={() => setMenuOpen(false)}>
                         <img
                             src="/images/common/logo_w.svg"
-                            alt="기드온치과 로고"
+                            alt="기드온치과"
                             className={`h-8 md:h-9 ${menuOpen ? 'hidden' : 'block group-hover:hidden group-[.on]:hidden'}`}
                         />
                         <img
                             src="/images/common/logo_g.svg"
-                            alt="기드온치과 로고"
+                            alt="기드온치과"
                             className={`h-8 md:h-9 ${menuOpen ? 'block' : 'hidden group-hover:block group-[.on]:block'}`}
                         />
                     </Link>
@@ -195,12 +195,12 @@ export default function Header() {
                                 <>
                                     <img
                                         src="/images/common/l_m_ham_w.png"
-                                        alt="메뉴 열기"
+                                        alt=""
                                         className={`h-6 w-6 ${menuOpen ? 'hidden' : 'block group-hover:hidden group-[.on]:hidden'}`}
                                     />
                                     <img
                                         src="/images/common/l_m_ham_g.png"
-                                        alt="메뉴 열기"
+                                        alt=""
                                         className={`h-6 w-6 ${menuOpen ? 'block' : 'hidden group-hover:block group-[.on]:block'}`}
                                     />
                                 </>

@@ -64,7 +64,7 @@ export default function FloatingBanner() {
                     ) : (
                         <img
                             src="/images/common/l_teeth.svg"
-                            alt="퀵메뉴 열기"
+                            alt=""
                             className="w-[24px] md:w-[36px] h-[24px] md:h-[36px] block object-contain"
                         />
                     )}
