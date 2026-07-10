@@ -186,7 +186,7 @@ export default function Home() {
             <div id="philosophy" className="relative py-20 md:py-40 overflow-hidden">
                 <Image
                     src="/images/bg_main_03.jpg"
-                    alt=""
+                    alt="성남임플란트 기드온치과 진료 철학 이미지"
                     fill
                     sizes="100vw"
                     className="object-cover object-center -z-10 absolute top-0 left-0"
@@ -281,24 +281,28 @@ export default function Home() {
                             title2: '임플란트',
                             desc: '모의 시술로 오차 없이\n안전하고 아픔을 줄인\n디지털 임플란트.',
                             img: '01',
+                            alt: '성남임플란트 기드온치과 AI 네비게이션 임플란트 진료 이미지',
                         },
                         {
                             title1: '물방울 레이저',
                             title2: '치주관리',
                             desc: '드릴 소리 없이\n물방울로 치료하는\n잇몸 케어.',
                             img: '02',
+                            alt: '성남임플란트 기드온치과 물방울 레이저 치주관리 이미지',
                         },
                         {
                             title1: '티스캔',
                             title2: '교합관리',
                             desc: '씹는 힘의 균형을\n디지털 수치로\n정밀하게 맞추는 진료.',
                             img: '03',
+                            alt: '성남임플란트 기드온치과 티스캔 교합 정밀 진단 과정',
                         },
                         {
                             title1: '시니어',
                             title2: '라미네이트',
                             desc: '중장년층을 위한\n자연스럽고 품격 있는\n미소 성형.',
                             img: '04',
+                            alt: '성남임플란트 기드온치과 시니어 라미네이트 진료 이미지',
                         },
                     ].map((card, i) => (
                         <div
@@ -307,7 +311,7 @@ export default function Home() {
                         >
                             <img
                                 src={`/images/main_hover_${card.img}.jpg`}
-                                alt=""
+                                alt={card.alt}
                                 className="w-full h-auto block object-cover"
                             />
 

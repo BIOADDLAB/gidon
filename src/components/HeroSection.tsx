@@ -50,7 +50,7 @@ export default function HeroSection({
             {/* #STYLE: 인테리어 사진 노출 극대화를 위해 모바일 높이를 h-[260px]에서 h-[380px]로 과감히 확장, 태블릿 구간(sm:, md:) 높이도 비례하여 상향 스케일링 */}
             <Image
                 src={imgSrc}
-                alt=""
+                alt={`성남임플란트 기드온치과 ${mainTitle} 이미지`}
                 fill
                 priority
                 sizes="100vw"
