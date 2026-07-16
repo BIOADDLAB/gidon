@@ -1,8 +1,3 @@
-// #LINK: /components/MapSection.tsx
-// #STYLE: 진료 시간 (야간진료) 텍스트를 줄바꿈 없이 시간 바로 옆에 나란히 배치
-// #ISSUE: 반응형 줄바꿈을 제거하고 가로로 붙여서 표기하도록 원복
-
-import React from 'react';
 import KakaoMap from './KakaoMap';
 
 export default function MapSection() {
@@ -44,7 +39,7 @@ export default function MapSection() {
                                         <span aria-hidden="true">/</span>
                                         <span aria-hidden="true">목</span>
                                     </div>
-                                    <span className="text-ink-900 text-[15px]  md:text-[17px] lg:text-[18px]">
+                                    <span className="text-ink-900 text-[15px] md:text-[17px] lg:text-[18px]">
                                         09:00~20:00
                                         <br className="hidden max-[374px]:block" />
                                         <span className="ml-1 text-[15px] break-all md:text-[16.5px] font-medium">
@@ -107,6 +102,15 @@ export default function MapSection() {
                             <p className="text-ink-900 text-[15px] md:text-[17px] lg:text-[18px] break-keep leading-relaxed">
                                 모란역 4번 출구 나와서 도보 1분
                                 <br className="block md:hidden" /> 좌측 은행 건물(다이소 옆)
+                            </p>
+                        </li>
+
+                        <li className="flex gap-6 md:gap-14.25 pb-3 md:pb-3.75 border-b border-[#3C3C3C] mb-3 md:mb-3.75">
+                            <h3 className="font-semibold text-green-600 w-16 md:w-20 shrink-0 text-[15px] md:text-base">
+                                버스
+                            </h3>
+                            <p className="text-ink-900 text-[15px] md:text-[17px] lg:text-[18px] break-keep leading-relaxed">
+                                모란역 4번출구 정류장에서 도보로 들어오는 길
                             </p>
                         </li>
 
