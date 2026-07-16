@@ -17,12 +17,12 @@ export default function LocationSections() {
                     />
 
                     <div className="flex flex-col lg:flex-row justify-center items-stretch gap-4 lg:gap-[13px] mt-[40px] md:mt-[60px]">
-                        <div className="relative w-full lg:w-[452px] h-[220px] sm:h-[280px] lg:h-auto shrink-0">
+                        <div className="relative w-full lg:w-[452px] aspect-[4/3] sm:aspect-[3/2] lg:aspect-auto lg:h-auto shrink-0 bg-white rounded-[10px] overflow-hidden">
                             <Image
-                                src="/images/bg_interior_1.jpg"
+                                src="/images/map.jpeg"
                                 sizes="(max-width: 1024px) 100vw, 452px"
                                 fill
-                                className="object-cover rounded-[10px]"
+                                className="object-cover object-top lg:object-center"
                                 alt="기드온치과가 위치한 건물 외관 전경"
                             />
                         </div>
@@ -89,9 +89,18 @@ export default function LocationSections() {
                     />
                     <SectionHeading topTitle="MAP" centerTitle="지도에서 바로 확인하기" isWhite={true} />
 
-                    <div className="w-full h-[300px] sm:h-[380px] md:h-[456px] bg-[#D9D9D9] rounded-[10px] mt-8 md:mt-[58px]"></div>
+                    <div className="w-full h-[300px] sm:h-[380px] md:h-[456px] rounded-[10px] mt-8 md:mt-[58px] overflow-hidden bg-[#D9D9D9]">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m5!3m3!1m2!1s0x357ca9a1f93ed0b1%3A0xb0acb96b3571c575!2z6riw65Oc7Jio7LmY6rO8!5e0!3m2!1sko!2skr!4v1784179718829!5m2!1sko!2skr"
+                            className="w-full h-full border-0"
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="strict-origin-when-cross-origin"
+                        ></iframe>
+                    </div>
                 </div>
             </section>
+
             <section className="relative w-full pt-[70px] pb-[90px] md:pt-[90px] md:pb-[110px] lg:pt-[100px] lg:pb-[130px]">
                 <Image
                     src="/images/bg_info.jpg"
@@ -148,11 +157,43 @@ export default function LocationSections() {
                                 />
                                 <h3 className="font-ui text-[19px] md:text-[26px] font-bold text-white">버스 이용</h3>
                             </div>
-                            <div className="pt-6 md:pt-[44px] pb-5 md:pb-[32px] px-6 md:px-[50px] flex-1">
-                                <div className="flex items-center gap-3 md:gap-[14px]">
-                                    <p className="text-[14px] md:text-[20px] font-semibold text-[#302e2e] break-keep">
-                                        모란역 4번 출구 정류장 하차 후 도보 이동이 가능합니다.
-                                    </p>
+                            <div className="pt-6 md:pt-[36px] pb-5 md:pb-[32px] px-6 md:px-[50px] flex-1">
+                                <p className="text-[15px] md:text-[18px] font-semibold text-[#302e2e] break-keep mb-4 border-b border-gray-200 pb-3">
+                                    모란역 4번 출구 정류장 하차
+                                </p>
+                                <div className="flex flex-col gap-3.5 md:gap-4">
+                                    <div className="flex items-start gap-3">
+                                        <span className="shrink-0 flex justify-center items-center w-10 md:w-11 bg-[#53b332] text-white text-[12px] md:text-[13px] font-bold py-1 rounded-[4px] mt-[1.5px] md:mt-[2px]">
+                                            마을
+                                        </span>
+                                        <p className="flex-1 text-[13px] md:text-[16px] text-[#444] font-medium leading-[1.6] break-keep">
+                                            3-3, 76, 88
+                                        </p>
+                                    </div>
+                                    <div className="flex items-start gap-3">
+                                        <span className="shrink-0 flex justify-center items-center w-10 md:w-11 bg-[#00A059] text-white text-[12px] md:text-[13px] font-bold py-1 rounded-[4px] mt-[1.5px] md:mt-[2px]">
+                                            일반
+                                        </span>
+                                        <p className="flex-1 text-[13px] md:text-[16px] text-[#444] font-medium leading-[1.6] break-keep">
+                                            3-1, 32, 32-1, 50, 119, 119-1, 200, 220, 240, 241, 311, 315, 320, 330, S2
+                                        </p>
+                                    </div>
+                                    <div className="flex items-start gap-3">
+                                        <span className="shrink-0 flex justify-center items-center w-10 md:w-11 bg-[#0068b7] text-white text-[12px] md:text-[13px] font-bold py-1 rounded-[4px] mt-[1.5px] md:mt-[2px]">
+                                            간선
+                                        </span>
+                                        <p className="flex-1 text-[13px] md:text-[16px] text-[#444] font-medium leading-[1.6] break-keep">
+                                            422
+                                        </p>
+                                    </div>
+                                    <div className="flex items-start gap-3">
+                                        <span className="shrink-0 flex justify-center items-center w-10 md:w-11 bg-[#e60012] text-white text-[12px] md:text-[13px] font-bold py-1 rounded-[4px] mt-[1.5px] md:mt-[2px]">
+                                            광역
+                                        </span>
+                                        <p className="flex-1 text-[13px] md:text-[16px] text-[#444] font-medium leading-[1.6] break-keep">
+                                            500-1, 500-1A, 500-2, 500-2N, 1117, 3302, 4500, 9607, 반디1, 반디1-1, 반디2
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
