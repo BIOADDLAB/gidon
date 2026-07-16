@@ -1,5 +1,4 @@
 import HeroSection from '@/components/HeroSection';
-import Image from 'next/image';
 import SpecialSection from './../../../components/SpecialSection';
 import RecommendSection from '../../../components/RecommendSection';
 import ProcessSection from '../../../components/ProcessSection';
@@ -139,10 +138,10 @@ export default function TScanPage() {
 
             <RecommendSection
                 topTitle="RECOMMEND"
-                centerTitle="이런 시니어 분들에게 추천합니다"
+                centerTitle="이런 분들에게 추천합니다"
                 cardList={tScanRecommendList}
             />
-            <ProcessSection topTitle="PROCESS" centerTitle="시니어 라미네이트 진행과정" stepData={tScanProcessSteps} />
+            <ProcessSection topTitle="PROCESS" centerTitle="티스캔 교합관리 진행과정" stepData={tScanProcessSteps} />
             <CareSection />
             <FaqSection isBg={false} />
             <AskSection />

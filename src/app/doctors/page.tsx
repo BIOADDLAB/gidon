@@ -1,7 +1,3 @@
-// #LINK: pages/doctors/page.tsx
-// #STYLE: 원장 4인의 전체 약력(history) 누락분 완전 동기화
-// #ISSUE: 기존 코드에 누락되어 있던 세미나 수료, 학회 활동, 방송 자문 및 수상 내역 전체 반영
-
 import HeroSection from '@/components/HeroSection';
 import MapSection from './../../components/MapStion';
 import SectionHeading from '@/components/common/SectionHeading';
@@ -21,7 +17,7 @@ interface DoctorProps {
 export default function DoctorsPage() {
     const doctorsMenuList = ['의료진소개'];
 
-    // #FIX: 각 원장님별 원본 약력 텍스트와 대조하여 누락된 이력 전체 추가
+    // #ISSUE: 각 원장님별 원본 약력 텍스트와 대조하여 약식처리했던 이력 전체 추가
     const doctorList: DoctorProps[] = [
         {
             id: 1,
