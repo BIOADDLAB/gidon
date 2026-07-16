@@ -140,10 +140,10 @@ export default function Home() {
                                 className="object-cover object-center"
                             />
                             <div className="flex flex-col justify-center items-center h-full px-4 z-2 relative text-white text-center">
-                                <h2 className="text-2xl sm:text-3xl md:text-[40px] font-hero font-normal  leading-tight md:leading-6.1 break-keep  tracking-normal">
-                                    치과를 오래 쓰는 길,
+                                <h2 className="text-2xl sm:text-3xl md:text-[40px] font-hero font-bold  leading-tight md:leading-6.1 break-keep  tracking-normal">
+                                    치아를 오래 쓰는 길,
                                 </h2>
-                                <h2 className="text-2xl sm:text-3xl md:text-[40px] font-hero font-normal leading-tight mt-1 tracking-normal">
+                                <h2 className="text-2xl sm:text-3xl md:text-[40px] font-hero font-bold leading-tight mt-1 tracking-normal">
                                     기드온이 안내합니다.
                                 </h2>
                                 <p className="text-base sm:text-xl md:text-3xl mt-5 md:mt-7 font-ui opacity-90 break-keep tracking-normal">
@@ -163,10 +163,10 @@ export default function Home() {
                                 className="object-cover object-center"
                             />
                             <div className="flex flex-col justify-center items-center h-full px-4 z-2 relative text-white text-center tracking-normal">
-                                <h2 className="text-2xl sm:text-3xl md:text-[40px] font-hero leading-tight break-keep  tracking-normal">
+                                <h2 className="text-2xl sm:text-3xl md:text-[40px] font-hero leading-tight break-keep font-bold  tracking-normal">
                                     정해진 길로 정확하게 안내하고,
                                 </h2>
-                                <h2 className="text-2xl sm:text-3xl md:text-[40px] font-hero leading-tight mt-1 break-keep tracking-normal">
+                                <h2 className="text-2xl sm:text-3xl md:text-[40px] font-hero leading-tight mt-1 font-bold break-keep tracking-normal">
                                     치아를 오래 쓰게 하는 안정적인 치과입니다.
                                 </h2>
                                 <p className="text-base sm:text-xl md:text-3xl mt-5 md:mt-7 font-ui opacity-90 break-keep tracking-normal">
