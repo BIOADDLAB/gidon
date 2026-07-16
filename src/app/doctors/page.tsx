@@ -191,9 +191,12 @@ export default function DoctorsPage() {
                                             </h4>
                                             <ul className="flex flex-col gap-2 text-[13px] md:text-[15px] font-ui font-medium text-[#555555]">
                                                 {doc.history.map((h, i) => (
-                                                    <li key={i} className="leading-[1.7] md:leading-[1.8] break-keep">
-                                                        {' '}
-                                                        - {h}{' '}
+                                                    <li
+                                                        key={i}
+                                                        className="flex leading-[1.7] md:leading-[1.8] break-keep"
+                                                    >
+                                                        <span className="shrink-0 mr-1">-</span>
+                                                        <span>{h}</span>
                                                     </li>
                                                 ))}
                                             </ul>
