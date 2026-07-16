@@ -18,10 +18,10 @@ import Link from 'next/link';
 export default function Home() {
     const [activeSection, setActiveSection] = useState('hero');
 
+    // 오시는 길(location) 항목 제거
     const navItems = [
         { id: 'philosophy', label: '기드온 철학' },
         { id: 'signature', label: '진료 과목' },
-        { id: 'location', label: '오시는 길' },
         { id: 'ask', label: '상담 예약' },
     ];
 
@@ -31,7 +31,6 @@ export default function Home() {
 
             const philosophyEl = document.getElementById('philosophy');
             const signatureEl = document.getElementById('signature');
-            const locationEl = document.getElementById('location');
             const askEl = document.getElementById('ask');
             const mapEl = document.getElementById('map');
 
@@ -39,8 +38,6 @@ export default function Home() {
                 setActiveSection('map');
             } else if (askEl && scrollPosition >= askEl.offsetTop) {
                 setActiveSection('ask');
-            } else if (locationEl && scrollPosition >= locationEl.offsetTop) {
-                setActiveSection('location');
             } else if (signatureEl && scrollPosition >= signatureEl.offsetTop) {
                 setActiveSection('signature');
             } else if (philosophyEl && scrollPosition >= philosophyEl.offsetTop) {
@@ -65,7 +62,6 @@ export default function Home() {
 
     return (
         <div className="relative w-full">
-            {/* #STYLE: 맥북(1440px) 환경에서 본문과 겹쳐 답답했던 현상을 해결하기 위해, 1600px 미만 전 구간에서 네비바를 완전히 숨김(hidden) 제어 */}
             <h1 className="hidden">성남임플란트 기드온치과</h1>
             <div
                 className={`fixed left-12 top-1/2 -translate-y-1/2 z-40 hidden min-[1600px]:flex flex-col items-baseline transition-all duration-500 ${
@@ -274,7 +270,6 @@ export default function Home() {
                     />
                 </div>
 
-                {/* #STYLE: 2열 그리드 실험실을 폭파하고, 원래 의도하셨던 시원한 데스크톱 4열 구조(xl:grid-cols-4 max-w-7xl)로 완벽 롤백 */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 mt-10 md:mt-14 px-4 max-w-7xl mx-auto w-full">
                     {[
                         {
@@ -339,58 +334,6 @@ export default function Home() {
                     </Link>
                 </div>
             </div>
-
-            <section
-                id="location"
-                className="w-full py-20 md:py-[120px] flex flex-col items-center bg-gradient-to-b from-[#EBF2EA] to-[#F4F8F3]"
-            >
-                <div className="w-full max-w-[1000px] px-4 flex flex-col items-center">
-                    <SectionHeading
-                        topTitle="GIDEON'S Location"
-                        centerTitle="오시는 길"
-                        desc="처음 방문하시는 분도 쉽게 찾으실 수 있습니다."
-                        isDesc={true}
-                    />
-
-                    <div className="mt-10 md:mt-[60px] w-full max-w-[640px] flex flex-col gap-4 md:gap-[22px]">
-                        <div className="w-full bg-white rounded-[10px] p-4 md:p-5 flex items-center gap-4 md:gap-5 shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
-                            <div className="w-10 h-10 md:w-[50px] md:h-[50px] bg-green-600 rounded-full flex items-center justify-center shrink-0">
-                                <img
-                                    src="/images/i_loca_02.svg"
-                                    alt=""
-                                    className="w-5 h-5 md:w-6 md:h-6 object-contain"
-                                />
-                            </div>
-                            <p className="text-base sm:text-lg md:text-[22px] font-semibold text-green-600 tracking-tight break-keep whitespace-normal">
-                                모란역 4번 출구에서 도보 2분
-                            </p>
-                        </div>
-
-                        <div className="w-full bg-white rounded-[10px] p-4 md:p-5 flex items-center gap-4 md:gap-5 shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
-                            <div className="w-10 h-10 md:w-[50px] md:h-[50px] bg-green-600 rounded-full flex items-center justify-center shrink-0">
-                                <img
-                                    src="/images/i_loca_01.svg"
-                                    alt=""
-                                    className="w-5 h-5 md:w-6 md:h-6 object-contain"
-                                />
-                            </div>
-                            <p className="text-base sm:text-lg md:text-[22px] font-semibold text-[#233a31] tracking-tight break-keep whitespace-normal">
-                                국민은행 건물 3층
-                            </p>
-                        </div>
-                    </div>
-
-                    <a
-                        href="/location"
-                        className="mt-10 md:mt-[70px] flex items-center justify-center bg-green-600 text-white text-base md:text-[20px] font-bold px-6 md:px-8 h-12 md:h-[55px] rounded-full shadow-md transition-all gap-2 group"
-                    >
-                        <span>오시는길 자세히보기</span>
-                        <span className="text-[12px] md:text-[13px] opacity-80 group-hover:translate-x-1 transition-transform">
-                            ＞
-                        </span>
-                    </a>
-                </div>
-            </section>
 
             <div id="ask">
                 <AskSection />
