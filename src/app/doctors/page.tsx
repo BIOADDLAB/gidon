@@ -1,4 +1,6 @@
-// pages/doctors/page.tsx
+// #LINK: pages/doctors/page.tsx
+// #STYLE: 원장 4인의 전체 약력(history) 누락분 완전 동기화
+// #ISSUE: 기존 코드에 누락되어 있던 세미나 수료, 학회 활동, 방송 자문 및 수상 내역 전체 반영
 
 import HeroSection from '@/components/HeroSection';
 import MapSection from './../../components/MapStion';
@@ -19,7 +21,7 @@ interface DoctorProps {
 export default function DoctorsPage() {
     const doctorsMenuList = ['의료진소개'];
 
-    // #FIX: 이미지 경로 오타 수정 및 데이터 정리
+    // #FIX: 각 원장님별 원본 약력 텍스트와 대조하여 누락된 이력 전체 추가
     const doctorList: DoctorProps[] = [
         {
             id: 1,
@@ -34,7 +36,12 @@ export default function DoctorsPage() {
                 '국민건강보험공단 인증 구강검진의',
                 '장애인 치과 주치의',
                 '오스템임플란트 AIC Implant Master Course 수료',
-                '한국경제방송 / 생활경제방송 / 메디컬TV 주치의',
+                '오스템임플란트 AIC Advanced Course 수료',
+                '한국경제방송 주치의',
+                '생활경제방송 주치의',
+                '메디컬TV 주치의',
+                '한국의료문화상 수상',
+                '헤럴드경제 주관 대한민국마켓리더 대상 수상',
                 '국내외 의료봉사 다수',
                 '남서울은혜교회 시무장로',
             ],
@@ -49,11 +56,22 @@ export default function DoctorsPage() {
             specialties: ['보건복지부 인증 통합치의학과 전문의'],
             history: [
                 '보건복지부 인증 통합치의학과 전문의',
+                '장애인 치과 주치의',
                 '국민건강보험공단 인증 구강검진의',
+                '대한치과의사협회 정회원',
                 '대한통합치과학회 정회원',
                 '대한구강악안면임플란트학회 정회원',
+                '대한장애인치과학회 정회원',
+                '오스템임플란트 AIC Implant Master Course 수료',
+                '오스템임플란트 AIC Advanced Course 수료',
+                'UPENN Endodontic Seminar 수료',
+                'KAYA Prosthodontics Seminar 수료',
+                'OSSTEM Implant Course 수료',
+                'DENTIUM Implant Course 수료',
+                '네이버 지식인 치과의사',
                 '전) 서울 웰치과 대표원장',
                 '전) 강남레옹치과 원장',
+                '국내외 의료봉사 다수',
             ],
             imgSrc: '/images/doctor_2.jpg',
         },
@@ -63,14 +81,24 @@ export default function DoctorsPage() {
             position: '원장',
             intro: '철저한 분석과 정밀한 기술로\n가장 안전한 치료를 제공합니다.',
             education: '단국대학교 치과대학 졸업',
-            specialties: ['심평원 인증 측두하악관절자극요법 인증의'],
+            specialties: ['심평원 인증 측두하악관절자극요법 교육 수료 인증의'],
             history: [
                 '국민건강보험공단 인증 구강검진의',
                 '심평원 인증 측두하악관절자극요법 교육 수료 인증의',
                 '대한치과의사협회 정회원',
                 '대한구강악안면임플란트학회 정회원',
+                '대한치주과학회 정회원',
+                '대한심미치과학회 정회원',
+                '오스템임플란트 AIC Implant Master Course 수료',
+                '오스템임플란트 AIC Advanced Course 수료',
+                '서울대학교 치의학대학원 Advanced Periodontal Implant Course 수료',
+                'University of Pennsylvania Endodontic Course 수료',
+                'Dentis Implant All-in-One Seminar 수료',
+                'ATC 심미보철 세미나 수료',
+                '최소삭제 라미네이트 세미나 수료',
                 '전) 장흥군보건소 치과실 진료과장',
-                '전) 바른손치과 / 그랜드치과 원장',
+                '전) 바른손치과 원장',
+                '전) 그랜드치과 원장',
             ],
             imgSrc: '/images/doctor_3.jpg',
         },
@@ -79,12 +107,23 @@ export default function DoctorsPage() {
             name: '김의현',
             position: '원장',
             intro: '구강악안면외과 전문의의 전문성으로\n난이도 높은 수술도 편안하게 진행합니다.',
-            education: '단국대학교 치과대학 수석 졸업 \n고려대학교 임상치의학대학원 석사 최우수 졸업',
+            education:
+                '단국대학교 치과대학 수석 입학 · 졸업\n고려대학교 임상치의학대학원 임플란트학과 석사 최우수 졸업',
             specialties: ['보건복지부 인증 구강악안면외과 전문의'],
             history: [
-                '고려대학교 안암병원 인턴 / 구강악안면외과 전공의',
+                '고려대학교 안암병원 인턴',
+                '고려대학교 안암병원 구강악안면외과 전공의',
                 '보건복지부 인증 구강악안면외과 전문의',
                 '대한악안면성형재건학회 인정의',
+                '대한치과의사협회 정회원',
+                '대한구강악안면외과학회 정회원',
+                '대한악안면성형재건학회 정회원',
+                '대한구강악안면임플란트학회 정회원',
+                '오스템임플란트 AIC Implant Master Course 수료',
+                '오스템임플란트 AIC Advanced Course 수료',
+                '서울아산병원 파견의',
+                '국립암센터 파견의',
+                '중앙병역판정검사소 수석 병역판정의사',
                 '전) 온아치과 마석점 원장',
             ],
             imgSrc: '/images/doctor_4.jpg',
@@ -165,7 +204,7 @@ export default function DoctorsPage() {
                                         </div>
                                     </div>
 
-                                    {/* #FIX: 이미지 영역 - 고정 높이와 object-cover로 비율 깨짐 방지 */}
+                                    {/* 이미지 영역 */}
                                     <div className="order-1 md:order-none w-full md:w-[44%] shrink-0">
                                         <div className="overflow-hidden rounded-[20px] bg-gray-100 shadow-sm h-[320px] md:h-[520px]">
                                             <img
