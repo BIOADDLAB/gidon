@@ -79,7 +79,6 @@ export default function LocationSections() {
             </section>
 
             <section className="relative w-full pt-[60px] pb-[80px] md:pt-[100px] md:pb-[130px]">
-                {/* #STYLE: 고정폭 w-[1140px]를 max-w 제약으로 변경하고 px-4를 주어 가로폭이 터지는 현상 원천 방어 */}
                 <div className="w-full max-w-[1140px] px-4 mx-auto">
                     <Image
                         src="/images/bg_location.jpg"
@@ -90,8 +89,6 @@ export default function LocationSections() {
                     />
                     <SectionHeading topTitle="MAP" centerTitle="지도에서 바로 확인하기" isWhite={true} />
 
-                    {/* 구글지도영역 */}
-                    {/* #STYLE: 모바일 화면에서 지도가 너무 거대해져 발생하는 스크롤 가로막기 현상을 방지하기 위해 높이 및 상단 마진 반응형 조율 */}
                     <div className="w-full h-[300px] sm:h-[380px] md:h-[456px] bg-[#D9D9D9] rounded-[10px] mt-8 md:mt-[58px]"></div>
                 </div>
             </section>
@@ -173,27 +170,40 @@ export default function LocationSections() {
                             </div>
                             <div className="pt-6 md:pt-[44px] pb-5 md:pb-[32px] px-6 md:px-[50px] flex-1">
                                 <div className="pb-2.5 md:pb-[12px] flex items-center justify-between">
-                                    <h4 className="text-[16px] md:text-[22px] font-semibold text-[#302e2e]">
-                                        월 / 화 / 목
+                                    <h4 className="text-[15px] md:text-[22px] font-semibold text-[#302e2e]">
+                                        월 / 목
+                                        <span className="text-[14.5px] md:text-[20px]  ml-1 tracking-tight">
+                                            (야간진료)
+                                        </span>
                                     </h4>
                                     <p className="text-[14px] md:text-[20px] font-semibold text-[#646464]">
-                                        10:00 ~ 19:00
+                                        09:00 ~ 20:00
                                     </p>
                                 </div>
                                 <div className="pb-2.5 md:pb-[12px] flex items-center justify-between">
-                                    <h4 className="text-[16px] md:text-[22px] font-semibold text-[#302e2e]">금</h4>
+                                    <h4 className="text-[15px] md:text-[22px] font-semibold text-[#302e2e]">
+                                        화 / 수 / 금
+                                    </h4>
                                     <p className="text-[14px] md:text-[20px] font-semibold text-[#646464]">
-                                        10:00 ~ 20:00
+                                        09:00 ~ 18:00
                                     </p>
                                 </div>
                                 <div className="pb-2.5 md:pb-[12px] flex items-center justify-between">
-                                    <h4 className="text-[16px] md:text-[22px] font-semibold text-[#302e2e]">수 / 토</h4>
+                                    <h4 className="text-[15px] md:text-[22px] font-semibold text-[#302e2e]">토요일</h4>
                                     <p className="text-[14px] md:text-[20px] font-semibold text-[#646464]">
-                                        10:00 ~ 16:00
+                                        09:00 ~ 13:00
+                                    </p>
+                                </div>
+                                <div className="pb-2.5 md:pb-[12px] flex items-center justify-between">
+                                    <h4 className="text-[15px] md:text-[22px] font-semibold text-[#302e2e]">
+                                        점심시간
+                                    </h4>
+                                    <p className="text-[14px] md:text-[20px] font-semibold text-[#646464]">
+                                        12:30 ~ 14:00
                                     </p>
                                 </div>
                                 <div className="pb-2.5 md:pb-[12px] flex items-center justify-between border-b border-[#949494]">
-                                    <h4 className="text-[16px] md:text-[22px] font-semibold text-[#302e2e]">
+                                    <h4 className="text-[15px] md:text-[22px] font-semibold text-[#302e2e]">
                                         일 / 공휴일
                                     </h4>
                                     <p className="text-[14px] md:text-[20px] font-semibold text-[#AE4F4F]">휴진</p>

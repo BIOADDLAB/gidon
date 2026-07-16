@@ -1,19 +1,18 @@
+// #LINK: /components/MapSection.tsx
+// #STYLE: 진료 시간 (야간진료) 텍스트를 줄바꿈 없이 시간 바로 옆에 나란히 배치
+// #ISSUE: 반응형 줄바꿈을 제거하고 가로로 붙여서 표기하도록 원복
+
 import React from 'react';
 import KakaoMap from './KakaoMap';
 
 export default function MapSection() {
     return (
-        // #STYLE: py 대화면 확장
         <section className="bg-[#F4F3EB] py-[60px] md:py-[70px] 2xl:py-[90px] px-4">
-            {/* #STYLE: 태블릿(md)부터 세로 정렬, lg부터 가로 정렬 / max-w 대화면 확장 */}
             <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto flex flex-col lg:flex-row gap-8 md:gap-10 lg:gap-15 items-stretch">
-                {/* #STYLE: KakaoMap이 h-full 의존 구조라 부모가 높이를 명시해야 함.
-                    모바일/태블릿(세로 배치)에서는 고정 높이(h-[320px]~[400px]), lg(가로 배치)부터는 부모 stretch에 맡김 */}
                 <div className="w-full lg:w-[50%] h-[320px] md:h-[400px] lg:h-auto shrink-0">
                     <KakaoMap />
                 </div>
 
-                {/* 상세 정보 텍스트 영역 */}
                 <address className="w-full lg:w-[50%] flex flex-col justify-center not-italic">
                     <ul className="py-3 md:py-5">
                         <li className="flex gap-6 md:gap-14.25 pb-3 md:pb-3.75 border-b border-[#3C3C3C] mb-3 md:mb-3.75">
@@ -22,7 +21,6 @@ export default function MapSection() {
                             </h3>
                             <p className="text-ink-900 text-[15px] md:text-[17px] lg:text-[18px] break-keep leading-relaxed">
                                 경기도 성남시 중원구 성남대로 1126,
-                                {/* #STYLE반응형줄바꿈: 모바일 좁은 폭에서만 줄바꿈, md부터는 한 줄로 이어짐 */}
                                 <br className="block md:hidden" /> 메가프라자 3층
                             </p>
                         </li>
@@ -39,46 +37,65 @@ export default function MapSection() {
                                 진료 시간
                             </h3>
                             <div>
-                                <div className="flex gap-4 md:gap-4.5 mb-2 md:mb-2.5">
-                                    <div className="text-ink-900 text-[15px] md:text-[17px] lg:text-[18px] w-[72px] md:w-19.25 flex justify-between">
-                                        <span className="sr-only">월화목</span>
+                                <div className="flex items-start gap-4 md:gap-4.5 mb-2.5 md:mb-3.5">
+                                    <div className="text-ink-900 text-[15px] md:text-[17px] lg:text-[18px] w-[72px] md:w-19.25 flex justify-between shrink-0">
+                                        <span className="sr-only">월요일과 목요일</span>
                                         <span aria-hidden="true">월</span>
-                                        <span aria-hidden="true">화</span>
+                                        <span aria-hidden="true">/</span>
                                         <span aria-hidden="true">목</span>
                                     </div>
-                                    <span className="text-ink-900 text-[15px] md:text-[17px] lg:text-[18px]">
-                                        10:00~19:00
+                                    <span className="text-ink-900 text-[15px]  md:text-[17px] lg:text-[18px]">
+                                        09:00~20:00
+                                        <br className="hidden max-[374px]:block" />
+                                        <span className="ml-1 text-[15px] break-all md:text-[16.5px] font-medium">
+                                            (야간진료)
+                                        </span>
                                     </span>
                                 </div>
-                                <div className="flex gap-4 md:gap-4.5 mb-2 md:mb-2.5">
-                                    <div className="text-ink-900 text-[15px] md:text-[17px] lg:text-[18px] w-[72px] md:w-19.25 flex justify-between">
-                                        <span className="sr-only">수토</span>
+                                <div className="flex items-start gap-4 md:gap-4.5 mb-2.5 md:mb-3.5">
+                                    <div className="text-ink-900 text-[15px] md:text-[17px] lg:text-[18px] w-[72px] md:w-19.25 flex justify-between shrink-0">
+                                        <span className="sr-only">화,수,금요일</span>
+                                        <span aria-hidden="true">화</span>
                                         <span aria-hidden="true">수</span>
-                                        <span aria-hidden="true">토</span>
+                                        <span aria-hidden="true">금</span>
                                     </div>
                                     <span className="text-ink-900 text-[15px] md:text-[17px] lg:text-[18px]">
-                                        10:00~16:00
+                                        09:00~18:00
                                     </span>
                                 </div>
-                                <div className="flex gap-4 md:gap-4.5 mb-2 md:mb-2.5">
-                                    <div className="text-ink-900 text-[15px] md:text-[17px] lg:text-[18px] w-[72px] md:w-19.25 flex justify-between">
-                                        <span className="sr-only">금요일</span>
-                                        <span aria-hidden="true">금</span>
+                                <div className="flex items-start gap-4 md:gap-4.5 mb-2.5 md:mb-3.5">
+                                    <div className="text-ink-900 text-[15px] md:text-[17px] lg:text-[18px] w-[72px] md:w-19.25 flex justify-between shrink-0">
+                                        <span className="sr-only">토요일</span>
+                                        <span aria-hidden="true">토</span>
                                         <span aria-hidden="true">요</span>
                                         <span aria-hidden="true">일</span>
                                     </div>
                                     <span className="text-ink-900 text-[15px] md:text-[17px] lg:text-[18px]">
-                                        10:00~20:00
+                                        09:00~13:00
                                     </span>
                                 </div>
-                                <div className="flex gap-4 md:gap-4.5">
-                                    <div className="text-ink-900 text-[15px] md:text-[17px] lg:text-[18px] w-[72px] md:w-19.25 flex justify-between">
+                                <div className="flex items-start gap-4 md:gap-4.5 mb-2.5 md:mb-3.5">
+                                    <div className="text-ink-900 text-[15px] md:text-[17px] lg:text-[18px] w-[72px] md:w-19.25 flex justify-between shrink-0">
+                                        <span className="sr-only">점심시간</span>
+                                        <span aria-hidden="true">점</span>
+                                        <span aria-hidden="true">심</span>
+                                        <span aria-hidden="true">시</span>
+                                        <span aria-hidden="true">간</span>
+                                    </div>
+                                    <span className="text-ink-900 text-[15px] md:text-[17px] lg:text-[18px]">
+                                        12:30~14:00
+                                    </span>
+                                </div>
+                                <div className="flex items-start gap-4 md:gap-4.5">
+                                    <div className="text-ink-900 text-[15px] md:text-[17px] lg:text-[18px] w-[72px] md:w-19.25 flex justify-between shrink-0">
                                         <span className="sr-only">일요일과 공휴일</span>
                                         <span aria-hidden="true">일</span>
                                         <span aria-hidden="true">/</span>
                                         <span aria-hidden="true">공휴일</span>
                                     </div>
-                                    <span className="text-ink-900 text-[15px] md:text-[17px] lg:text-[18px]">휴진</span>
+                                    <span className="text-ink-900 text-[15px] md:text-[17px] lg:text-[18px] text-[#AE4F4F]">
+                                        휴진
+                                    </span>
                                 </div>
                             </div>
                         </li>
@@ -89,7 +106,6 @@ export default function MapSection() {
                             </h3>
                             <p className="text-ink-900 text-[15px] md:text-[17px] lg:text-[18px] break-keep leading-relaxed">
                                 모란역 4번 출구 나와서 도보 1분
-                                {/* #STYLE반응형줄바꿈: 모바일에서만 줄바꿈, md부터 한 줄 */}
                                 <br className="block md:hidden" /> 좌측 은행 건물(다이소 옆)
                             </p>
                         </li>
