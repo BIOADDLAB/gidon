@@ -14,7 +14,6 @@ export default function TourSwiper() {
     const [currentIndex, setCurrentIndex] = useState(1);
 
     const tourImages = [
-        '/images/img_tour_01.jpg',
         '/images/img_tour_02.jpg',
         '/images/img_tour_03.jpg',
         '/images/img_tour_04.jpg',
