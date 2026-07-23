@@ -60,8 +60,8 @@ const menus: MenuItem[] = [
     },
     {
         title: '기드온칼럼',
-        href: '/column',
-        subs: [{ name: '기드온칼럼', href: '/column' }],
+        href: '/blog',
+        subs: [{ name: '기드온칼럼', href: '/blog' }],
     },
 ];
 

@@ -8,7 +8,7 @@ const feedItems = [
     },
     {
         title: '기드온칼럼',
-        path: '/column',
+        path: '/blog',
         description: '기드온치과의 진료 철학과 치과 치료 정보를 전하는 칼럼입니다.',
     },
     {

@@ -16,7 +16,7 @@ const routes = [
     { path: '/guide/t-scan', priority: 0.7 },
     { path: '/guide/senior', priority: 0.7 },
     { path: '/price', priority: 0.8 },
-    { path: '/column', priority: 0.8 },
+    { path: '/blog', priority: 0.8 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
