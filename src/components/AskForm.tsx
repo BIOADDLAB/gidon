@@ -18,12 +18,13 @@ export default function AskForm() {
             return;
         }
 
+        const form = e.currentTarget;
         setIsSubmitting(true);
         setSubmitMessage('');
         setSubmitStatus('');
 
         try {
-            const formData = new FormData(e.currentTarget);
+            const formData = new FormData(form);
             const response = await fetch('/api/contact', {
                 method: 'POST',
                 body: formData,
@@ -34,7 +35,7 @@ export default function AskForm() {
                 throw new Error(result.error ?? '상담 신청 전송에 실패했습니다.');
             }
 
-            e.currentTarget.reset();
+            form.reset();
             setIsChecked(false);
             setSubmitStatus('success');
             setSubmitMessage('상담 신청이 접수되었습니다. 빠르게 연락드리겠습니다.');
