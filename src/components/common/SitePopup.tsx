@@ -69,6 +69,15 @@ const getTodayKey = () => {
     return new Date().toISOString().slice(0, 10);
 };
 
+const preloadPopupImage = (src: string) => {
+    return new Promise<void>((resolve) => {
+        const image = new window.Image();
+        image.onload = () => resolve();
+        image.onerror = () => resolve();
+        image.src = src;
+    });
+};
+
 export default function SitePopup() {
     const [items, setItems] = useState<PopupItem[]>([]);
     const [selected, setSelected] = useState(0);
@@ -94,11 +103,16 @@ export default function SitePopup() {
                         return nextPopup.enabled && hasContent && isWithinPopupPeriod(nextPopup);
                     });
 
-                if (activePopups.length === 0) {
+                const imagePopups = activePopups.filter((popup) => popup.imageUrl.trim() !== '');
+
+                if (imagePopups.length === 0) {
                     return;
                 }
 
-                setItems(activePopups);
+                await Promise.all(imagePopups.map((popup) => preloadPopupImage(popup.imageUrl)));
+
+                setSelected(0);
+                setItems(imagePopups);
                 setIsOpen(true);
             } catch {
                 setItems([]);
@@ -158,19 +172,19 @@ export default function SitePopup() {
         );
 
     return (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 p-4">
-            <div className="relative max-h-[92vh] w-auto max-w-[calc(100vw-2rem)]">
-                <div className="relative flex h-[88vh] w-fit max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-xl bg-white shadow-2xl">
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 p-3 md:p-4">
+            <div className="relative max-h-[92vh] w-full max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-[calc(100vw-2rem)]">
+                <div className="relative flex max-h-[92vh] w-full flex-col overflow-hidden rounded-xl bg-white shadow-2xl md:h-[88vh] md:w-fit md:max-w-[calc(100vw-2rem)]">
                     <div className="relative flex min-h-0 flex-1 flex-col overflow-hidden md:flex-row">
-                        <div className="flex min-h-0 shrink-0 items-center justify-center overflow-hidden bg-white">
-                            <div className="relative h-full w-[min(78vw,calc((88vh-52px)*0.78))] min-w-[320px]">
+                        <div className="flex h-[62vh] min-h-[260px] shrink-0 items-center justify-center overflow-hidden bg-white md:h-full md:min-h-0 md:shrink-0">
+                            <div className="relative h-full w-full md:w-[min(78vw,calc((88vh-52px)*0.78))] md:min-w-[320px]">
                                 {linkedImage}
                             </div>
                         </div>
 
                         {safeItems.length > 1 && (
                             <nav
-                                className="max-h-[180px] overflow-y-auto border-t border-line md:max-h-[calc(88vh-52px)] md:w-[220px] md:border-l md:border-t-0"
+                                className="max-h-[160px] shrink-0 overflow-y-auto border-t border-line md:max-h-[calc(88vh-52px)] md:w-[220px] md:border-l md:border-t-0"
                                 aria-label="팝업 목록"
                             >
                                 {safeItems.map((item, idx) => {
