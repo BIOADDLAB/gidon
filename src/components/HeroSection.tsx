@@ -4,6 +4,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 interface HeroProps {
     mainTitle: string;
@@ -26,8 +27,27 @@ export default function HeroSection({
     isGreen = false,
     subMenuList = [],
 }: HeroProps) {
+    const pathname = usePathname();
     const homeIconSrc = isGreen ? '/images/i_home_w.svg' : '/images/i_home.svg';
     const arrowIconSrc = isGreen ? '/images/i_arr_right_w.svg' : '/images/i_arr_right.svg';
+    const breadcrumbStructuredData = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            {
+                '@type': 'ListItem',
+                position: 1,
+                name: '기드온치과',
+                item: 'https://www.gideondental.com/',
+            },
+            {
+                '@type': 'ListItem',
+                position: 2,
+                name: pageName || mainTitle,
+                item: `https://www.gideondental.com${pathname}`,
+            },
+        ],
+    };
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -47,6 +67,12 @@ export default function HeroSection({
 
     return (
         <section className="flex flex-col justify-center items-center relative h-[380px] sm:h-[420px] md:h-[460px] lg:h-[440px] 2xl:h-[520px]">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(breadcrumbStructuredData).replace(/</g, '\\u003c'),
+                }}
+            />
             {/* #STYLE: 인테리어 사진 노출 극대화를 위해 모바일 높이를 h-[260px]에서 h-[380px]로 과감히 확장, 태블릿 구간(sm:, md:) 높이도 비례하여 상향 스케일링 */}
             <Image
                 src={imgSrc}

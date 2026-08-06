@@ -5,6 +5,136 @@ import { Tenor_Sans } from 'next/font/google';
 import './globals.css';
 import SiteChrome from '@/components/layout/SiteChrome';
 
+const clinicStructuredData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+        {
+            '@type': 'WebSite',
+            '@id': 'https://www.gideondental.com/#website',
+            url: 'https://www.gideondental.com/',
+            name: '기드온치과',
+            alternateName: '성남임플란트 기드온치과',
+            inLanguage: 'ko-KR',
+            publisher: {
+                '@id': 'https://www.gideondental.com/#clinic',
+            },
+        },
+        {
+            '@type': ['Dentist', 'MedicalClinic', 'LocalBusiness'],
+            '@id': 'https://www.gideondental.com/#clinic',
+            name: '기드온치과',
+            alternateName: '성남임플란트 기드온치과',
+            url: 'https://www.gideondental.com/',
+            logo: 'https://www.gideondental.com/images/common/logo_g.svg',
+            image: 'https://www.gideondental.com/images/og-image.png',
+            description:
+                '성남 모란역 4번 출구 도보 1분 거리에 위치한 기드온치과입니다. 임플란트, 치주치료, 교합관리, 심미치료를 정직하고 투명하게 진료합니다.',
+            telephone: '1522-7528',
+            address: {
+                '@type': 'PostalAddress',
+                streetAddress: '성남대로 1126, 메가프라자 303호·304호·305호',
+                addressLocality: '성남시',
+                addressRegion: '경기도',
+                addressCountry: 'KR',
+            },
+            geo: {
+                '@type': 'GeoCoordinates',
+                latitude: 37.4303456,
+                longitude: 127.1298975,
+            },
+            hasMap: 'https://www.google.com/maps/search/?api=1&query=37.4303456,127.1298975',
+            areaServed: [
+                { '@type': 'City', name: '성남시' },
+                { '@type': 'AdministrativeArea', name: '중원구' },
+            ],
+            medicalSpecialty: 'Dentistry',
+            contactPoint: {
+                '@type': 'ContactPoint',
+                telephone: '1522-7528',
+                contactType: 'customer service',
+                availableLanguage: ['Korean'],
+            },
+            openingHoursSpecification: [
+                {
+                    '@type': 'OpeningHoursSpecification',
+                    dayOfWeek: ['Monday', 'Thursday'],
+                    opens: '09:00',
+                    closes: '12:30',
+                },
+                {
+                    '@type': 'OpeningHoursSpecification',
+                    dayOfWeek: ['Monday', 'Thursday'],
+                    opens: '14:00',
+                    closes: '20:00',
+                },
+                {
+                    '@type': 'OpeningHoursSpecification',
+                    dayOfWeek: ['Tuesday', 'Wednesday', 'Friday'],
+                    opens: '09:00',
+                    closes: '12:30',
+                },
+                {
+                    '@type': 'OpeningHoursSpecification',
+                    dayOfWeek: ['Tuesday', 'Wednesday', 'Friday'],
+                    opens: '14:00',
+                    closes: '18:00',
+                },
+                {
+                    '@type': 'OpeningHoursSpecification',
+                    dayOfWeek: 'Saturday',
+                    opens: '09:00',
+                    closes: '13:00',
+                },
+            ],
+            employee: [
+                { '@id': 'https://www.gideondental.com/doctors#seong-yogil' },
+                { '@id': 'https://www.gideondental.com/doctors#yang-mira' },
+                { '@id': 'https://www.gideondental.com/doctors#kim-hyeonchan' },
+                { '@id': 'https://www.gideondental.com/doctors#kim-uihyeon' },
+            ],
+            hasOfferCatalog: {
+                '@type': 'OfferCatalog',
+                name: '기드온치과 주요 진료',
+                itemListElement: [
+                    '임플란트',
+                    'AI 네비게이션 임플란트',
+                    '보험 임플란트',
+                    '물방울레이저 치주관리',
+                    '티스캔 교합관리',
+                    '시니어 라미네이트',
+                ].map((name) => ({
+                    '@type': 'Offer',
+                    itemOffered: {
+                        '@type': 'Service',
+                        name,
+                        provider: { '@id': 'https://www.gideondental.com/#clinic' },
+                    },
+                })),
+            },
+            sameAs: [
+                'https://blog.naver.com/pauls2001n',
+                'http://pf.kakao.com/_xisgFE',
+                'https://map.naver.com/p/entry/place/2054269887',
+            ],
+        },
+        ...[
+            ['seong-yogil', '성요길', '대표원장'],
+            ['yang-mira', '양미라', '원장'],
+            ['kim-hyeonchan', '김현찬', '원장'],
+            ['kim-uihyeon', '김의현', '원장'],
+        ].map(([id, name, jobTitle]) => ({
+            '@type': 'Person',
+            '@id': `https://www.gideondental.com/doctors#${id}`,
+            name,
+            jobTitle,
+            url: 'https://www.gideondental.com/doctors',
+            worksFor: {
+                '@id': 'https://www.gideondental.com/#clinic',
+            },
+        })),
+    ],
+};
+
 export const metadata: Metadata = {
     metadataBase: new URL('https://www.gideondental.com'),
     title: '성남임플란트 기드온치과 | 바른 마음과 정직한 진료',
@@ -70,6 +200,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="ko" className={`${dotSans.variable} ${suit.variable} ${tenorSans.variable} ${hansuwon.variable}`}>
             <body className="flex min-h-screen flex-col">
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(clinicStructuredData).replace(/</g, '\\u003c'),
+                    }}
+                />
                 <SiteChrome>{children}</SiteChrome>
             </body>
         </html>

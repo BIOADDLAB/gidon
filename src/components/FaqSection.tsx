@@ -39,6 +39,18 @@ export default function FaqSection({ isBg = false }: FaqSectionProps) {
             answer: '만 65세 이상 건강보험 가입자 중 치아가 1개 이상 남아 있는 경우 \n보험 적용이 가능합니다.',
         },
     ];
+    const faqStructuredData = {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqList.map((item) => ({
+            '@type': 'Question',
+            name: item.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: item.answer.replace(/\n/g, ' '),
+            },
+        })),
+    };
 
     const handleToggle = (id: number) => {
         setOpenId(openId === id ? null : id);
@@ -49,6 +61,12 @@ export default function FaqSection({ isBg = false }: FaqSectionProps) {
         <section
             className={`relative w-full pt-[70px] md:pt-[100px] 2xl:pt-[130px] pb-[90px] md:pb-[130px] 2xl:pb-[160px] overflow-hidden flex flex-col items-center ${!isBg ? 'bg-[#F9FAF5]' : ''}`}
         >
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(faqStructuredData).replace(/</g, '\\u003c'),
+                }}
+            />
             {isBg ? (
                 <Image
                     src="/images/bg_green3.jpg"
