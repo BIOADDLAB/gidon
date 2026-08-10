@@ -90,7 +90,6 @@ const clinicStructuredData = {
                 { '@id': 'https://www.gideondental.com/doctors#seong-yogil' },
                 { '@id': 'https://www.gideondental.com/doctors#yang-mira' },
                 { '@id': 'https://www.gideondental.com/doctors#kim-hyeonchan' },
-                { '@id': 'https://www.gideondental.com/doctors#kim-uihyeon' },
             ],
             hasOfferCatalog: {
                 '@type': 'OfferCatalog',
@@ -121,7 +120,6 @@ const clinicStructuredData = {
             ['seong-yogil', '성요길', '대표원장'],
             ['yang-mira', '양미라', '원장'],
             ['kim-hyeonchan', '김현찬', '원장'],
-            ['kim-uihyeon', '김의현', '원장'],
         ].map(([id, name, jobTitle]) => ({
             '@type': 'Person',
             '@id': `https://www.gideondental.com/doctors#${id}`,
