@@ -132,12 +132,12 @@ export default function LaserPage() {
 
             <SpecialSection
                 topTitle="WHY GIDEON"
-                centerTitle="기드온 시니어 라미네이트만의 특별함"
+                centerTitle="기드온 물방울레이저 치주관리만의 특별함"
                 cardList={laserCards}
             />
             <RecommendSection
                 topTitle="WHY GIDEON"
-                centerTitle="기드온 물방울레이저 치주관리만의 특별함"
+                centerTitle="물방울레이저 치주관리 진행과정"
                 cardList={laserRecommendList}
             />
             <ProcessSection
