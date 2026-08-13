@@ -1,4 +1,3 @@
-// app/layout.tsx
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import { Tenor_Sans } from 'next/font/google';
@@ -133,6 +132,42 @@ const clinicStructuredData = {
     ],
 };
 
+const treatmentItemListStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: '기드온치과 진료 과목',
+    itemListElement: [
+        {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'AI 네비게이션 임플란트',
+            image: 'https://www.gideondental.com/images/main_hover_01.jpg',
+            url: 'https://www.gideondental.com/guide/ai-navigation',
+        },
+        {
+            '@type': 'ListItem',
+            position: 2,
+            name: '물방울레이저 치주관리',
+            image: 'https://www.gideondental.com/images/main_hover_02.jpg',
+            url: 'https://www.gideondental.com/guide/laser',
+        },
+        {
+            '@type': 'ListItem',
+            position: 3,
+            name: '티스캔 교합관리',
+            image: 'https://www.gideondental.com/images/main_hover_03.jpg',
+            url: 'https://www.gideondental.com/guide/t-scan',
+        },
+        {
+            '@type': 'ListItem',
+            position: 4,
+            name: '시니어 라미네이트',
+            image: 'https://www.gideondental.com/images/main_hover_04.jpg',
+            url: 'https://www.gideondental.com/guide/senior',
+        },
+    ],
+};
+
 export const metadata: Metadata = {
     metadataBase: new URL('https://www.gideondental.com'),
     title: '성남임플란트 기드온치과 | 바른 마음과 정직한 진료',
@@ -197,13 +232,21 @@ const hansuwon = localFont({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="ko" className={`${dotSans.variable} ${suit.variable} ${tenorSans.variable} ${hansuwon.variable}`}>
-            <body className="flex min-h-screen flex-col">
+            <head>
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
                         __html: JSON.stringify(clinicStructuredData).replace(/</g, '\\u003c'),
                     }}
                 />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(treatmentItemListStructuredData).replace(/</g, '\\u003c'),
+                    }}
+                />
+            </head>
+            <body className="flex min-h-screen flex-col">
                 <SiteChrome>{children}</SiteChrome>
             </body>
         </html>
