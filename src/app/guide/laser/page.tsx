@@ -114,7 +114,6 @@ export default function LaserPage() {
             <TechSection
                 topTitle="WaterLase Periodontal Care"
                 centerTitle="물방울레이저 치주관리"
-                // #STYLE반응형줄바꿈: br에 반응형 클래스로 사이즈별 줄바꿈 위치 제어
                 desc={
                     <>
                         물방울레이저 치주관리는 레이저를 이용해 <br />
@@ -125,7 +124,6 @@ export default function LaserPage() {
                 }
                 imageSrc="/images/tech_img_3.png"
                 imageAlt=""
-                // #STYLE: 픽셀 고정값(w-[440px]) → 반응형 단계별 너비로 변경
                 imgClass="w-[230px] sm:w-[300px] md:w-[380px] lg:w-[440px] aspect-[180/91]"
                 isMargin="mt-[40px] md:mt-[60px] mb-[30px] md:mb-[50px]"
             />
