@@ -48,20 +48,20 @@ export default function SectionHeading({ topTitle, centerTitle, desc, isDesc, is
     // #STYLE: isLh가 true일 때 모바일에서 줄바꿈 시 글자가 수직으로 겹치는 버그를 막기 위해 leading-normal 적용, PC 규격 진입 시 md:leading-none으로 원본 핏 전환
     return (
         <div className="text-center px-4">
-            <p className={`font-accent ${isWhite ? 'text-[#fff]' : 'text-[#213225]'}`}>{topTitle}</p>
+            <p className={`font-accent text-[17px] md:text-[19px] ${isWhite ? 'text-[#fff]' : 'text-[#213225]'}`}>{topTitle}</p>
 
             <h2
-                className={`text-[28px] md:text-[34px] lg:text-[40px] 2xl:text-[46px] font-bold ${isWhite ? 'text-[#fff]' : 'text-[#213225]'} mt-1 break-keep`}
+                className={`text-[32px] md:text-[38px] lg:text-[44px] 2xl:text-[50px] font-bold ${isWhite ? 'text-[#fff]' : 'text-[#213225]'} mt-1 break-keep`}
             >
                 {centerTitle}
             </h2>
 
             {isDesc ? (
-                <h3
-                    className={`text-[16px] md:text-[18px] lg:text-[20px] 2xl:text-[22px] text-[#19251e] whitespace-pre-wrap mt-5 md:mt-6 font-normal break-keep leading-relaxed ${isLh ? 'leading-normal md:leading-none' : ''}`}
+                <div
+                    className={`mx-auto mt-5 max-w-[34rem] text-[18px] font-normal leading-[1.8] md:mt-6 md:text-[20px] lg:max-w-[38rem] lg:text-[22px] 2xl:text-[24px] [&_p]:break-keep [&_p]:leading-[1.8] [&_p]:whitespace-pre-wrap [&_p+_p]:mt-4 ${isWhite ? 'text-[#fff]' : 'text-[#19251e]'} ${isLh ? 'leading-normal md:leading-none' : ''}`}
                 >
-                    {desc}
-                </h3>
+                    {typeof desc === 'string' ? <p>{desc}</p> : desc}
+                </div>
             ) : null}
         </div>
     );

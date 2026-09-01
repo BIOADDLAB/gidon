@@ -1,69 +1,64 @@
 import HeroSection from '@/components/HeroSection';
-import SpecialSection from './../../../components/SpecialSection';
-import RecommendSection from '../../../components/RecommendSection';
-import ProcessSection from '../../../components/ProcessSection';
-import CareSection from '../../../components/CareSection';
-import FaqSection from '../../../components/FaqSection';
-import AskSection from '../../../components/AskSection';
-import MapSection from '../../../components/MapStion';
-import TechSection from '../../../components/TechSection';
+import SectionHeading from '@/components/common/SectionHeading';
+import SpecialSection from '@/components/SpecialSection';
+import RecommendSection from '@/components/RecommendSection';
+import CareSection from '@/components/CareSection';
+import FaqSection from '@/components/FaqSection';
+import AskSection from '@/components/AskSection';
+import MapSection from '@/components/MapStion';
+import TechSection from '@/components/TechSection';
+import { getSubNames } from '@/data/nav';
 
 export default function TScanPage() {
-    const guideMenuList = ['AI 네비게이션 임플란트', '물방울레이저 치주관리', '티스캔 교합관리', '시니어 라미네이트'];
+    const guideMenuList = getSubNames('턱관절·교합케어');
 
     const tScanCards = [
         {
             id: 1,
-            cardTitle: '컴퓨터 분석으로 \n맞물림을 눈으로 확인',
-            cardDesc: '치아 표면만 미세하게 정리하여 \n시린 증상 없이 안전하게 치료합니다.',
+            cardTitle: '교합 압력의\n정밀 수치화',
+            cardDesc:
+                '좌우 치아 전체에 분산되는 악력의 퍼센티지(%)와\n중심축 이동 경로를 실시간 그래프로 데이터화합니다.',
             specialSrc: '/images/i_special_8.svg',
             specialAlt: '',
         },
         {
             id: 2,
-            cardTitle: '치아 하나하나 \n씹는 힘을 고르게 조절',
-            cardDesc: '특정 치아에만 힘이 쏠리지 않도록 \n전체 치아를 균형 있게 지켜줍니다.',
+            cardTitle: '1/1,000초 단위의\n시간 분석',
+            cardDesc: '입을 다물 때 어느 치아에 가장 먼저\n강한 힘이 닿는지 미세한 타이밍 차이를 감지합니다.',
             specialSrc: '/images/i_special_9.svg',
             specialAlt: '',
         },
         {
             id: 3,
-            cardTitle: '자연 치아와 임플란트 \n파손 걱정 없이 오래 사용',
-            cardDesc: '맞물림 균형을 맞춰, 치아가 깨지거나 \n임플란트가 망가지는 것을 예방합니다.',
+            cardTitle: '치료 성공률 향상',
+            cardDesc:
+                '보철물 깨짐 방지, 교정 후 재발 위험감소, 턱관절 유해 간섭 제거 등\n치과 치료의 완성도를 극대화합니다.',
             specialSrc: '/images/i_special_10.svg',
-            specialAlt: '',
-        },
-        {
-            id: 4,
-            cardTitle: '보철물 수명은 늘리고 \n시림 증상은 줄여줌',
-            cardDesc: '보철물의 수명을 늘려주고 \n치아 시림 증상도 개선해줍니다.',
-            specialSrc: '/images/i_special_11.svg',
             specialAlt: '',
         },
     ];
 
     const tScanRecommendList = [
         {
-            title: '음식을 씹을 때마다 치아가 \n아프거나 시큰거리시는 분',
-            description:
-                '틀어지거나 과도한 치아 압박을 \n정밀하게 찾아내어, 편안하고 \n질기지 않은 식사를 도와드립니다.',
+            title: '턱관절 및 교합 치료',
+            description: '턱관절 통증과 만성 두통을 유발하는\n특정 치아의 과교합(초기 접촉) 선별 및\n정밀 미세 조정',
             bgClass: 'bg-[#40584E]',
             textColorClass: 'text-white',
             iconSrc: '/images/common/i_tooth_w.svg',
             lineColor: 'rgba(255, 255, 255, 0.3)',
         },
         {
-            title: '임플란트나 보철 치료 후 \n맞물림이 불편하신 분',
-            description: '디지털로 오차를 \n정확히 측정하여, 내 치아처럼 \n딱 맞는 편안함을 드립니다.',
+            title: '임플란트 & 심미보철 수복 후',
+            description:
+                '보철물에 과도한 부하가 쏠려\n발생할 수 있는 보철 파절, 나사 풀림, 잇몸뼈 흡수를 사전 예방합니다.',
             bgClass: 'bg-[#7A9389]',
             textColorClass: 'text-white',
             iconSrc: '/images/common/i_tooth_w.svg',
             lineColor: 'rgba(255, 255, 255, 0.3)',
         },
         {
-            title: '두통이나 턱관절 통증으로 \n고생하고 계신 분',
-            description:
-                '치아 균형만 잘 맞춰도 턱과 목의 긴장이 \n풀리므로, 연세가 많으신 어르신도 \n쉽게 통증을 개선할 수 있습니다.',
+            title: '치아교정 완료 단계',
+            description: '교정 장치 제거 후 치아 전체에 악력이\n균등하게 분산되도록 맞물림 평형을 점검합니다.',
             bgClass: 'bg-[#F4F1EA]',
             textColorClass: 'text-[#414141]',
             iconSrc: '/images/common/i_tooth_b.png',
@@ -71,39 +66,13 @@ export default function TScanPage() {
         },
     ];
 
-    const tScanProcessSteps = [
-        {
-            stepNumber: 1,
-            title: '디지털 장비로 정밀한 교합 상태 측정',
-            description:
-                '컴퓨터 분석 시스템을 통해 눈에 보이지 않는 치아의 \n맞물림 압력과 불균형한 위치를 정확하게 찾아냅니다.',
-            imgSrc: '/images/pro_item_10.jpg',
-            imgAlt: '성남임플란트 기드온치과 티스캔 교합관리 정밀 진단 과정',
-        },
-        {
-            stepNumber: 2,
-            title: '맞춤형 미세 조절로 치아 균형 맞춤',
-            description:
-                '검사 결과를 바탕으로 과도하게 힘을 받는 치아 표면을 \n다듬어, 전체적인 씹는 힘을 고르게 분산시킵니다.',
-            imgSrc: '/images/pro_item_4.jpg',
-            imgAlt: '성남임플란트 기드온치과 티스캔 교합관리 미세 조절 과정',
-        },
-        {
-            stepNumber: 3,
-            title: '정기적인 사후 관리로 튼튼하게 유지',
-            description: '정기적인 검진을 통해 균형 잡힌 \n치아 건강을 오래 쓰도록 관리합니다.',
-            imgSrc: '/images/pro_item_12.jpg',
-            imgAlt: '성남임플란트 기드온치과 티스캔 교합관리 사후 관리 과정',
-        },
-    ];
-
     return (
         <main>
             <HeroSection
-                mainTitle="진료안내"
-                subTitle="Medical Guide"
-                pageName="티스캔 교합관리"
-                subNavItem="티스캔 교합관리"
+                mainTitle="턱관절·교합케어"
+                subTitle="TMJ & Occlusion"
+                pageName="턱관절·교합케어"
+                subNavItem="T-Scan 디지털 교합분석"
                 imgSrc="/images/bg_yellow.jpg"
                 isNav={true}
                 isGreen={false}
@@ -112,20 +81,19 @@ export default function TScanPage() {
 
             <TechSection
                 topTitle="T-Scan Occlusal Analysis"
-                centerTitle="티스캔 교합관리"
+                centerTitle="T-Scan 디지털 교합분석"
                 desc={
                     <>
-                        티스캔 교합관리는 컴퓨터 장비로 치아가 씹는
-                        <br className="hidden min-[360px]:block md:hidden" /> 힘과
-                        <br className="hidden md:block" />
-                        맞물림을 바르게 맞춰주는 치료입니다.
-                        <br className="hidden min-[360px]:block md:hidden" />
-                        <br className="hidden min-[360px]:block md:hidden" />
-                        특정 치아에만 힘이 쏠리지 않게 도와주어,
-                        <br className="hidden md:block" />
-                        <br className="hidden min-[360px]:block md:hidden" />내 치아와 임플란트를 부러짐 없이
-                        <br className="hidden min-[360px]:block md:hidden" />
-                        오래 쓰도록 지켜줍니다.
+                        <p>눈에 보이지 않는 씹는 힘(교합)을 1/1,000초 단위 수치로 측정.</p>
+                        <p>“치료 후에도 계속 이가 얼얼하거나 턱이 아프신가요?”</p>
+                        <p>
+                            기존의 씹는 종이(치은지) 진단만으로는 치아에 가해지는 실제 압력의 크기와 시간차를 정확히
+                            측정하기 어렵습니다.
+                        </p>
+                        <p>
+                            기드온치과는 T-Scan III 디지털 교합 분석 시스템을 통해 객관적 수치 데이터 기반의 초정밀 교합
+                            케어를 제공합니다.
+                        </p>
                     </>
                 }
                 imageSrc="/images/tech_img_4.png"
@@ -134,14 +102,36 @@ export default function TScanPage() {
                 isMargin="mt-[40px] md:mt-[60px] mb-[30px] md:mb-[50px]"
             />
 
-            <SpecialSection topTitle="PROCESS" centerTitle="티스캔 교합관리 진행과정" cardList={tScanCards} />
-
+            <SpecialSection
+                topTitle="WHY T-SCAN"
+                centerTitle="T-Scan 디지털 교합분석이 필요한 이유"
+                cardList={tScanCards}
+            />
             <RecommendSection
-                topTitle="RECOMMEND"
-                centerTitle="이런 분들에게 추천합니다"
+                topTitle="APPLICATION"
+                centerTitle="T-Scan 정밀 교합케어 적용 분야"
                 cardList={tScanRecommendList}
             />
-            <ProcessSection topTitle="PROCESS" centerTitle="티스캔 교합관리 진행과정" stepData={tScanProcessSteps} />
+            <section className="bg-[#FAF9F6] px-4 py-[70px] md:py-[100px] 2xl:py-[130px]">
+                <div className="mx-auto w-full max-w-[860px]">
+                    <SectionHeading
+                        topTitle="GIDEON'S POINT"
+                        centerTitle="수치로 증명하는 정밀한 교합 평형"
+                    />
+                    <div className="mx-auto mt-10 flex max-w-[38rem] flex-col gap-4">
+                        <p className="break-keep text-center text-[17px] font-medium leading-[1.85] text-[#444] md:text-[19px]">
+                            “단순 통증 완화에 그치지 않고, 수치화된 교합 평형을 완성합니다.”
+                        </p>
+                        <p className="break-keep text-center text-[17px] font-medium leading-[1.85] text-[#444] md:text-[19px]">
+                            턱관절 및 치과 치료의 핵심은 눈대중이 아닌 정밀 데이터에 있습니다.
+                        </p>
+                        <p className="break-keep text-center text-[17px] font-medium leading-[1.85] text-[#444] md:text-[19px]">
+                            기드온치과는 T-Scan 디지털 교합 측정 결과를 바탕으로 턱관절에 유해한 교합 간섭만을 정교하게
+                            다듬어, 재발 위험을 낮추고 가장 편안한 씹는 즐거움을 약속합니다.
+                        </p>
+                    </div>
+                </div>
+            </section>
             <CareSection />
             <FaqSection isBg={false} />
             <AskSection />

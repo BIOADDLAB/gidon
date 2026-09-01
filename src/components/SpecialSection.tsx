@@ -23,17 +23,17 @@ export default function SpecialSection({ topTitle, centerTitle, cardList }: Spec
                     <div className="relative z-10">
                         <SectionHeading topTitle={topTitle} centerTitle={centerTitle} />
 
-                        <div className="flex flex-col min-[995px]:flex-row min-[995px]:flex-wrap justify-center items-center gap-[16px] md:gap-[20px] max-w-[690px] 2xl:max-w-[820px] mx-auto mt-[40px] md:mt-[58px]">
+                        <div className="mx-auto mt-[40px] grid max-w-[690px] grid-cols-1 items-stretch gap-[16px] md:mt-[58px] md:gap-[20px] min-[995px]:grid-cols-2 2xl:max-w-[820px]">
                             {cardList.map((card, i) => (
                                 <div
                                     key={i}
-                                    className="w-full min-[995px]:w-[calc(50%-10px)] border border-[#B0B0B0] rounded-[10px] pt-[44px] md:pt-[60px] pb-[36px] md:pb-[50px] flex flex-col items-center justify-center bg-white shadow-sm"
+                                    className="flex h-full min-h-[280px] flex-col items-center rounded-[10px] border border-[#B0B0B0] bg-white px-5 pb-[36px] pt-[44px] shadow-sm md:min-h-[320px] md:px-6 md:pb-[50px] md:pt-[60px]"
                                 >
-                                    <img src={card.specialSrc} className="w-16 md:w-18" alt={card.specialAlt} />
-                                    <h4 className="whitespace-pre-wrap text-center text-[20px] md:text-[22px] lg:text-[25px] 2xl:text-[28px] font-bold pt-3 md:pt-3.5 pb-5 md:pb-6.25 leading-tight break-keep">
+                                    <img src={card.specialSrc} className="h-16 w-16 shrink-0 object-contain md:h-[72px] md:w-[72px]" alt={card.specialAlt} />
+                                    <h4 className="mt-3 flex min-h-[3.4em] items-center justify-center text-center text-[20px] font-bold leading-tight break-keep whitespace-pre-wrap md:mt-3.5 md:min-h-[3.6em] md:text-[22px] lg:text-[25px] 2xl:text-[28px]">
                                         {card.cardTitle}
                                     </h4>
-                                    <p className="whitespace-pre-wrap text-center text-[15px] md:text-[16px] lg:text-[18px] text-[#666] leading-relaxed break-keep px-2">
+                                    <p className="mt-2 flex flex-1 items-center justify-center text-center text-[15px] leading-[1.75] break-keep text-[#666] md:text-[16px] lg:text-[18px]">
                                         {card.cardDesc}
                                     </p>
                                 </div>

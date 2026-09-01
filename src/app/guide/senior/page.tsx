@@ -134,16 +134,10 @@ export default function SeniorPage() {
                     centerTitle="시니어 라미네이트"
                     desc={
                         <>
-                            치아 표면을 미세하게 정리하고
-                            <br className="hidden min-[360px]:block md:hidden" /> 친환경 재료를 붙여
-                            <br className="hidden md:block" /> 치아를 바르고
-                            <br className="hidden min-[360px]:block md:hidden" /> 튼튼하게 만드는 치료입니다.
-                            <br className="hidden md:block" />
-                            <br className="hidden min-[360px]:block md:hidden" />
-                            <br className="hidden min-[360px]:block md:hidden" />
-                            노화로 인해 깨지거나 벌어진 치아 모양을
-                            <br className="hidden min-[360px]:block md:hidden" /> 바로잡아 건강하고 환한 미소를 되찾아
-                            드립니다.
+                            <p>치아 표면을 미세하게 정리하고 친환경 재료를 붙여 치아를 바르고 튼튼하게 만드는 치료입니다.</p>
+                            <p>
+                                노화로 인해 깨지거나 벌어진 치아 모양을 바로잡아 건강하고 환한 미소를 되찾아 드립니다.
+                            </p>
                         </>
                     }
                     isDesc={true}

@@ -4,8 +4,10 @@ import AskSection from '../../../components/AskSection';
 import MapSection from '../../../components/MapStion';
 import SectionHeading from './../../../components/common/SectionHeading';
 
+import { getSubNames } from '@/data/nav';
+
 export default function InsurancePage() {
-    const insuranceMenuList = ['진행과정', '보험 임플란트'];
+    const insuranceMenuList = getSubNames('임플란트');
 
     return (
         <main>
@@ -27,18 +29,11 @@ export default function InsurancePage() {
                         centerTitle="보험 임플란트"
                         desc={
                             <>
-                                보험 임플란트는 만 65세 이상 어르신을
-                                <br className="hidden min-[360px]:block md:hidden" /> 대상으로
-                                <br className="hidden md:block" />
-                                건강보험 혜택을 받을 수 있는
-                                <br className="hidden min-[360px]:block md:hidden" />
-                                임플란트 치료입니다.
-                                <br className="hidden md:block" />
-                                <br className="hidden min-[360px]:block md:hidden" />
-                                <br className="hidden min-[360px]:block md:hidden" />
-                                치료 비용 부담은 줄이고, 건강한 치아 기능을
-                                <br className="hidden min-[360px]:block md:hidden" />
-                                회복할 수 있도록 돕습니다.
+                                <p>
+                                    보험 임플란트는 만 65세 이상 어르신을 대상으로 건강보험 혜택을 받을 수 있는 임플란트
+                                    치료입니다.
+                                </p>
+                                <p>치료 비용 부담은 줄이고, 건강한 치아 기능을 회복할 수 있도록 돕습니다.</p>
                             </>
                         }
                         isDesc={true}

@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { getHrefByName } from '@/data/nav';
 
 interface HeroProps {
     mainTitle: string;
@@ -114,7 +115,7 @@ export default function HeroSection({
                             <button
                                 type="button"
                                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                                className={`flex items-center justify-between w-[160px] md:w-[240px] px-4 md:px-5 py-2 rounded-[8px] text-[14px] md:text-[18px] font-semibold focus:outline-none transition-colors border ${
+                                className={`flex items-center justify-between w-[200px] md:w-[300px] px-4 md:px-5 py-2 rounded-[8px] text-[14px] md:text-[18px] font-semibold focus:outline-none transition-colors border ${
                                     isGreen ? 'text-white border-[#fff]' : 'text-[#333] border-[#333]'
                                 }`}
                             >
@@ -131,22 +132,7 @@ export default function HeroSection({
                                     <ul className="flex flex-col">
                                         {subMenuList.map((menu, idx) => {
                                             const isSelected = menu === subNavItem;
-
-                                            let targetHref = '/';
-                                            if (menu === '병원철학') targetHref = '/about/philosophy';
-                                            else if (menu === '기드온의 약속') targetHref = '/about/promise';
-                                            else if (menu === '둘러보기') targetHref = '/about/tour';
-                                            else if (menu === '진행과정') targetHref = '/implant/process';
-                                            else if (menu === '보험 임플란트') targetHref = '/implant/insurance';
-                                            else if (menu === '의료진소개') targetHref = '/doctors';
-                                            else if (menu === 'AI 네비게이션 임플란트')
-                                                targetHref = '/guide/ai-navigation';
-                                            else if (menu === '물방울레이저 치주관리') targetHref = '/guide/laser';
-                                            else if (menu === '티스캔 교합관리') targetHref = '/guide/t-scan';
-                                            else if (menu === '시니어 라미네이트') targetHref = '/guide/senior';
-                                            else if (menu === '가격안내') targetHref = '/price';
-                                            else if (menu === '기드온칼럼') targetHref = '/blog';
-                                            else if (menu === '오시는길') targetHref = '/about/location';
+                                            const targetHref = getHrefByName(menu);
 
                                             return (
                                                 <li key={idx}>

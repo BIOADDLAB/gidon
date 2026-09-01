@@ -2,6 +2,7 @@ import HeroSection from '@/components/HeroSection';
 import MapSection from './../../components/MapStion';
 import SectionHeading from '@/components/common/SectionHeading';
 import TourSwiper from '@/components/TourSwiper';
+import { getSubNames } from '@/data/nav';
 
 interface DoctorProps {
     id: number;
@@ -15,7 +16,7 @@ interface DoctorProps {
 }
 
 export default function DoctorsPage() {
-    const doctorsMenuList = ['의료진소개'];
+    const doctorsMenuList = getSubNames('기드온소개');
 
     // #ISSUE: 각 원장님별 원본 약력 텍스트와 대조하여 약식처리했던 이력 전체 추가
     const doctorList: DoctorProps[] = [
@@ -103,10 +104,10 @@ export default function DoctorsPage() {
     return (
         <main>
             <HeroSection
-                mainTitle="의료진소개"
+                mainTitle="기드온소개"
                 subTitle="Medical Staff"
-                pageName="의료진소개"
-                subNavItem="의료진소개"
+                pageName="기드온소개"
+                subNavItem="의료진 소개"
                 imgSrc="/images/bg_interior_3.jpg"
                 isNav={true}
                 isGreen={true}

@@ -7,63 +7,9 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 
+import { menus } from '@/data/nav';
+
 gsap.registerPlugin(ScrollTrigger);
-
-interface SubItem {
-    name: string;
-    href: string;
-}
-interface MenuItem {
-    title: string;
-    href: string;
-    subs: SubItem[];
-}
-
-const menus: MenuItem[] = [
-    {
-        title: '기드온치과',
-        href: '/about/philosophy',
-        subs: [
-            { name: '병원철학', href: '/about/philosophy' },
-            { name: '기드온의 약속', href: '/about/promise' },
-            { name: '오시는길', href: '/about/location' },
-            { name: '둘러보기', href: '/about/tour' },
-        ],
-    },
-    {
-        title: '의료진소개',
-        href: '/doctors',
-        subs: [{ name: '의료진소개', href: '/doctors' }],
-    },
-    {
-        title: '임플란트',
-        href: '/implant/process',
-        subs: [
-            { name: '진행과정', href: '/implant/process' },
-            { name: '보험 임플란트', href: '/implant/insurance' },
-        ],
-    },
-    {
-        title: '진료안내',
-        href: '/guide/ai-navigation',
-        subs: [
-            { name: 'AI 네비게이션 임플란트', href: '/guide/ai-navigation' },
-            { name: '물방울레이저 치주관리', href: '/guide/laser' },
-            { name: '티스캔 교합관리', href: '/guide/t-scan' },
-            { name: '시니어 라미네이트', href: '/guide/senior' },
-        ],
-    },
-    {
-        title: '가격안내',
-        href: '/price',
-        subs: [{ name: '가격안내', href: '/price' }],
-    },
-    {
-        title: '기드온칼럼',
-        href: '/blog',
-        subs: [{ name: '기드온칼럼', href: '/blog' }],
-    },
-];
 
 export default function Header() {
     const navRef = useRef<HTMLElement>(null);
@@ -123,19 +69,19 @@ export default function Header() {
                             <div
                                 key={menu.title}
                                 // #STYLE: 2xl에서 메뉴 아이템 너비 확장
-                                className="group/menu relative flex h-20 w-[110px] xl:w-[120px] 2xl:w-[140px] items-center justify-center"
+                                className="group/menu relative flex h-20 w-[86px] xl:w-[104px] 2xl:w-[122px] items-center justify-center"
                             >
                                 <Link
                                     href={menu.href}
-                                    className="px-2 py-4 text-[16px] xl:text-[17px] 2xl:text-[18px] font-semibold text-white transition-colors
+                                    className="px-1 py-4 text-center text-[14px] xl:text-[16px] 2xl:text-[17px] font-semibold text-white transition-colors break-keep
                                         group-hover:text-green-600
                                         group-[.on]:text-green-600
                                         group-hover/menu:text-[#1c2f2a]"
                                 >
-                                    {menu.title}
+                                    {menu.shortTitle}
                                 </Link>
 
-                                <div className="absolute left-0 top-20 flex h-[280px] w-full origin-top scale-y-0 flex-col items-center gap-4 px-2 pt-[30px] pb-8 opacity-0 transition-all duration-300 group-hover:scale-y-100 group-hover:opacity-100 group-hover/menu:bg-[#DAB551] z-30">
+                                <div className="absolute left-0 top-20 flex h-[420px] w-full origin-top scale-y-0 flex-col items-center gap-4 px-2 pt-[30px] pb-8 opacity-0 transition-all duration-300 group-hover:scale-y-100 group-hover:opacity-100 group-hover/menu:bg-[#DAB551] z-30">
                                     {menu.subs.map((sub) => {
                                         // #STYLE: 현재 보고 있는 페이지의 서브메뉴는 호버 여부와 상관없이 밑줄 항상 표시
                                         const isCurrentPage = pathname === sub.href;
@@ -211,7 +157,7 @@ export default function Header() {
             </div>
 
             {/* PC 서브 패널 배경판 */}
-            <div className="absolute left-0 top-20 z-10 hidden h-[280px] w-full origin-top scale-y-0 border-b border-gray-200 bg-white opacity-0 shadow-md transition-all duration-300 group-hover:scale-y-100 group-hover:opacity-100 lg:block" />
+            <div className="absolute left-0 top-20 z-10 hidden h-[420px] w-full origin-top scale-y-0 border-b border-gray-200 bg-white opacity-0 shadow-md transition-all duration-300 group-hover:scale-y-100 group-hover:opacity-100 lg:block" />
 
             {/* 모바일 2-Pane 서브 메뉴 */}
             {menuOpen &&
@@ -242,7 +188,7 @@ export default function Header() {
                                             }`}
                                             onClick={() => setSubOpen(i)}
                                         >
-                                            {menu.title}
+                                            {menu.shortTitle}
                                         </button>
                                     );
                                 })}

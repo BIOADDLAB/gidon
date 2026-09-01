@@ -17,14 +17,29 @@ const feedItems = [
         description: '기드온치과 의료진을 소개합니다.',
     },
     {
-        title: '임플란트 진행과정',
-        path: '/implant/process',
-        description: '정밀하고 안정적인 임플란트 치료 과정을 안내합니다.',
+        title: 'AI 네비게이션 임플란트',
+        path: '/guide/ai-navigation',
+        description: '3D CT로 식립 위치를 정밀하게 계획하는 네비게이션 임플란트입니다.',
     },
     {
-        title: '가격안내',
-        path: '/price',
-        description: '기드온치과의 진료 가격을 안내합니다.',
+        title: '전체 임플란트',
+        path: '/guide/full-implant',
+        description: '여러 치아가 없을 때 필요한 범위만큼 계획하는 전체 임플란트입니다.',
+    },
+    {
+        title: '임플란트 틀니',
+        path: '/guide/implant-denture',
+        description: '일반 틀니보다 덜 흔들리는 임플란트 틀니입니다.',
+    },
+    {
+        title: '최소 삭제 라미네이트',
+        path: '/guide/laminate',
+        description: '자연 치아를 최대한 보존하는 최소 삭제 라미네이트입니다.',
+    },
+    {
+        title: '턱관절 질환 & 통증케어',
+        path: '/guide/tmj',
+        description: '턱 소리, 통증, 두통의 원인을 턱관절과 교합에서 찾아 치료합니다.',
     },
 ];
 

@@ -7,6 +7,7 @@ import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { db, storage } from '@/lib/firebase';
 import { DEFAULT_MAIN_STATS, type MainStatsData } from '@/types/mainStats';
 import { DEFAULT_POPUP_DATA, type PopupData } from '@/types/popup';
+import PriceGuideManagement from '@/components/admin/PriceGuideManagement';
 
 interface AdminPopup extends PopupData {
     id: string;
@@ -21,6 +22,8 @@ export default function AdminDashboard() {
             </div>
 
             <MainStatsManagement />
+
+            <PriceGuideManagement />
 
             <div className="mb-8 border-b border-line">
                 <nav className="flex gap-12 text-sm font-bold text-ink-500">

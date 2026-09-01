@@ -11,6 +11,7 @@ import TourSwiper from '@/components/TourSwiper';
 import FaqSection from '@/components/FaqSection';
 import AskSection from '@/components/AskSection';
 import LocationSections from '@/components/LocationSections';
+import { getSubNames } from '@/data/nav';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -19,7 +20,7 @@ interface AboutLayoutProps {
 }
 
 export default function AboutLayout({ activeSection }: AboutLayoutProps) {
-    const aboutMenuList = ['병원철학', '기드온의 약속', '오시는길', '둘러보기'];
+    const aboutMenuList = getSubNames('기드온소개');
     const containerRef = useRef<HTMLDivElement>(null);
     const archRef = useRef<SVGSVGElement>(null);
 
@@ -53,16 +54,16 @@ export default function AboutLayout({ activeSection }: AboutLayoutProps) {
     const subNavMap = {
         philosophy: '병원철학',
         promise: '기드온의 약속',
-        location: '오시는길',
+        location: '오시는 길',
         tour: '둘러보기',
     };
 
     return (
         <main className="scroll-smooth">
             <HeroSection
-                mainTitle="기드온치과"
+                mainTitle="기드온소개"
                 subTitle="About GIDEON"
-                pageName="기드온치과"
+                pageName="기드온소개"
                 subNavItem={subNavMap[activeSection]}
                 imgSrc="/images/bg_interior_3.jpg"
                 isNav={true}

@@ -54,11 +54,10 @@ export default function ProcessPage() {
                 centerTitle="기드온 임플란트"
                 desc={
                     <>
-                        기드온의 임플란트는 환자 한 분 한 분의 구강 상태를 세심하게 고려하여
-                        <br className="hidden md:block" />
-                        불편함은 줄이고 만족도는 높이는 치료를 제공하며,
-                        <br className="hidden min-[360px]:block md:hidden" />
-                        편안한 일상 회복을 돕습니다.
+                        <p>
+                            기드온의 임플란트는 환자 한 분 한 분의 구강 상태를 세심하게 고려하여 불편함은 줄이고
+                            만족도는 높이는 치료를 제공하며, 편안한 일상 회복을 돕습니다.
+                        </p>
                     </>
                 }
                 imageSrc="/images/tech_img_1.png"

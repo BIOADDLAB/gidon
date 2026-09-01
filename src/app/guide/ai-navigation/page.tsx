@@ -8,8 +8,10 @@ import AskSection from '../../../components/AskSection';
 import MapSection from '../../../components/MapStion';
 import TechSection from '../../../components/TechSection';
 
+import { getSubNames } from '@/data/nav';
+
 export default function AiNavigationPage() {
-    const guideMenuList = ['AI 네비게이션 임플란트', '물방울레이저 치주관리', '티스캔 교합관리', '시니어 라미네이트'];
+    const guideMenuList = getSubNames('임플란트');
 
     const aiCards = [
         {
@@ -101,9 +103,9 @@ export default function AiNavigationPage() {
     return (
         <main>
             <HeroSection
-                mainTitle="진료안내"
-                subTitle="Medical Guide"
-                pageName="AI 네비게이션 임플란트"
+                mainTitle="임플란트"
+                subTitle="Implant"
+                pageName="임플란트"
                 subNavItem="AI 네비게이션 임플란트"
                 imgSrc="/images/bg_yellow.jpg"
                 isNav={true}
@@ -116,14 +118,7 @@ export default function AiNavigationPage() {
                 centerTitle="네비게이션 임플란트"
                 desc={
                     <>
-                        네비게이션 임플란트는 3D CT를 통해
-                        <br className="hidden min-[360px]:block md:hidden" />
-                        환자 개개인의 구강 상태를 분석하고,
-                        <br className="hidden md:block" />
-                        <br className="hidden min-[360px]:block md:hidden" />
-                        식립 위치를 정밀하게 계획하여
-                        <br className="hidden min-[360px]:block md:hidden" />
-                        정밀한 임플란트 치료를 제공합니다.
+                        <p>네비게이션 임플란트는 3D CT를 통해 환자 개개인의 구강 상태를 분석하고, 식립 위치를 정밀하게 계획하여 정밀한 임플란트 치료를 제공합니다.</p>
                     </>
                 }
                 imageSrc="/images/tech_img_2.png"

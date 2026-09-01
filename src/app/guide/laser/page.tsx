@@ -8,8 +8,10 @@ import AskSection from '../../../components/AskSection';
 import MapSection from '../../../components/MapStion';
 import TechSection from '../../../components/TechSection';
 
+import { getSubNames } from '@/data/nav';
+
 export default function LaserPage() {
-    const guideMenuList = ['AI 네비게이션 임플란트', '물방울레이저 치주관리', '티스캔 교합관리', '시니어 라미네이트'];
+    const guideMenuList = getSubNames('일반·치주진료');
 
     const laserCards = [
         {
@@ -101,9 +103,9 @@ export default function LaserPage() {
     return (
         <main>
             <HeroSection
-                mainTitle="진료안내"
-                subTitle="Medical Guide"
-                pageName="진료안내"
+                mainTitle="일반·치주진료"
+                subTitle="General Dentistry"
+                pageName="일반·치주진료"
                 subNavItem="물방울레이저 치주관리"
                 imgSrc="/images/bg_yellow.jpg"
                 isNav={true}
@@ -116,10 +118,8 @@ export default function LaserPage() {
                 centerTitle="물방울레이저 치주관리"
                 desc={
                     <>
-                        물방울레이저 치주관리는 레이저를 이용해 <br />
-                        잇몸을 건강하게 관리하는 치료입니다. <br />
-                        <br className="hidden md:block" />
-                        잇몸 염증과 불편함을 줄이고, 건강한 치아를 오래 유지할 수 있도록 돕습니다.
+                        <p>물방울레이저 치주관리는 레이저를 이용해 잇몸을 건강하게 관리하는 치료입니다.</p>
+                        <p>잇몸 염증과 불편함을 줄이고, 건강한 치아를 오래 유지할 수 있도록 돕습니다.</p>
                     </>
                 }
                 imageSrc="/images/tech_img_3.png"

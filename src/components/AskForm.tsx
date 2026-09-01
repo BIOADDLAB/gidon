@@ -71,7 +71,7 @@ export default function AskForm() {
                             type="text"
                             required
                             placeholder="성함을 입력해주세요."
-                            className="py-[10px] w-full block border-b border-black placeholder:text-[#757776] focus:outline-none text-[15px] md:text-base"
+                            className="py-[10px] w-full block border-b border-black placeholder:text-[#757776] focus:outline-none text-[17px] md:text-lg"
                         />
                     </div>
                     <div className="mb-[30px] md:mb-[40px]">
@@ -87,7 +87,7 @@ export default function AskForm() {
                             type="tel"
                             required
                             placeholder="010-0000-0000"
-                            className="py-[10px] w-full block border-b border-black placeholder:text-[#757776] focus:outline-none text-[15px] md:text-base"
+                            className="py-[10px] w-full block border-b border-black placeholder:text-[#757776] focus:outline-none text-[17px] md:text-lg"
                         />
                     </div>
                     <div>
@@ -103,7 +103,7 @@ export default function AskForm() {
                             type="text"
                             required
                             placeholder="문의하실 내용을 자유롭게 입력해주세요."
-                            className="py-[10px] w-full block border-b border-black placeholder:text-[#757776] focus:outline-none text-[15px] md:text-base"
+                            className="py-[10px] w-full block border-b border-black placeholder:text-[#757776] focus:outline-none text-[17px] md:text-lg"
                         />
                     </div>
                 </div>
@@ -123,13 +123,13 @@ export default function AskForm() {
                     className="pl-[30px] pr-1 cursor-pointer select-none relative h-[22px] flex items-center bg-no-repeat bg-left bg-contain
                                bg-[url('/images/common/check_off.png')] 
                                peer-checked:bg-[url('/images/common/check_on.png')]
-                               text-[14px] md:text-base"
+                               text-[16px] md:text-lg"
                 >
                     개인정보취급방침에 동의
                 </label>
                 <button
                     type="button"
-                    className="underline z-10 text-[14px] md:text-base"
+                    className="underline z-10 text-[16px] md:text-lg"
                     onClick={() => setIsPrivacyOpen(true)}
                 >
                     [자세히 보기]
@@ -138,7 +138,7 @@ export default function AskForm() {
 
             {submitMessage && (
                 <p
-                    className={`mx-auto mb-5 max-w-[660px] rounded-2xl px-5 py-4 text-center text-sm font-bold ${
+                    className={`mx-auto mb-5 max-w-[660px] rounded-2xl px-5 py-4 text-center text-base font-bold ${
                         submitStatus === 'success' ? 'bg-green-50 text-green-700' : 'bg-red-50 text-red-600'
                     }`}
                 >

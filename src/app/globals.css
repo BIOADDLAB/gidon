@@ -32,8 +32,28 @@
     }
 }
 
+.swiper-slide-active .hero-zoom {
+    animation: hero-zoom 10s ease-out forwards;
+}
+
+@keyframes hero-zoom {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.06);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-zoom {
+        animation: none;
+    }
+}
+
 body {
     font-family: var(--font-sans);
     color: var(--color-ink-900);
     background: var(--color-paper);
+    font-size: 18px;
 }
